@@ -204,8 +204,7 @@ header{
     margin-bottom: 1rem;
   &:focus{
     outline: none;
-//    border: 1px solid $primary;
-    box-shadow: 0 0 5px $secondary;
+    box-shadow: 0 0 5px $accient;
   }
 }
 

@@ -15,7 +15,7 @@ class About_app extends React.Component {
     }
     render() {
         return (
-           <section id="about_app" className="screen-section">                 
+           <section id="about_app" className="screen-section">
                 <h1 className="title--page">В кратце о приложении:</h1>
                 <p className="main-text">В данном приложении Вы можете примерить на себе две роли:</p>                
                  <ul>
@@ -24,7 +24,6 @@ class About_app extends React.Component {
                  </ul>
                 <div>
                   <Route path={`/about_app/:id`} component={About_user}/>
-                  <Route exact path='/about_app/' component={About_user}/>
                 </div> 
            </section>            
         )

@@ -1,15 +1,15 @@
 const quests = {
   "web":[
   {
-      id: 435,
+      id: 1,
       title: "Quest1",
       author: "qweqweqwe",
-      category: "web"
+      cat: "web"
   }
     ],
   "design":[
   {
-      id: 7654,
+      id: 2,
       title: "Quest1",
       author: "qweqweqwe",
       cat: "design"

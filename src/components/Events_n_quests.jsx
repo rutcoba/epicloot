@@ -34,13 +34,18 @@ class Events_n_quests extends React.Component {
   }
   
     render(){
-      console.log(Object.values(quests));
+      var questsArr = Object.values(quests);
       return (
             <section id="events_n_quests" className="screen-section"> 
                <h2 className="title--page">Задания и квесты</h2>
                <input type="text" placeholder="выберите категорию" value={this.state.val} onBlur={this.closeCategoryList} onFocus={this.openCategoryList} onClick={this.changeValue}/>
                <ul className={this.state.openList == true ? 'category__dropdown open' : 'category__dropdown'}>
-                
+                 {questsArr.map(i => {                   
+                    console.log(i);
+                   return(
+                      <li key = {i[0].id} >{i[0].cat}</li>
+                     )
+                 })}
                </ul>
               <div>
                 <Route path={`/events_n_quests/:id`} component={Events_category}/>
