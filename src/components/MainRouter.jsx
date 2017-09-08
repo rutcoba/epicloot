@@ -4,6 +4,7 @@ import { HashRouter, Redirect, Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
 import About_app from './About_app';
+import About_user from './About_user';
 import Our_team from './Our_team';
 import Contacts from './Contacts';
 import Events_n_quests from './Events_n_quests';
@@ -18,6 +19,8 @@ const MainRouter = () => (
       <Route path="/our_team" component={Our_team}/>
       <Route path="/contacts" component={Contacts}/>
       <Route path="/events_n_quests" component={Events_n_quests} />
+      <Route path='/about_app/npc' component={About_user}/>
+      <Route path='/about_app/player' component={About_user}/>
       <Route path="*" component={NotFound}/>
     </Switch>
   </main>       

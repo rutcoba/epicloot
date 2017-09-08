@@ -21,7 +21,6 @@ class Header extends React.Component{
   }
   
   render(){
-    console.log('width window: ' + window.innerWidth); 
     var btnClose, btnOpen;    
     if(window.innerWidth <= 1100){
       btnOpen = 
@@ -39,11 +38,11 @@ class Header extends React.Component{
         <nav className={window.innerWidth <= 1100 ? 'mobile_nav' : 'desktop_nav'}>
           <ul className="menu">
             {btnClose}
-            <li className="menu_item"><NavLink className="menu_link" to='/' onClick={this.handleClose}>Home</NavLink></li>
-            <li className="menu_item"><NavLink className="menu_link" to="/about_app" onClick={this.handleClose}>about_app</NavLink></li>
-            <li className="menu_item"><NavLink className="menu_link" to="/our_team" onClick={this.handleClose}>our_team</NavLink></li>
-            <li className="menu_item"><NavLink className="menu_link" to="/contacts" onClick={this.handleClose}>contacts</NavLink></li>
-            <li className="menu_item"><NavLink className="menu_link" to="/events_n_quests" onClick={this.handleClose}>events_n_quests</NavLink></li>
+            <li className="menu_item"><NavLink className="menu_link" to='/' onClick={this.handleClose}>Домой</NavLink></li>
+            <li className="menu_item"><NavLink className="menu_link" to="/about_app" onClick={this.handleClose}>О приложении</NavLink></li>
+            <li className="menu_item"><NavLink className="menu_link" to="/our_team" onClick={this.handleClose}>Наша команда</NavLink></li>
+            <li className="menu_item"><NavLink className="menu_link" to="/contacts" onClick={this.handleClose}>Контакты</NavLink></li>
+            <li className="menu_item"><NavLink className="menu_link" to="/events_n_quests" onClick={this.handleClose}>Квесты и лут</NavLink></li>
           </ul>          
         </nav>
       </header>        

@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
+import { Route, Link } from 'react-router-dom';
+
+import About_user from './About_user';
+
+import users from './../data/users';
+=======
+>>>>>>> 1ad47828af0bd59a7f62c671b454f92728f1aaab
 
 class About_app extends React.Component {
     constructor(props){
@@ -10,11 +18,17 @@ class About_app extends React.Component {
     }
     render() {
         return (
-           <section id="about_app" className="screen-section">                 
-                <h1 className="title--page">About app</h1>
-                <p className="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, nostrum!</p>
-                <p className="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id similique accusantium optio fugiat nihil ullam laudantium atque fugit perspiciatis, voluptas!</p>
-                <p className="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus esse molestias quibusdam excepturi fuga.</p>
+           <section id="about_app" className="screen-section"> 
+                <h1 className="title--page">В кратце о приложении:</h1>
+                <p className="main-text">В данном приложении Вы можете примерить на себе две роли:</p>                
+                 <ul>
+                   <li><Link className="main-text" to="/about_app/player">Игрок</Link></li>
+                   <li><Link className="main-text" to="/about_app/npc">НИП</Link></li>
+                 </ul>
+                <div>
+                  <Route path={`/about_app/:id`} component={About_user}/>
+                  <Route exact path='/about_app/' component={About_user}/>
+                </div>
            </section>            
         )
     }

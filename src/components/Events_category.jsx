@@ -12,7 +12,7 @@ class Events_category extends React.Component {
     }
     render() {
         return (
-            <section id="events_category" className="screen-section"> 
+            <section id="events_category" className="inner-section">
            </section>            
         )
     }
