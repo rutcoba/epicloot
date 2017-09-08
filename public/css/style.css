@@ -1,4 +1,4 @@
-/* line 15, Z:/project/my_app/public/css/style.scss */
+/* line 15, Z:/project/EpicLoot/public/css/style.scss */
 body {
   display: flex;
   flex-direction: column;
@@ -12,44 +12,44 @@ body {
   color: #fff;
   transition: 0.6s all; }
 
-/* line 29, Z:/project/my_app/public/css/style.scss */
+/* line 29, Z:/project/EpicLoot/public/css/style.scss */
 .screen-section {
   min-height: 100%;
   padding: 2rem 1rem; }
 
-/* line 33, Z:/project/my_app/public/css/style.scss */
+/* line 33, Z:/project/EpicLoot/public/css/style.scss */
 .main-text {
   font-size: 1rem; }
 
-/* line 37, Z:/project/my_app/public/css/style.scss */
+/* line 37, Z:/project/EpicLoot/public/css/style.scss */
 .title--page {
   font-size: 1.4rem;
   font-weight: normal; }
 
-/* line 41, Z:/project/my_app/public/css/style.scss */
+/* line 41, Z:/project/EpicLoot/public/css/style.scss */
 .title--section {
   font-size: 1.2rem;
   font-weight: normal;
   margin-bottom: 1rem; }
 
-/* line 48, Z:/project/my_app/public/css/style.scss */
+/* line 48, Z:/project/EpicLoot/public/css/style.scss */
 .hex {
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
   background-size: 200% auto;
   transition: 0.3s all;
   -webkit-clip-path: url("#hex");
   clip-path: url("#hex"); }
-  /* line 54, Z:/project/my_app/public/css/style.scss */
+  /* line 54, Z:/project/EpicLoot/public/css/style.scss */
   .hex:hover {
     background-position: right center; }
 
-/* line 59, Z:/project/my_app/public/css/style.scss */
+/* line 59, Z:/project/EpicLoot/public/css/style.scss */
 .hex {
   height: 8rem;
   width: 8rem;
   margin: auto; }
 
-/* line 66, Z:/project/my_app/public/css/style.scss */
+/* line 66, Z:/project/EpicLoot/public/css/style.scss */
 .btn--send {
   height: 3rem;
   border-radius: 1.5rem;
@@ -59,22 +59,22 @@ body {
   border: none;
   transform: scale(1); }
 
-/* line 77, Z:/project/my_app/public/css/style.scss */
+/* line 77, Z:/project/EpicLoot/public/css/style.scss */
 .btn--send {
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
   background-size: 200% auto;
   color: #fff;
   transition: 0.3s all; }
-  /* line 83, Z:/project/my_app/public/css/style.scss */
+  /* line 83, Z:/project/EpicLoot/public/css/style.scss */
   .btn--send:focus {
     box-shadow: 0 0 5px lightgrey; }
-  /* line 86, Z:/project/my_app/public/css/style.scss */
+  /* line 86, Z:/project/EpicLoot/public/css/style.scss */
   .btn--send:hover {
     outline: none;
     transform: scale(0.95);
     background-position: right center; }
 
-/* line 92, Z:/project/my_app/public/css/style.scss */
+/* line 92, Z:/project/EpicLoot/public/css/style.scss */
 .btn--ghost {
   height: 3rem;
   width: 3rem;
@@ -85,7 +85,7 @@ body {
   background-color: transparent;
   border: none; }
 
-/* line 102, Z:/project/my_app/public/css/style.scss */
+/* line 102, Z:/project/EpicLoot/public/css/style.scss */
 .btn--close {
   position: absolute;
   right: 0;
@@ -93,11 +93,11 @@ body {
   background-color: transparent;
   border: none; }
 
-/* line 114, Z:/project/my_app/public/css/style.scss */
+/* line 114, Z:/project/EpicLoot/public/css/style.scss */
 header.open .mobile_nav {
   left: 0; }
 
-/* line 121, Z:/project/my_app/public/css/style.scss */
+/* line 121, Z:/project/EpicLoot/public/css/style.scss */
 .mobile_nav {
   max-width: 100%;
   position: absolute;
@@ -107,18 +107,18 @@ header.open .mobile_nav {
   left: -40rem;
   transition: 0.3s all; }
 
-/* line 132, Z:/project/my_app/public/css/style.scss */
+/* line 132, Z:/project/EpicLoot/public/css/style.scss */
 .desktop_nav .menu {
   position: relative;
   width: 100%;
   flex-direction: row;
   padding: 0; }
 
-/* line 138, Z:/project/my_app/public/css/style.scss */
+/* line 138, Z:/project/EpicLoot/public/css/style.scss */
 .desktop_nav .btn--close {
   display: none; }
 
-/* line 143, Z:/project/my_app/public/css/style.scss */
+/* line 143, Z:/project/EpicLoot/public/css/style.scss */
 .menu {
   position: absolute;
   top: 0;
@@ -133,7 +133,7 @@ header.open .mobile_nav {
   box-sizing: border-box;
   background-color: #494e68;
   list-style: none; }
-  /* line 160, Z:/project/my_app/public/css/style.scss */
+  /* line 160, Z:/project/EpicLoot/public/css/style.scss */
   .menu_link {
     display: flex;
     align-items: center;
@@ -143,22 +143,22 @@ header.open .mobile_nav {
     font-size: 1.2rem;
     color: #fff; }
 
-/* line 172, Z:/project/my_app/public/css/style.scss */
+/* line 172, Z:/project/EpicLoot/public/css/style.scss */
 .custom_form--feedback {
   display: flex;
   flex-direction: column;
   align-items: center; }
 
-/* line 179, Z:/project/my_app/public/css/style.scss */
+/* line 179, Z:/project/EpicLoot/public/css/style.scss */
 .what-we-do_item {
   display: flex;
   margin-bottom: 1.5rem; }
-  /* line 182, Z:/project/my_app/public/css/style.scss */
+  /* line 182, Z:/project/EpicLoot/public/css/style.scss */
   .what-we-do_item .main-text {
     flex: 1;
     padding-left: 1rem; }
 
-/* line 188, Z:/project/my_app/public/css/style.scss */
+/* line 188, Z:/project/EpicLoot/public/css/style.scss */
 .field-block input, .field-block textarea {
   width: 100%;
   box-sizing: border-box;
@@ -169,23 +169,23 @@ header.open .mobile_nav {
   background-color: #fff;
   border-radius: .2rem;
   margin-bottom: 1rem; }
-  /* line 198, Z:/project/my_app/public/css/style.scss */
+  /* line 198, Z:/project/EpicLoot/public/css/style.scss */
   .field-block input:focus, .field-block textarea:focus {
     box-shadow: 0 0 10px #98878f; }
 
-/* line 203, Z:/project/my_app/public/css/style.scss */
+/* line 203, Z:/project/EpicLoot/public/css/style.scss */
 .field-block {
   width: 100%;
   max-width: 300px; }
-  /* line 206, Z:/project/my_app/public/css/style.scss */
+  /* line 206, Z:/project/EpicLoot/public/css/style.scss */
   .field-block input {
     width: 100%;
     height: 2.5rem; }
-  /* line 211, Z:/project/my_app/public/css/style.scss */
+  /* line 211, Z:/project/EpicLoot/public/css/style.scss */
   .field-block textarea {
     height: 5rem; }
 
-/* line 218, Z:/project/my_app/public/css/style.scss */
+/* line 218, Z:/project/EpicLoot/public/css/style.scss */
 .category__dropdown {
   height: 0;
   width: 40rem;

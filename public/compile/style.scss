@@ -32,7 +32,6 @@ body{
 }
 .main-text{
   font-size: 1rem;
-  color: $light;
 }
 .title{
   &--page{
@@ -42,12 +41,6 @@ body{
   &--section{
     font-size: 1.2rem;
     font-weight: normal;
-    margin-bottom: 1rem;
-  }
-  &--block{
-    font-size: 1.1rem;
-    font-weight: normal;
-    text-decoration: underline;
     margin-bottom: 1rem;
   }
 }
@@ -71,8 +64,8 @@ body{
 }
 
 %btn{  
-  height: 2.5rem;
-  border-radius: .2rem;
+  height: 3rem;
+  border-radius: 1.5rem;
   padding: 0 1.5rem;
   margin: 1rem auto;
   text-transform: uppercase;
@@ -90,7 +83,7 @@ body{
     &:focus{
       box-shadow: 0 0 5px $lightgrey;
     }
-    &:hover, &:active{
+    &:hover{
       outline: none;
       transform: scale(0.95);
       background-position: right center;
@@ -203,9 +196,7 @@ header{
     border-radius: .2rem;
     margin-bottom: 1rem;
   &:focus{
-    outline: none;
-//    border: 1px solid $primary;
-    box-shadow: 0 0 5px $secondary;
+    box-shadow: 0 0 10px $primary;
   }
 }
 
