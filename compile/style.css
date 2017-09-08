@@ -1,0 +1,27 @@
+/* line 8, C:/Users/dogr.OMEGA/Desktop/myapp/css/style.scss */
+.hexagon {
+  position: relative;
+  width: 8rem;
+  height: 4rem;
+  margin: auto;
+  background-color: #bafff7;
+  transform: translateZ(0);
+  z-index: 2; }
+  /* line 16, C:/Users/dogr.OMEGA/Desktop/myapp/css/style.scss */
+  .hexagon:before, .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 4rem solid transparent;
+    border-right: 4rem solid transparent; }
+  /* line 24, C:/Users/dogr.OMEGA/Desktop/myapp/css/style.scss */
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 2rem solid #bafff7; }
+  /* line 28, C:/Users/dogr.OMEGA/Desktop/myapp/css/style.scss */
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 2rem solid #bafff7; }
+
+/*# sourceMappingURL=style.css.map */
