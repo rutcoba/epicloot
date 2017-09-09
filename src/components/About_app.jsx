@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
 import { Route, Link } from 'react-router-dom';
 
 import About_user from './About_user';
 
 import users from './../data/users';
-=======
->>>>>>> 1ad47828af0bd59a7f62c671b454f92728f1aaab
 
 class About_app extends React.Component {
     constructor(props){

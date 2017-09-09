@@ -15,12 +15,10 @@ const MainRouter = () => (
     <main>
      <Switch>
       <Route exact path="/" component={Home}/>
-      <Route path="/about_app" component={About_app}/>
+      <Route path="/about_app" component={About_app} />
       <Route path="/our_team" component={Our_team}/>
       <Route path="/contacts" component={Contacts}/>
       <Route path="/events_n_quests" component={Events_n_quests} />
-      <Route path='/about_app/npc' component={About_user}/>
-      <Route path='/about_app/player' component={About_user}/>
       <Route path="*" component={NotFound}/>
     </Switch>
   </main>       
