@@ -46,7 +46,7 @@ const quests = [
     , link: "cookery"
     , dificulty: '1'
     , reward: {
-      loot: '10х порций активированного угля'
+      loot: 'личный раб'
       , money: '100'
       , xp: '50'
     }
@@ -59,7 +59,7 @@ const quests = [
     , link: "cookery"
     , dificulty: '3'
     , reward: {
-      loot: 'личный раб'
+      loot: '10х порций активированного угля'
       , money: '1000'
       , xp: '250'
     }
@@ -92,13 +92,13 @@ const quests = [
    }
   , {
     id: 8
-    , title: "Тич ме андерстенд рашн"
-    , author: "qweqweqwe"
+    , title: "Перевести Некрономикон на человеческий"
+    , author: "Алистер Кроули"
     , cat: "языки"
     , link: "lang"
     , dificulty: '4'
     , reward: {
-      loot: 'словарь латыни'
+      loot: 'МОГУЩЕСТВО'
       , money: '500'
       , xp: '150'
     }
