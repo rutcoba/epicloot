@@ -24,7 +24,8 @@ class About_app extends React.Component {
                  </ul>
                 <div>
                   <Route path={`/about_app/:id`} component={About_user}/>
-                </div> 
+                  <Route exact path='/about_app/' component={About_user}/>
+                </div>
            </section>            
         )
     }

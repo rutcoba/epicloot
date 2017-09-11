@@ -17,7 +17,6 @@ class About_user extends React.Component {
         return (
             <section id="about_user" className="inner-section">
               {arrJSON.map((i, val) => {
-              console.log(val);
               if(i[0].en == user){
                 return(
                   <div id={val} key={val}>

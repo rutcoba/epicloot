@@ -19,7 +19,7 @@ body{
   font-size: 10px;
   font-family: $main_text;
   margin: 0;
-  background: linear-gradient(to top, hsla(230, 18%, 35%, 0.99), rgba(152, 94, 109, 0.9)) no-repeat center, url('../img/9ewsT3r.jpg') no-repeat center;
+  background: linear-gradient(to top, hsla(230, 18%, 35%, 0.99), hsla(344, 24%, 48%, 0.9)) no-repeat center, url('../img/9ewsT3r.jpg') no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   color: $light;
@@ -68,6 +68,12 @@ body{
   width: $hex-size;
   margin: auto;
   @extend %hex;
+}
+
+%nowrap{  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 %btn{  
@@ -195,7 +201,7 @@ header{
 %field{
     width: 100%;
     box-sizing: border-box;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem .75rem;
     font-size: 1.2rem;
     font-family: $main_text;
     border: none;
@@ -209,8 +215,10 @@ header{
 }
 
 .field-block{
+  display: flex;
   width: 100%;
   max-width: 300px;
+  position: relative;
   input{
     width: 100%;
     height: 2.5rem;
@@ -224,12 +232,106 @@ header{
 
 .category{
   &__dropdown{
+    position: absolute;
+    top: 2.5rem;    
     height: 0;
-    width: 40rem;
-    max-width: 90%;
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+    overflow: hidden;
     background-color: $light;
+    &.open{
+      height: auto;
+      max-height: 300px;
+      overflow-y: scroll;
+      padding: 0;
+      box-sizing: border-box;
+      color: $dark;
+      border-radius: .2rem;
+    }
   }
   &__item{
     
+  }
+  &__link{
+    display: block;
+    padding: 0.5em .75rem;
+    color: $dark;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-bottom: 1px solid $lightgrey;
+  }
+}
+
+.quest{
+  &__item{
+    display: flex;
+    flex-direction: column;
+    padding: .5rem .75rem;
+    background-color: $light;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px $lightgrey;
+    margin-bottom: 1rem;
+    border-radius: .2rem;
+    color: $dark;
+    text-decoration: none;
+  }
+  &__title{
+    font-size: 1.3rem;
+    color: $secondary;
+    margin: 0;
+    padding: .3rem 0;
+    @extend %nowrap;
+  }
+  &__author{
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: $primary;
+    margin-bottom: .5rem;
+    @extend %nowrap;
+  }
+  &__ava{
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+    box-shadow: 0 0 5px $lightgrey;
+    border-radius: 50%;
+  }
+  &__cat{
+    margin-bottom: .5rem;    
+    span{
+      color: $lightgrey;
+    }
+  }
+  &__reward{
+    display: flex;
+    justify-content: space-around;
+    padding: .5rem 0;
+    border-top: 1px solid $lightgrey;
+    &--money,
+    &--loot,
+    &--xp{
+      display: flex;
+      flex-direction: column;
+      span{
+        color: $lightgrey;
+        margin-bottom: .5rem;
+      }
+    }
+    &--loot{
+      flex-basis: 2;
+      width: 50%;
+    }
+    &--money,
+    &--xp{
+      flex-basis: 1;
+      width: 25%;
+    }
+    &--loot{    
+    }
+    &--xp{
+    }
   }
 }
