@@ -21,14 +21,14 @@ class About_user extends React.Component {
                 return(
                   <div id={val} key={val}>
                     <p className="title--block">Основная информация:</p>
-                    <p>{i[0].info}</p>
+                    <p className="main-text">{i[0].info}</p>
                     <p className="title--block">Бонусы:</p>
-                    <p>{i[0].bonus}</p>
+                    <p className="main-text">{i[0].bonus}</p>
                   </div>
                 )
               }                
               })}
-              <p>Все заявки на задания проходят модерацию, в связи с чем снижена вероятность несоответствия сложности задания с его наградой.</p>
+              <p className="main-text">Все заявки на задания проходят модерацию, в связи с чем снижена вероятность несоответствия сложности задания с его наградой.</p>
            </section>            
         )
     }

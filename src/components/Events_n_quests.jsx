@@ -22,7 +22,7 @@ class Events_n_quests extends React.Component {
   } 
   
   componentDidMount(){
-    var questsArr = Object.values(quests); 
+    var questsArr = Object.values(quests);
     var newCat = {};
     var categoryArr = [];
     questsArr.sort();
@@ -46,7 +46,9 @@ class Events_n_quests extends React.Component {
     })
     this.setState({category: categoryArr});
   }
-  changeValue(){}
+  changeValue(){
+    
+  }
   
   changeCategory(){
     this.closeCategoryList();
