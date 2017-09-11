@@ -19,7 +19,6 @@ class Event extends React.Component {
     var questsArr = Object.values(quests);  
     var item = this.props.data;
     var idItem = this.props.match.params.id; 
-    console.log(questsArr);
       return (
         <div>
         {questsArr.map(item => {

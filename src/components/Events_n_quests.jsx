@@ -13,12 +13,15 @@ class Events_n_quests extends React.Component {
     this.state = {
       val: '',
       openList: false,
+      open_search_field: false,
+      ico_search: 'search',
       category: []
     }
     this.changeValue = this.changeValue.bind(this);
     this.openCategoryList = this.openCategoryList.bind(this);
     this.closeCategoryList = this.closeCategoryList.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   } 
   
   componentDidMount(){
@@ -50,6 +53,17 @@ class Events_n_quests extends React.Component {
     
   }
   
+  handleSearch(){
+    this.state.open_search_field == false ?
+      (
+        this.setState({open_search_field: true}),
+        this.setState({ico_search: 'close'})
+      ) : (
+        this.setState({open_search_field: false}),
+        this.setState({ico_search: 'search'})
+      );
+  }
+  
   changeCategory(){
     this.closeCategoryList();
   }
@@ -59,7 +73,7 @@ class Events_n_quests extends React.Component {
   }
   closeCategoryList(){
     this.setState({openList: false});
-//    this.setState({val: this.props.match.params.id});
+//    this.setState({val: e.target.innerText});
   }
   
     render(){
@@ -67,20 +81,31 @@ class Events_n_quests extends React.Component {
       if(this.props.location.pathname == '/events_n_quests'){ 
         redirect = <Redirect from='/events_n_quests' to='/events_n_quests/all' />;
       }
+      var pathnameArr = this.props.location.pathname.split('/');
+      var regExp = /\d/;
+      var searchField = '';
+      if(!regExp.test(pathnameArr[pathnameArr.length-1])){
+        searchField = 
+          <div>
+           <h2 className="title--page title--with_action">Задания и квесты <i className="material-icons" onClick={this.handleSearch}>{this.state.ico_search}</i></h2>
+           <div className={`search__block field-block ${this.state.open_search_field == true ? 'open' : ''} `}>
+             <input type="text" placeholder="введите или выберите категорию" value={this.state.val} onFocus={this.openCategoryList}/>
+             <ul className={this.state.openList == true ? 'field__dropdown category__dropdown open' : 'category__dropdown'}>
+                <li><Link to={`/events_n_quests/all`} className="category__link" onClick={this.changeCategory} id="all">все</Link></li>
+               {this.state.category.map((item, val) => { 
+                 return(
+                   <li key={val}><Link to={`/events_n_quests/${item.link}`} className="category__link" onClick={this.changeCategory} id={item.link}>{item.cat}</Link></li>
+                 )
+               })}
+             </ul>
+           </div>
+         </div>;
+      } else {
+        searchField = '';
+      }
       return (
-            <section id="events_n_quests" className="screen-section"> 
-               <h2 className="title--page">Задания и квесты</h2>
-               <div className="field-block" >
-                 <input type="text" placeholder="выберите категорию" value={this.state.val} onFocus={this.openCategoryList}/>
-                 <ul className={this.state.openList == true ? 'field__dropdown category__dropdown open' : 'category__dropdown'}>
-                    <li><Link to={`/events_n_quests/all`} className="category__link" onClick={this.changeCategory} id="all">все</Link></li>
-                   {this.state.category.map((item, val) => { 
-                     return(
-                       <li key={val}><Link to={`/events_n_quests/${item.link}`} className="category__link" onClick={this.changeCategory} id={item.link}>{item.cat}</Link></li>
-                     )
-                   })}
-                 </ul>              
-               </div>
+            <section id="events_n_quests" className="screen-section">
+              {searchField}
               <div>
                 {redirect}
                 <Route exact path={`/events_n_quests/:link`} component={Events_category}/>
