@@ -61,20 +61,21 @@ class Events_n_quests extends React.Component {
       ) : (
         this.setState({open_search_field: false}),
         this.setState({ico_search: 'search'}),
+        this.setState({val: ''}),
         this.closeCategoryList()
       );
   }
   
-  changeCategory(){
+  changeCategory(event){
     this.closeCategoryList();
+    this.setState({val: event.target.innerText});
   }
   
   openCategoryList(){
     this.setState({openList: true});
   }
-  closeCategoryList(){
+  closeCategoryList(event){
     this.setState({openList: false});
-//    this.setState({val: e.target.innerText});
   }
   
     render(){
@@ -103,7 +104,6 @@ class Events_n_quests extends React.Component {
                      categoryList
                    )
                  } else {
-                     console.log(regExp_search);
                    if(regExp_search.test(item.cat)){
                      return(
                        categoryList

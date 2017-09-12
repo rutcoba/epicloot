@@ -62,18 +62,6 @@ body{
 
 /************************************/
 
-
-%hex{  
-  background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
-  background-size: 200% auto;
-  transition: $anim all;
-  -webkit-clip-path: url("#hex");
-  clip-path: url("#hex");
-  &:hover{
-    background-position: right center;
-  }
-}
-
 %nowrap{  
   white-space: nowrap;
   overflow: hidden;
@@ -108,14 +96,6 @@ body{
 }
 
 /************************************/
-
-
-.hex {
-  height: $hex-size;
-  width: $hex-size;
-  margin: auto;
-  @extend %hex;
-}
 
 .btn{
   &--send{

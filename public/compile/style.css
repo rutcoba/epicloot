@@ -48,24 +48,13 @@ body {
   align-items: center; }
 
 /************************************/
-/* line 66, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
-.hex {
-  background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
-  background-size: 200% auto;
-  transition: 0.3s all;
-  -webkit-clip-path: url("#hex");
-  clip-path: url("#hex"); }
-  /* line 72, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
-  .hex:hover {
-    background-position: right center; }
-
-/* line 77, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 65, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__title, .quest__author {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
 
-/* line 83, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 71, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--send, .btn--take_quest {
   height: 2.5rem;
   border-radius: .3rem;
@@ -76,7 +65,7 @@ body {
   border: none;
   transform: scale(1); }
 
-/* line 94, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 82, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .field-block input, .field-block textarea {
   width: 100%;
   box-sizing: border-box;
@@ -87,34 +76,28 @@ body {
   background-color: #fff;
   border-radius: .3rem;
   margin-bottom: 1rem; }
-  /* line 104, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 92, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .field-block input:focus, .field-block textarea:focus {
     outline: none;
     box-shadow: 0 0 5px #e04718; }
 
 /************************************/
-/* line 113, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
-.hex {
-  height: 8rem;
-  width: 8rem;
-  margin: auto; }
-
-/* line 121, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 101, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--send {
   background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
   background-size: 200% auto;
   color: #fff;
   transition: 0.3s all; }
-  /* line 127, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 107, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .btn--send:focus {
     box-shadow: 0 0 5px lightgrey; }
-  /* line 130, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 110, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .btn--send:hover, .btn--send:active {
     outline: none;
     transform: scale(0.95);
     background-position: right center; }
 
-/* line 136, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 116, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--ghost {
   height: 3rem;
   width: 3rem;
@@ -125,7 +108,7 @@ body {
   background-color: transparent;
   border: none; }
 
-/* line 146, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 126, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--close {
   position: absolute;
   left: 0;
@@ -133,7 +116,7 @@ body {
   background-color: transparent;
   border: none; }
 
-/* line 154, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 134, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--take_quest {
   position: absolute;
   bottom: -1rem;
@@ -143,14 +126,14 @@ body {
   background-size: 200% auto;
   box-shadow: 0 0 20px rgba(182, 251, 255, 0.5), 0 0 10px rgba(182, 251, 255, 0.5); }
 
-/* line 170, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 150, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 header.open .mobile_nav {
   left: 0; }
-  /* line 172, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 152, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   header.open .mobile_nav .menu_item {
     opacity: 1; }
 
-/* line 180, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 160, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .mobile_nav {
   max-width: 100%;
   position: absolute;
@@ -160,18 +143,18 @@ header.open .mobile_nav {
   left: -40rem;
   transition: 0.3s all; }
 
-/* line 191, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 171, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .desktop_nav .menu {
   position: relative;
   width: 100%;
   flex-direction: row;
   padding: 0; }
 
-/* line 197, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 177, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .desktop_nav .btn--close {
   display: none; }
 
-/* line 202, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 182, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .menu {
   position: absolute;
   top: 0;
@@ -188,13 +171,13 @@ header.open .mobile_nav {
   box-sizing: border-box;
   background-image: linear-gradient(-120deg, rgba(98, 79, 120, 0.95) 0%, #506190 51%, rgba(98, 79, 120, 0.95) 100%);
   list-style: none; }
-  /* line 219, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 199, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .menu_item {
     width: 80%;
     max-width: 300px;
     transition: 0.3s all;
     opacity: 0; }
-  /* line 225, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 205, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .menu_link {
     display: flex;
     align-items: center;
@@ -209,47 +192,47 @@ header.open .mobile_nav {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(226, 226, 226, 0.03) 50%, rgba(255, 255, 255, 0));
     margin-bottom: 1rem; }
 
-/* line 242, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 222, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .custom_form--feedback {
   display: flex;
   flex-direction: column;
   align-items: center; }
 
-/* line 249, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 229, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .what-we-do_item {
   display: flex;
   margin-bottom: 1.5rem; }
-  /* line 252, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 232, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .what-we-do_item .main-text {
     flex: 1;
     padding-left: 1rem; }
 
-/* line 258, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 238, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .field-block {
   display: flex;
   width: 100%;
   position: relative; }
-  /* line 262, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 242, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .field-block input {
     transition: 0.3s;
     width: 100%;
     height: 2.5rem; }
-  /* line 268, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 248, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .field-block textarea {
     height: 5rem; }
 
-/* line 274, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 254, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .search__block {
   height: 0; }
-  /* line 276, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 256, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .search__block input {
     font-size: 0.8rem; }
-  /* line 279, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 259, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .search__block.open {
     height: 2.5rem;
     padding: 0 0 1rem; }
 
-/* line 286, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 266, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .category__dropdown {
   position: absolute;
   z-index: 2;
@@ -260,7 +243,7 @@ header.open .mobile_nav {
   overflow: hidden;
   transition: 0.3s;
   background-color: #fff; }
-  /* line 296, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 276, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .category__dropdown.open {
     height: auto;
     max-height: 300px;
@@ -270,7 +253,7 @@ header.open .mobile_nav {
     color: #192231;
     border-radius: .2rem; }
 
-/* line 309, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 289, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .category__link {
   display: block;
   padding: 0.5em .75rem;
@@ -279,7 +262,7 @@ header.open .mobile_nav {
   text-decoration: none;
   border-bottom: 1px solid lightgrey; }
 
-/* line 320, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 300, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__item {
   position: relative;
   display: flex;
@@ -293,14 +276,14 @@ header.open .mobile_nav {
   color: #192231;
   text-decoration: none; }
 
-/* line 337, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 317, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__title {
   font-size: 1.3rem;
   color: #e04718;
   margin: 0;
   padding: .3rem 0; }
 
-/* line 344, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 324, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__author {
   display: flex;
   align-items: center;
@@ -310,7 +293,7 @@ header.open .mobile_nav {
   padding: .2rem;
   margin-left: -.2rem; }
 
-/* line 354, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 334, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__ava {
   display: inline-block;
   height: 2rem;
@@ -319,47 +302,47 @@ header.open .mobile_nav {
   box-shadow: 0 0 10px rgba(182, 251, 255, 0.5), 0 0 5px rgba(182, 251, 255, 0.5);
   border-radius: 50%; }
 
-/* line 365, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 345, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__cat {
   margin-bottom: .5rem; }
-  /* line 367, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 347, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__cat span {
     color: lightgrey; }
 
-/* line 371, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 351, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__description {
   font-size: 1rem; }
 
-/* line 374, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 354, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__reward {
   display: flex;
   justify-content: space-around;
   padding: .5rem 0;
   border-top: 1px solid lightgrey; }
-  /* line 379, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 359, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__reward--money, .quest__reward--loot, .quest__reward--xp {
     display: flex;
     flex-direction: column; }
-    /* line 384, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+    /* line 364, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
     .quest__reward--money span, .quest__reward--loot span, .quest__reward--xp span {
       color: lightgrey;
       margin-bottom: .5rem; }
-  /* line 389, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 369, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__reward--loot {
     flex-basis: 2;
     width: 50%; }
-  /* line 393, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 373, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__reward--money, .quest__reward--xp {
     flex-basis: 1;
     width: 25%; }
 
-/* line 406, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 386, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__item--full {
   padding: 1.5rem 1rem 4rem; }
-  /* line 409, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 389, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__item--full .quest__title {
     white-space: normal; }
-  /* line 413, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  /* line 393, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__item--full .btn--take_quest {
     width: 80%;
     left: 10%;
