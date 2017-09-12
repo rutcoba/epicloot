@@ -49,8 +49,8 @@ class Events_n_quests extends React.Component {
     })
     this.setState({category: categoryArr});
   }
-  changeValue(){
-    
+  changeValue(event){
+    this.setState({ val: event.target.value });
   }
   
   handleSearch(){
@@ -60,7 +60,8 @@ class Events_n_quests extends React.Component {
         this.setState({ico_search: 'close'})
       ) : (
         this.setState({open_search_field: false}),
-        this.setState({ico_search: 'search'})
+        this.setState({ico_search: 'search'}),
+        this.closeCategoryList()
       );
   }
   
@@ -83,19 +84,32 @@ class Events_n_quests extends React.Component {
       }
       var pathnameArr = this.props.location.pathname.split('/');
       var regExp = /\d/;
+      var regExp_search = new RegExp("(" + this.state.val + ")", "i");
       var searchField = '';
+      var categoryList = '';
       if(!regExp.test(pathnameArr[pathnameArr.length-1])){
         searchField = 
           <div>
            <h2 className="title--page title--with_action">Задания и квесты <i className="material-icons" onClick={this.handleSearch}>{this.state.ico_search}</i></h2>
            <div className={`search__block field-block ${this.state.open_search_field == true ? 'open' : ''} `}>
-             <input type="text" placeholder="введите или выберите категорию" value={this.state.val} onFocus={this.openCategoryList}/>
+             <input type="text" placeholder="введите или выберите категорию" value={this.state.val} onFocus={this.openCategoryList} onChange={this.changeValue}/>
              <ul className={this.state.openList == true ? 'field__dropdown category__dropdown open' : 'category__dropdown'}>
                 <li><Link to={`/events_n_quests/all`} className="category__link" onClick={this.changeCategory} id="all">все</Link></li>
-               {this.state.category.map((item, val) => { 
-                 return(
-                   <li key={val}><Link to={`/events_n_quests/${item.link}`} className="category__link" onClick={this.changeCategory} id={item.link}>{item.cat}</Link></li>
-                 )
+               {this.state.category.map((item, val) => {
+                 categoryList = 
+                    <li key={val}><Link to={`/events_n_quests/${item.link}`} className="category__link" onClick={this.changeCategory} id={item.link}>{item.cat}</Link></li>;
+                 if(this.state.val == ''){                   
+                   return(
+                     categoryList
+                   )
+                 } else {
+                     console.log(regExp_search);
+                   if(regExp_search.test(item.cat)){
+                     return(
+                       categoryList
+                     )                     
+                   }
+                 }
                })}
              </ul>
            </div>

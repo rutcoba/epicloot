@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import users from './../data/users';
+import roles from './../data/roles';
 
 class About_user extends React.Component {
     constructor(props){
@@ -11,13 +11,13 @@ class About_user extends React.Component {
         }
     }
     render() {
-      var arrJSON = Object.values(users),
-          user = this.props.match.params.id;
+      var arrJSON = Object.values(roles),
+          role = this.props.match.params.id;
       
         return (
             <section id="about_user" className="inner-section">
               {arrJSON.map((i, val) => {
-              if(i[0].en == user){
+              if(i[0].en == role){
                 return(
                   <div id={val} key={val}>
                     <p className="title--block">Основная информация:</p>

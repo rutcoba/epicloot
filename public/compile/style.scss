@@ -1,8 +1,10 @@
 $lightgrey: lightgrey;
 $light: #fff;
 $dark: #192231;
-$primary: #494e68;
-$secondary: #985e6d;
+$primary: #506190;
+$primary_op: hsla(224, 29%, 44%, 0.97);
+$secondary: #614e77;
+$secondary_op: hsla(268, 21%, 39%, 0.95);
 $accient: #e04718;
 
 $hex-size: 8rem;
@@ -19,7 +21,7 @@ body{
   font-size: 10px;
   font-family: $main_text;
   margin: 0;
-  background: linear-gradient(to top, hsla(251, 22%, 14%, 0.9) 0%, hsla(250, 15%, 61%, 0.95) 100%) no-repeat center, url('../img/9ewsT3r.jpg') no-repeat center;
+  background: linear-gradient(to top, $primary_op 0%, $secondary_op 100%) no-repeat center, url('../img/9ewsT3r.jpg') no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   color: $light;
@@ -58,8 +60,11 @@ body{
   }
 }
 
+/************************************/
+
+
 %hex{  
-  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
   background-size: 200% auto;
   transition: $anim all;
   -webkit-clip-path: url("#hex");
@@ -67,13 +72,6 @@ body{
   &:hover{
     background-position: right center;
   }
-}
-
-.hex {
-  height: $hex-size;
-  width: $hex-size;
-  margin: auto;
-  @extend %hex;
 }
 
 %nowrap{  
@@ -84,18 +82,45 @@ body{
 
 %btn{  
   height: 2.5rem;
-  border-radius: .2rem;
+  border-radius: .3rem;
   padding: 0 1.5rem;
   margin: 1rem auto;
+  color: $light;
   text-transform: uppercase;
   border: none;
   transform: scale(1);
 }
 
+%field{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem .75rem;
+    font-size: 1.2rem;
+    font-family: $main_text;
+    border: none;
+    background-color: $light;
+    border-radius: .3rem;
+    margin-bottom: 1rem;
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 5px $accient;
+  }
+}
+
+/************************************/
+
+
+.hex {
+  height: $hex-size;
+  width: $hex-size;
+  margin: auto;
+  @extend %hex;
+}
+
 .btn{
   &--send{
     @extend %btn;
-    background-image: linear-gradient(to right, #1CD8D2 0%, #93EDC7 51%, #1CD8D2 100%);
+    background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
     background-size: 200% auto;
     color: $light;
     transition: $anim all;
@@ -120,7 +145,7 @@ body{
   }
   &--close{
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     background-color: transparent;
     border: none;
@@ -132,8 +157,11 @@ body{
     bottom: -1rem;
     right: 1rem;
     margin: 0;
-    background-image: linear-gradient(to right, #1CD8D2 0%, #93EDC7 51%, #1CD8D2 100%);
+    background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
     background-size: 200% auto;
+    box-shadow: 
+      0 0 20px rgba(182, 251, 255, 0.5),
+      0 0 10px rgba(182, 251, 255, 0.5);
   }
 }
 
@@ -141,6 +169,9 @@ header{
   &.open{
     .mobile_nav{
       left: 0;
+      .menu_item{
+        opacity: 1;
+      }
     }
   }
 }
@@ -175,24 +206,35 @@ header{
   z-index: 10;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 1rem 0 0;
   box-sizing: border-box;
-  background-color: $primary;
+//  background-color: $primary;
+  background-image: linear-gradient(-120deg, $secondary_op 0%, $primary 51%, $secondary_op 100%);
   list-style: none;
   &_item{
-    
+    width: 80%;
+    max-width: 300px;
+    transition: $anim all;
+    opacity: 0;
   }
   &_link{
     display: flex;
     align-items: center;
-    padding: 1rem 1.5rem;
+    justify-content: center;
+    padding: 2rem 2.5rem;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
     color: $light;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(226, 226, 226, 0.03) 50%, rgba(255, 255, 255, 0));
+    margin-bottom: 1rem;
   }
 }
 
@@ -210,22 +252,6 @@ header{
   .main-text{
     flex: 1;
     padding-left: 1rem;
-  }
-}
-
-%field{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0.5rem .75rem;
-    font-size: 1.2rem;
-    font-family: $main_text;
-    border: none;
-    background-color: $light;
-    border-radius: .2rem;
-    margin-bottom: 1rem;
-  &:focus{
-    outline: none;
-    box-shadow: 0 0 5px $accient;
   }
 }
 
@@ -297,10 +323,14 @@ header{
     flex-direction: column;
     padding: .5rem .75rem 1.5rem;
     background-color: $light;
+//    background-image: linear-gradient(to right, #a9c2e5 0%, #b6fbff 100%);
     box-sizing: border-box;
-    box-shadow: 0 0 10px $lightgrey;
+    box-shadow: 
+      0 0 25px rgba(182, 251, 255, 0.5),
+      0 0 20px rgba(182, 251, 255, 0.5),
+      0 0 10px rgba(182, 251, 255, 0.5);
     margin-bottom: 2rem;
-    border-radius: .2rem;
+    border-radius: .3rem;
     color: $dark;
     text-decoration: none;
   }
@@ -317,6 +347,8 @@ header{
     font-size: 0.9rem;
     color: $primary;
     margin: 0 0 .5rem;
+    padding: .2rem;
+    margin-left: -.2rem;
     @extend %nowrap;
   }
   &__ava{
@@ -324,7 +356,10 @@ header{
     height: 2rem;
     width: 2rem;
     margin-right: 1rem;
-    box-shadow: 0 0 5px $lightgrey;
+    box-shadow: 
+      0 0 10px rgba(182, 251, 255, 0.5),
+      0 0 5px rgba(182, 251, 255, 0.5)
+      ;
     border-radius: 50%;
   }
   &__cat{

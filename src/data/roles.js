@@ -1,4 +1,4 @@
-const users = {
+const roles = {
   "NPC":[
     {
         id: 1,
@@ -20,4 +20,4 @@ const users = {
 }
     
 
-export default users;
+export default roles;

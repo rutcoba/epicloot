@@ -4,8 +4,6 @@ import { Route, Link } from 'react-router-dom';
 
 import About_user from './About_user';
 
-import users from './../data/users';
-
 class About_app extends React.Component {
     constructor(props){
         super(props);
