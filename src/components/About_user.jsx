@@ -17,13 +17,13 @@ class About_user extends React.Component {
         return (
             <section id="about_user" className="inner-section">
               {arrJSON.map((i, val) => {
-              if(i[0].en == role){
+              if(i.en == role){
                 return(
                   <div id={val} key={val}>
                     <p className="title--block">Основная информация:</p>
-                    <p className="main-text">{i[0].info}</p>
+                    <p className="main-text">{i.info}</p>
                     <p className="title--block">Бонусы:</p>
-                    <p className="main-text">{i[0].bonus}</p>
+                    <p className="main-text">{i.bonus}</p>
                   </div>
                 )
               }                
