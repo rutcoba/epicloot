@@ -10,11 +10,11 @@ class Footer extends React.Component {
     }
     render() {
         return (
-          <section id="about_app" className="screen-section">      
+          <footer>      
                 <p className="main-text copyright">Lorem ipsum dolor</p>
                 <p className="main-text email">qweqwe@qwe.qwe</p>
                 <p className="main-text phone_number">8-789-123-243</p>
-           </section>
+           </footer>
         )
     }
 }

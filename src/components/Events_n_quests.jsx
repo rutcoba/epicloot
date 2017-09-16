@@ -5,7 +5,7 @@ import { Link, NavLink, Route, Redirect } from 'react-router-dom';
 import Events_category from './Events_category';
 import Event from './Event';
 
-import quests from './../data/quests';
+import category from './../data/category';
 
 class Events_n_quests extends React.Component {
   constructor(props){
@@ -15,7 +15,7 @@ class Events_n_quests extends React.Component {
       openList: false,
       open_search_field: false,
       ico_search: 'search',
-      category: []
+      category: Object.values(category)
     }
     this.changeValue = this.changeValue.bind(this);
     this.openCategoryList = this.openCategoryList.bind(this);
@@ -24,31 +24,8 @@ class Events_n_quests extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   } 
   
-  componentDidMount(){
-    var questsArr = Object.values(quests);
-    var newCat = {};
-    var categoryArr = [];
-    questsArr.sort();
-    for (var q = 1, i = 0; q < questsArr.length; ++q) {
-      if (questsArr[q].cat !== questsArr[q-1].cat) {
-        categoryArr[i++] = questsArr[q];
-      }
-    }
-/***********************************************
-//Вариант с new Set выдает одномерный массив, что исключает возможность переделки линка
-    categoryArr = questsArr.map(item => {
-      return item.cat;
-    })
-    categoryArr = [... new Set(categoryArr)];
-************************************************/
-    categoryArr = categoryArr.map(item => {
-      return newCat = {
-       cat: item.cat,
-       link: item.link
-      }
-    })
-    this.setState({category: categoryArr});
-  }
+  componentDidMount(){}
+  
   changeValue(event){
     this.setState({ val: event.target.value });
   }
@@ -118,15 +95,15 @@ class Events_n_quests extends React.Component {
         searchField = '';
       }
       return (
-            <section id="events_n_quests" className="screen-section">
-              {searchField}
-              <div>
-                {redirect}
-                <Route exact path={`/events_n_quests/:link`} component={Events_category}/>
-                <Route exact path={`/events_n_quests/:link/:id`} component={Event}/>
-              </div> 
-           </section>            
-        )
+        <section id="events_n_quests" className="screen-section">
+          {searchField}
+          <div>
+            {redirect}
+            <Route exact path={`/events_n_quests/:link`} component={Events_category}/>
+            <Route exact path={`/events_n_quests/:link/:id`} component={Event}/>
+          </div> 
+       </section>
+      )
     }
 }
   

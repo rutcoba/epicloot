@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 const App = () => (
     
   <Router>
-     <div>
+     <div id="wrapper">
         <Header />
           <MainRouter />  
         <Footer />  

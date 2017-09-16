@@ -31,3 +31,4 @@ const category = [
     , link: "lang"
   }
 ]
+export default category;

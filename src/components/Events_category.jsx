@@ -14,6 +14,7 @@ class Events_category extends React.Component {
         }
     }
     render() {
+      console.log(this.props);
       var idCat = this.props.match.params.link;
       var questsCat = Object.values(quests);
       var viewItem = [];
