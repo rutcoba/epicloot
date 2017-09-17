@@ -7,6 +7,7 @@ import About_app from './About_app';
 import About_user from './About_user';
 import Our_team from './Our_team';
 import Contacts from './Contacts';
+import Users from './Users';
 import Events_n_quests from './Events_n_quests';
 import Events_category from './Events_category';
 import NotFound from './NotFound';
@@ -19,6 +20,7 @@ const MainRouter = () => (
       <Route path="/our_team" component={Our_team}/>
       <Route path="/contacts" component={Contacts}/>
       <Route path="/events_n_quests" component={Events_n_quests} />
+      <Route path="/users" component={Users} />
       <Route path="*" component={NotFound}/>
     </Switch>
   </main>       
