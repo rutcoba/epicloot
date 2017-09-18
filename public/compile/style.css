@@ -1,4 +1,4 @@
-/* line 25, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 25, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 body {
   display: flex;
   flex-direction: column;
@@ -12,68 +12,68 @@ body {
   color: #fff;
   transition: 0.6s all; }
 
-/* line 39, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 39, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 #wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh; }
-  /* line 43, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 43, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   #wrapper header,
   #wrapper footer {
     flex: 0; }
-  /* line 47, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 47, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   #wrapper main {
     flex: 1; }
 
-/* line 52, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 52, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 footer {
-  background-image: linear-gradient(-120deg, #614e77 0%, #506190 51%, #614e77 100%);
+  background-image: linear-gradient(-120deg, #624f78 0%, #506190 51%, #624f78 100%);
   padding: 1rem; }
 
-/* line 57, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 57, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .screen-section {
   position: relative;
   min-height: 100%;
   padding: 0 1rem; }
 
-/* line 62, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 62, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .main-text {
   font-size: 1rem;
   color: #fff; }
 
-/* line 67, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 67, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .title--page {
   font-size: 1.4rem;
   font-weight: normal;
   margin: 1rem 0; }
 
-/* line 72, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 72, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .title--section {
   font-size: 1.2rem;
   font-weight: normal;
   margin-bottom: 1rem; }
 
-/* line 77, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 77, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .title--block {
   font-size: 1.1rem;
   font-weight: normal;
   text-decoration: underline;
   margin-bottom: 1rem; }
 
-/* line 83, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 83, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .title--with_action {
   display: flex;
   justify-content: space-between;
   align-items: center; }
 
 /************************************/
-/* line 92, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 92, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__title, .quest__author {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
 
-/* line 98, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 98, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--send, .btn--take_quest {
   height: 2.5rem;
   border-radius: .3rem;
@@ -84,7 +84,7 @@ footer {
   border: none;
   transform: scale(1); }
 
-/* line 109, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 109, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .field-block input, .field-block textarea {
   width: 100%;
   box-sizing: border-box;
@@ -95,28 +95,28 @@ footer {
   background-color: #fff;
   border-radius: .3rem;
   margin-bottom: 1rem; }
-  /* line 119, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 119, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .field-block input:focus, .field-block textarea:focus {
     outline: none;
     box-shadow: 0 0 5px #e04718; }
 
 /************************************/
-/* line 128, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 128, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--send {
-  background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
+  background-image: linear-gradient(135deg, #FFA6B7 0%, #1E2AD2 100%);
   background-size: 200% auto;
   color: #fff;
   transition: 0.3s all; }
-  /* line 134, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 134, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .btn--send:focus {
     box-shadow: 0 0 5px lightgrey; }
-  /* line 137, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 137, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .btn--send:hover, .btn--send:active {
     outline: none;
     transform: scale(0.95);
     background-position: right center; }
 
-/* line 143, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 143, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--ghost {
   height: 3rem;
   width: 3rem;
@@ -127,7 +127,7 @@ footer {
   background-color: transparent;
   border: none; }
 
-/* line 153, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 153, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--close {
   position: absolute;
   left: 0;
@@ -135,24 +135,24 @@ footer {
   background-color: transparent;
   border: none; }
 
-/* line 161, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 161, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--take_quest {
   position: absolute;
   bottom: -1rem;
   right: 1rem;
   margin: 0;
-  background-image: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
+  background-image: linear-gradient(135deg, #FFA6B7 0%, #1E2AD2 100%);
   background-size: 200% auto;
   box-shadow: 0 0 20px rgba(182, 251, 255, 0.5), 0 0 10px rgba(182, 251, 255, 0.5); }
 
-/* line 177, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 177, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 header.open .mobile_nav {
   left: 0; }
-  /* line 179, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 179, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   header.open .mobile_nav .menu_item {
     opacity: 1; }
 
-/* line 187, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 187, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .mobile_nav {
   max-width: 100%;
   position: absolute;
@@ -163,18 +163,18 @@ header.open .mobile_nav {
   z-index: 100;
   transition: 0.3s all; }
 
-/* line 199, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 199, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .desktop_nav .menu {
   position: relative;
   width: 100%;
   flex-direction: row;
   padding: 0; }
 
-/* line 205, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 205, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .desktop_nav .btn--close {
   display: none; }
 
-/* line 210, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 210, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .menu {
   position: absolute;
   top: 0;
@@ -189,15 +189,15 @@ header.open .mobile_nav {
   margin: 0;
   padding: 1rem 0 0;
   box-sizing: border-box;
-  background-image: linear-gradient(-120deg, #614e77 0%, #506190 51%, #614e77 100%);
+  background-image: linear-gradient(-120deg, #624f78 0%, #506190 51%, #624f78 100%);
   list-style: none; }
-  /* line 226, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 226, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .menu_item {
     width: 80%;
     max-width: 300px;
     transition: 0.3s all;
     opacity: 0; }
-  /* line 232, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 232, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .menu_link {
     display: flex;
     align-items: center;
@@ -212,49 +212,68 @@ header.open .mobile_nav {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(182, 251, 255, 0.03) 50%, rgba(255, 255, 255, 0));
     margin-bottom: 1rem; }
 
-/* line 249, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 248, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 1rem;
+  background-color: #fff; }
+  /* line 253, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .toolbar__link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+    /* line 260, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+    .toolbar__link span {
+      font-size: 0.6rem;
+      white-space: nowrap; }
+
+/* line 268, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .custom_form--feedback {
   display: flex;
   flex-direction: column;
   align-items: center; }
 
-/* line 256, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 275, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .what-we-do_item {
   display: flex;
   margin-bottom: 1.5rem; }
-  /* line 259, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 278, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .what-we-do_item .main-text {
     flex: 1;
     padding-left: 1rem; }
 
-/* line 265, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 284, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .field-block {
   display: flex;
   width: 100%;
   position: relative; }
-  /* line 269, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 288, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .field-block input {
     transition: 0.3s;
     width: 100%;
     height: 2.5rem; }
-  /* line 275, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 294, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .field-block textarea {
     height: 5rem; }
 
-/* line 281, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 300, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .search__block {
   height: 0;
   overflow: hidden; }
-  /* line 284, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 303, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .search__block input {
     font-size: 0.8rem; }
-  /* line 287, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 306, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .search__block.open {
     height: 2.5rem;
     padding: 0 0 1rem;
     overflow: visible; }
 
-/* line 295, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 314, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .category__dropdown {
   position: absolute;
   z-index: 2;
@@ -265,7 +284,7 @@ header.open .mobile_nav {
   overflow: hidden;
   transition: 0.3s;
   background-color: #fff; }
-  /* line 305, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 324, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .category__dropdown.open {
     height: auto;
     max-height: 300px;
@@ -275,7 +294,7 @@ header.open .mobile_nav {
     color: #192231;
     border-radius: .2rem; }
 
-/* line 318, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 337, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .category__link {
   display: block;
   padding: 0.5em .75rem;
@@ -284,7 +303,7 @@ header.open .mobile_nav {
   text-decoration: none;
   border-bottom: 1px solid lightgrey; }
 
-/* line 329, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 348, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__item {
   position: relative;
   display: flex;
@@ -298,14 +317,14 @@ header.open .mobile_nav {
   color: #192231;
   text-decoration: none; }
 
-/* line 345, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 364, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__title {
   font-size: 1.3rem;
   color: #fff;
   margin: 0;
   padding: .3rem 0; }
 
-/* line 352, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 371, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__author {
   display: flex;
   align-items: center;
@@ -315,7 +334,7 @@ header.open .mobile_nav {
   padding: .2rem;
   margin-left: -.2rem; }
 
-/* line 362, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 381, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__ava {
   display: inline-block;
   height: 2rem;
@@ -325,111 +344,109 @@ header.open .mobile_nav {
   box-shadow: 0 0 10px rgba(182, 251, 255, 0.5), 0 0 5px rgba(182, 251, 255, 0.5);
   border-radius: 50%; }
 
-/* line 373, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 392, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__cat {
   display: flex;
   align-items: center;
   margin-bottom: .5rem;
   font-size: .9rem; }
-  /* line 378, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 397, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__cat span {
     color: #fff;
     margin-right: .3rem; }
-  /* line 382, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 401, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__cat .star {
     font-size: .8rem;
     margin: .2rem;
     color: #fdbd39; }
 
-/* line 388, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 407, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__description {
   font-size: 1rem; }
 
-/* line 391, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 410, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .quest__reward {
   display: flex;
   justify-content: space-around;
   padding: .5rem 0;
   font-size: 0.8rem;
   border-top: 1px solid #fff; }
-  /* line 397, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 416, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__reward--money, .quest__reward--loot, .quest__reward--xp {
     display: flex;
     flex-direction: column; }
-    /* line 402, Z:/project/EpicLoot/public/compile/style.scss */
+    /* line 421, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
     .quest__reward--money span, .quest__reward--loot span, .quest__reward--xp span {
       color: #fff;
       margin-bottom: .5rem; }
-  /* line 407, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 426, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__reward--loot {
     flex: 2;
     width: 50%; }
-  /* line 411, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 430, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .quest__reward--money, .quest__reward--xp {
     flex: 1;
     width: 25%; }
 
-/* line 426, Z:/project/EpicLoot/public/compile/style.scss */
-.quest__page .quest__title {
-  white-space: normal; }
-  /* line 428, Z:/project/EpicLoot/public/compile/style.scss */
-  .quest__page .quest__title:after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    margin: 1rem 0;
-    background-color: #fff; }
-
-/* line 437, Z:/project/EpicLoot/public/compile/style.scss */
-.quest__page .quest__author {
-  color: #fff; }
-
-/* line 441, Z:/project/EpicLoot/public/compile/style.scss */
-.quest__page .quest__main--with-bg {
-  min-height: calc(100vh - 3rem);
-  margin: 0 -1rem;
-  padding: 3.5rem 1rem 2rem;
-  background: #fff;
-  color: #192231;
-  box-shadow: inset 0 6px 4px -4px #a9c2e5, 0 1px 3px 1px #a9c2e5; }
-
-/* line 455, Z:/project/EpicLoot/public/compile/style.scss */
-.quest__page .quest__cat {
-  margin: 0 0 1rem;
-  font-size: .9rem; }
-  /* line 458, Z:/project/EpicLoot/public/compile/style.scss */
-  .quest__page .quest__cat span {
-    color: #a9c2e5; }
-  /* line 461, Z:/project/EpicLoot/public/compile/style.scss */
-  .quest__page .quest__cat .star {
-    font-size: 1.2rem; }
-
-/* line 465, Z:/project/EpicLoot/public/compile/style.scss */
-.quest__page .quest__reward {
-  position: relative;
-  z-index: 10;
-  margin: 1rem 0 -1.5rem;
-  padding: .75rem;
-  background: #fff;
-  border-radius: .2rem;
-  border: none;
-  box-shadow: 0 0 5px #a9c2e5; }
-  /* line 475, Z:/project/EpicLoot/public/compile/style.scss */
-  .quest__page .quest__reward--money, .quest__page .quest__reward--loot, .quest__page .quest__reward--xp {
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: #506190; }
-    /* line 481, Z:/project/EpicLoot/public/compile/style.scss */
-    .quest__page .quest__reward--money span, .quest__page .quest__reward--loot span, .quest__page .quest__reward--xp span {
+/* line 443, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+.quest__page {
+  padding-top: 2rem; }
+  /* line 446, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .quest__page .quest__title {
+    white-space: normal; }
+    /* line 448, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+    .quest__page .quest__title:after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      margin: 1rem 0;
+      background-color: #fff; }
+  /* line 457, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .quest__page .quest__author {
+    color: #fff; }
+  /* line 461, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .quest__page .quest__main--with-bg {
+    min-height: calc(100vh - 3rem);
+    margin: 0 -1rem;
+    padding: 3.5rem 1rem 2rem;
+    background: #fff;
+    color: #192231;
+    box-shadow: inset 0 6px 4px -4px #a9c2e5, 0 1px 3px 1px #a9c2e5; }
+  /* line 475, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .quest__page .quest__cat {
+    margin: 0 0 1rem;
+    font-size: .9rem; }
+    /* line 478, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+    .quest__page .quest__cat span {
       color: #a9c2e5; }
-
-/* line 487, Z:/project/EpicLoot/public/compile/style.scss */
-.quest__page .btn--take_quest {
-  width: 80%;
-  left: 10%;
-  right: 10%;
-  bottom: auto;
-  margin-top: 3rem; }
+    /* line 481, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+    .quest__page .quest__cat .star {
+      font-size: 1.2rem; }
+  /* line 485, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .quest__page .quest__reward {
+    position: relative;
+    z-index: 10;
+    margin: 1rem 0 -1.5rem;
+    padding: .75rem;
+    background: #fff;
+    border-radius: .2rem;
+    border: none;
+    box-shadow: 0 0 5px #a9c2e5; }
+    /* line 495, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+    .quest__page .quest__reward--money, .quest__page .quest__reward--loot, .quest__page .quest__reward--xp {
+      align-items: flex-start;
+      justify-content: flex-start;
+      color: #506190; }
+      /* line 501, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+      .quest__page .quest__reward--money span, .quest__page .quest__reward--loot span, .quest__page .quest__reward--xp span {
+        color: #a9c2e5; }
+  /* line 507, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .quest__page .btn--take_quest {
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    bottom: auto;
+    margin-top: 3rem; }
 
 /*# sourceMappingURL=style.css.map */
