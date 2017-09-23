@@ -6,13 +6,13 @@ $primary_op: hsla(224, 29%, 44%, 0.97);
 $primary_light: #a9c2e5;
 $primary_light_op: hsla(215, 54%, 78%, 0.8);
 $primary_blue_op: rgba(182, 251, 255, 0.5);
-$secondary: #614e77;
+$secondary: #624f78;
 $secondary_op: hsla(268, 21%, 39%, 0.95);
 $accient: #e04718;
 $star-rating: #fdbd39;
 
-$main-gradient: linear-gradient(-120deg, $secondary 0%, $primary 51%, $secondary 100%);
-$neon-gradient: linear-gradient(to right, #6fd4d1 0%, #91e6d3 51%, #6fd4d1 100%);
+$main-gradient: linear-gradient(-120deg, #77559e 0%, #33467b 51%, #41275f 100%);
+$neon-gradient: linear-gradient( 135deg, #FFA6B7 0%, #1E2AD2 100%);
 $half-opacity-fradient: linear-gradient(to right, $primary_light_op 0%, $primary_blue_op 100%);
 
 $hex-size: 8rem;
@@ -29,7 +29,10 @@ body{
   font-size: 10px;
   font-family: $main_text;
   margin: 0;
-  background: linear-gradient(to top, $primary_op 0%, $secondary_op 100%) no-repeat center, url('../img/9ewsT3r.jpg') no-repeat center;
+//  background: linear-gradient(to top, $primary_op 0%, $secondary_op 100%) no-repeat center, url('../img/ground.jpg') no-repeat center;
+  background: linear-gradient(to top, rgba(80, 97, 144, 0.57) 0%, rgba(98, 79, 120, 0.54) 100%) no-repeat center, url('../img/ground2.jpg') no-repeat center;
+//  background: linear-gradient(to top, rgba(80, 97, 144, 0.57) 0%, rgba(98, 79, 120, 0.54) 100%) no-repeat center, url('../img/ground3.jpg') no-repeat center;
+//  background: linear-gradient(to top, rgba(80, 97, 144, 0.57) 0%, rgba(98, 79, 120, 0.54) 100%) no-repeat center, url('../img/ground4.jpg') no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   color: $light;
@@ -55,9 +58,18 @@ footer{
 }
 
 .screen-section{
+  opacity: 0;
+  transform: scale(0.95);
   position: relative;
   min-height: 100%;
   padding: 0 1rem;
+  transition: $anim;
+  
+  /*router animate*/
+  &.load-component{
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .main-text{
   font-size: 1rem;
@@ -164,11 +176,10 @@ footer{
     bottom: -1rem;
     right: 1rem;
     margin: 0;
-    background-image: $neon-gradient;
+    background-image: linear-gradient(to right, #B993D6 0%, #8CA6DB 51%, #B993D6 100%);
     background-size: 200% auto;
     box-shadow: 
-      0 0 20px $primary_blue_op,
-      0 0 10px $primary_blue_op;
+      0 0 5px rgba(202, 202, 202, 0.23);
   }
 }
 
@@ -176,8 +187,10 @@ header{
   &.open{
     .mobile_nav{
       left: 0;
-      .menu_item{
-        opacity: 1;
+      .menu{
+        &_item{
+          opacity: 1;
+        }
       }
     }
   }
@@ -193,7 +206,7 @@ header{
   top: 0;
   left: -$width;
   z-index: 100;
-  transition: $anim all;
+  transition: $anim*1.2 all  ease-in;
 }
 .desktop_nav{
   .menu{
@@ -226,14 +239,19 @@ header{
   &_item{
     width: 80%;
     max-width: 300px;
-    transition: $anim all;
+    transition: $anim*3 all ease-in;
     opacity: 0;
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}){
+        transition-delay: $anim * $i/5;
+      }
+    }
   }
   &_link{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 2.5rem;
+    padding: 1rem 2.5rem;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.2rem;
@@ -242,6 +260,25 @@ header{
     color: $light;
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(182, 251, 255, 0.03) 50%, rgba(255, 255, 255, 0));
     margin-bottom: 1rem;
+  }
+}
+
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: $light;
+  &__link{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    span{
+      font-size: 0.6rem;
+      white-space: nowrap;
+    }
   }
 }
 
@@ -331,15 +368,12 @@ header{
     display: flex;
     flex-direction: column;
     padding: .5rem .75rem 1.5rem;
-    background-image: $half-opacity-fradient;
+    background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
     box-sizing: border-box;
-    box-shadow: 
-      0 0 25px rgba(182, 251, 255, 0.2), 
-      0 0 20px rgba(182, 251, 255, 0.3), 
-      inset 0 0 10px rgba(182, 251, 255, 0.3);
+    box-shadow: inset 0 0 10px rgba(204, 163, 241, 0.3);
     margin-bottom: 2rem;
     border-radius: .3rem;
-    color: $dark;
+    color: #192231;
     text-decoration: none;
   }
   &__title{
@@ -422,6 +456,7 @@ header{
 
 
 .quest__page{
+  padding-top: 2rem;
   .quest{
     &__title{
       white-space: normal;
@@ -439,14 +474,12 @@ header{
     }
     &__main{
       &--with-bg{
-        min-height: calc(100vh - 3rem);
         margin: 0 -1rem;
         padding: 3.5rem 1rem 2rem;
         background: $light;
         color: $dark;
         box-shadow: 
-          inset 0 6px 4px -4px $primary_light,
-          0 1px 3px 1px $primary_light;
+          inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
       }
       &--without-bg{
         
@@ -485,6 +518,7 @@ header{
     }
   }
   .btn--take_quest{
+    position: relative;
     width: 80%;
     left: 10%;
     right: 10%;
