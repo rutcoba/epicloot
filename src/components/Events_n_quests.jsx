@@ -24,7 +24,12 @@ class Events_n_quests extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   } 
   
-  componentDidMount(){}
+  componentDidMount(){
+    let obj = this;
+    setTimeout(function(){
+      obj.setState({load: 1});
+    },100);
+  }
   
   changeValue(event){
     this.setState({ val: event.target.value });
@@ -95,7 +100,8 @@ class Events_n_quests extends React.Component {
         searchField = '';
       }
       return (
-        <section id="events_n_quests" className="screen-section">
+        <section id="events_n_quests" 
+                 className={`screen-section ${this.state.load === 1 ? 'load-component' : ''}`}>
           {searchField}
           <div>
             {redirect}

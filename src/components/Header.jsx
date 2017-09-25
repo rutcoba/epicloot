@@ -56,6 +56,7 @@ class Header extends React.Component{
             <li className="menu_item"><NavLink className="menu_link" to="/our_team" onClick={this.handleClose}>Наша команда</NavLink></li>
             <li className="menu_item"><NavLink className="menu_link" to="/contacts" onClick={this.handleClose}>Контакты</NavLink></li>
             <li className="menu_item"><NavLink className="menu_link" to="/events_n_quests" onClick={this.handleClose}>Квесты и лут</NavLink></li>
+            <li className="menu_item"><NavLink className="menu_link" to="/users" onClick={this.handleClose}>Пользователи</NavLink></li>
           </ul>          
         </nav>
       </header>        

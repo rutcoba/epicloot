@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink, Route } from 'react-router-dom';
 
-import Quest_compact from './Quest_compact';
+import User_compact from './User_compact';
 
 import quests from './../data/quests';
 
-class Events_category extends React.Component {
+class Users extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -14,6 +14,7 @@ class Events_category extends React.Component {
         }
     }
     render() {
+      console.log(this.props);
       var idCat = this.props.match.params.link;
       var questsCat = Object.values(quests);
       var viewItem = [];
@@ -22,12 +23,12 @@ class Events_category extends React.Component {
               {questsCat.map((item, val) => {
                 if( idCat == "all" ){
                   return(
-                      <Quest_compact key={val} data={item} idCat="all"/>
+                      <User_compact key={val} data={item} idCat="all"/>
                    )
                 } else {
                   if( item.link == idCat ){
                     return(
-                      <Quest_compact key={val} data={item} idCat={idCat}/>                        
+                      <User_compact key={val} data={item} idCat={idCat}/>                        
                      )
                   } 
                 }                                                  
@@ -37,4 +38,4 @@ class Events_category extends React.Component {
     }
 }
 
-export default Events_category
+export default Users
