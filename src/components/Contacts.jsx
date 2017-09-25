@@ -5,12 +5,21 @@ class Contacts extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            
+            load: 0
         }
     }
+  
+    componentDidMount(){
+      let obj = this;
+      setTimeout(function(){
+        obj.setState({load: 1});
+      },100);
+    }
+  
     render() {
         return (
-            <section id="contacts" className="screen-section"> 
+            <section id="contacts"
+              className={`screen-section ${this.state.load === 1 ? 'load-component' : ''}`}> 
                <h2 className="title--page">Наши контакты</h2>
                <p className="main-text">Напишите нам, и наши специалисты перезвонят вам, пожелают спокойной ночи или расскажут лучшую историю в вашей жизни</p>
                <form action="" className="custom_form--feedback">

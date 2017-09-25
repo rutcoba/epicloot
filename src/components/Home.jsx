@@ -8,12 +8,14 @@ class Home extends React.Component {
           load: 0
         }
     }
+  
     componentDidMount(){
       let obj = this;
       setTimeout(function(){
         obj.setState({load: 1});
       },100);
     }
+  
     render() {
         return (
          <section id="home_page" 

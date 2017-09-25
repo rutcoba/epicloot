@@ -8,12 +8,21 @@ class About_app extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            
+            load: 0
         }
     }
+  
+    componentDidMount(){
+      let obj = this;
+      setTimeout(function(){
+        obj.setState({load: 1});
+      },100);
+    }
+  
     render() {
         return (
-           <section id="about_app" className="screen-section">
+           <section id="about_app" 
+             className={`screen-section ${this.state.load === 1 ? 'load-component' : ''}`}>
                 <h1 className="title--page">В кратце о приложении:</h1>
                 <p className="main-text">В данном приложении Вы можете примерить на себе две роли:</p>                
                  <ul>

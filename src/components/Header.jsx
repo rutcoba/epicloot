@@ -12,7 +12,9 @@ class Header extends React.Component{
     this.handleClose = this.handleClose.bind(this);
   }
   handleOpen(event) {
-    this.setState({open:true});
+    this.state.open == false ?      
+      this.setState({open:true}) :    
+      this.setState({open:false});
   }
   handleClose(event) {
     this.setState({open:false});

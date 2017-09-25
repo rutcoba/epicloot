@@ -23,6 +23,8 @@ $anim: 0.3s;
 $main_text: 'Rubik', Helvetica;
 
 body{
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;  
   min-height: 100vh;
@@ -186,8 +188,10 @@ footer{
 header{
   &.open{
     .mobile_nav{
-      left: 0;
+      z-index: 11;
+      height: 100vh;
       .menu{
+        bottom: 0;
         &_item{
           opacity: 1;
         }
@@ -202,11 +206,15 @@ header{
   max-width: 100%;
   position: absolute;
   width: $width;
-  height: 100%;
-  top: 0;
-  left: -$width;
-  z-index: 100;
-  transition: $anim*1.2 all  ease-in;
+  height: 0;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: $anim*1 all  ease-in-out;
+  .menu{    
+    bottom: -100vh;
+  }
 }
 .desktop_nav{
   .menu{
@@ -232,7 +240,7 @@ header{
   height: 100%;
   width: 100%;
   margin: 0;
-  padding: 1rem 0 0;
+  padding: 1rem 0 3rem;
   box-sizing: border-box;
   background-image: $main-gradient;
   list-style: none;
@@ -264,10 +272,17 @@ header{
 }
 
 .toolbar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
+  width: 100%;
   padding: 0 1rem;
   background-color: $light;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px $primary_light_op;
   &__link{
     display: flex;
     flex-direction: column;

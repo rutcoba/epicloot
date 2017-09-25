@@ -10,16 +10,25 @@ class Users extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            
+            load: 0
         }
     }
+  
+    componentDidMount(){
+      let obj = this;
+      setTimeout(function(){
+        obj.setState({load: 1});
+      },100);
+    }
+  
     render() {
       console.log(this.props);
       var idCat = this.props.match.params.link;
       var questsCat = Object.values(quests);
       var viewItem = [];
         return (
-            <section id="events_category" className="inner-section">
+            <section id="events_category"
+              className={`screen-section ${this.state.load === 1 ? 'load-component' : ''}`}>
               {questsCat.map((item, val) => {
                 if( idCat == "all" ){
                   return(
