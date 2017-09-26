@@ -44,7 +44,7 @@ class Header extends React.Component{
          <i className="material-icons">new_releases</i>
          <span>Задания</span>
         </NavLink>
-        <NavLink className="btn btn--ghost toolbar__link" to="/profile">
+        <NavLink className="btn btn--ghost toolbar__link" to="/personal">
          <i className="material-icons">account_box</i>
          <span>Профиль</span>
         </NavLink>        

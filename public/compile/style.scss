@@ -190,6 +190,7 @@ header{
     .mobile_nav{
       z-index: 11;
       height: 100vh;
+      bottom: 0;
       .menu{
         bottom: 0;
         &_item{
@@ -202,15 +203,15 @@ header{
 
 
 .mobile_nav{
+  z-index: 10;
   $width: 40rem;
   max-width: 100%;
-  position: absolute;
+  position: fixed;
   width: $width;
   height: 0;
   overflow: hidden;
   left: 0;
   bottom: 0;
-  z-index: -1;
   transition: $anim*1 all  ease-in-out;
   .menu{    
     bottom: -100vh;
@@ -232,7 +233,6 @@ header{
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -469,6 +469,21 @@ header{
   }
 }
 
+.block{  
+  &--with-bg{
+    min-height: 70vh;
+    padding: 3.5rem 1rem 2rem;
+    background: $light;
+    color: $dark;
+    box-sizing: border-box;
+    box-shadow: 
+      inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
+  }
+  &--without-bg{    
+    min-height: 30vh;
+  }
+}
+
 
 .quest__page{
   padding-top: 2rem;
@@ -488,16 +503,8 @@ header{
       color: $light;
     }
     &__main{
-      &--with-bg{
+      &.block--with-bg{
         margin: 0 -1rem;
-        padding: 3.5rem 1rem 2rem;
-        background: $light;
-        color: $dark;
-        box-shadow: 
-          inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
-      }
-      &--without-bg{
-        
       }
     }
     &__cat{
@@ -518,7 +525,7 @@ header{
       background: $light;
       border-radius: .2rem;
       border: none;
-      box-shadow: 
+      box-shadow:
         0 0 5px $primary_light;
       &--money,
       &--loot,
@@ -539,5 +546,39 @@ header{
     right: 10%;
     bottom: auto;
     margin-top: 3rem;
+  }
+}
+
+.profile{
+  &__block{
+    &--main{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 2rem 1rem 1rem;
+      p{
+        margin: 0;
+      }
+    }
+    &--moreinfo{}
+  }
+  &__avatar{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 4rem;
+    margin-bottom: 1rem;
+    background-color: $light;
+    box-shadow: 
+      inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
+  }
+  &__name{
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  &__level{
+    span{
+      color: $star-rating;
+    }
   }
 }

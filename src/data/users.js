@@ -2,6 +2,8 @@ const users = [
   {
     id: 1
     , name: "Роман"
+    , avatar: 'img/superman.png'
+    , exp: '3400'
     , quests: {
       create: ['1', '3', '6'],
       take: ['2']      

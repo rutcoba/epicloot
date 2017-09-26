@@ -9,6 +9,7 @@ import About_user from './components/About_user';
 import Our_team from './components/Our_team';
 import Contacts from './components/Contacts';
 import Users from './components/Users';
+import Profile from './components/Profile';
 import Events_n_quests from './components/Events_n_quests';
 import Events_category from './components/Events_category';
 import NotFound from './components/NotFound';
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/contacts" component={Contacts}/>
           <Route path="/events_n_quests" component={Events_n_quests} />
           <Route path="/users" component={Users} />
+          <Route exact path="/personal" component={Profile} />
           <Route path="*" component={NotFound}/>
         </Switch>
       </section>

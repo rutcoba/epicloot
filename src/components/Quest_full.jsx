@@ -13,6 +13,10 @@ class Quest_full extends React.Component {
   
   componentDidMount(){
     window.scrollTo(0,0, 1000);
+      let obj = this;
+      setTimeout(function(){
+        obj.setState({load: 1});
+      },100);
   }
   
   render() {
@@ -22,8 +26,8 @@ class Quest_full extends React.Component {
       stars.push(<i key={i} className="material-icons star">star</i>);
     }
     return (
-      <div className="quest__page" >
-       <div className="quest__main--without-bg">
+      <div className={`quest__page ${this.state.load === 1 ? 'load-inner_page' : ''}`} >
+       <div className="quest__main block--without-bg">
         <p className="quest__title">{item.title}</p>
         <p className="quest__author"><img className="quest__ava" src="/img/superman.png" alt=""/>{item.author}</p>          
         <div className="quest__reward">
@@ -32,7 +36,7 @@ class Quest_full extends React.Component {
           <span className="quest__reward--xp"><span>Опыт</span>{item.reward.xp}</span>
         </div>           
        </div>
-       <div className="quest__main--with-bg">
+       <div className="quest__main block--with-bg">
         <p className="quest__cat"><span>Категория: </span>{item.cat}</p>
         <p className="quest__cat"><span>Сложность: </span>{stars}</p>
         <p className="quest__cat deadline"><span>Дата завершения: </span>28.09.2017</p>          
