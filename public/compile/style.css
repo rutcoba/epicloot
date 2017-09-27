@@ -38,7 +38,7 @@ footer {
   transform: scale(0.95);
   position: relative;
   min-height: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 4rem;
   transition: 0.3s;
   /*router animate*/ }
   /* line 71, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
@@ -113,7 +113,7 @@ footer {
 /************************************/
 /* line 142, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .btn--send {
-  background-image: linear-gradient(135deg, #FFA6B7 0%, #1E2AD2 100%);
+  background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%);
   background-size: 200% auto;
   color: #fff;
   transition: 0.3s all; }
@@ -509,16 +509,17 @@ header.open .mobile_nav {
 
 /* line 554, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .profile__block--main {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 2rem 1rem 1rem; }
-  /* line 560, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  padding: .5rem 1rem 2rem; }
+  /* line 561, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
   .profile__block--main p {
     margin: 0; }
 
-/* line 566, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 567, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .profile__avatar {
   width: 6rem;
   height: 6rem;
@@ -526,14 +527,67 @@ header.open .mobile_nav {
   margin-bottom: 1rem;
   background-color: #fff;
   box-shadow: inset 0 6px 4px -5px rgba(126, 133, 220, 0.4); }
+  /* line 575, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .profile__avatar img {
+    width: 100%;
+    height: auto;
+    max-height: 100%; }
 
-/* line 575, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 581, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+.profile__link-settings {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1rem; }
+  /* line 591, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .profile__link-settings a {
+    color: #fff; }
+
+/* line 595, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .profile__name {
   font-size: 1.2rem;
   line-height: 1.2; }
 
-/* line 580, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+/* line 600, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
 .profile__level span {
   color: #fdbd39; }
+
+/* line 604, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+.profile__tabs {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1rem 0 0;
+  margin: 0;
+  list-style: none; }
+
+/* line 615, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+.profile__tab-link {
+  position: relative;
+  flex: 1; }
+  /* line 618, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .profile__tab-link a {
+    display: block;
+    padding: .5rem 0;
+    text-align: center;
+    color: #fff;
+    font-size: .9rem;
+    text-decoration: none; }
+  /* line 627, C:/Users/dogr.OMEGA/Desktop/myapp/public/compile/style.scss */
+  .profile__tab-link.active:before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%); }
 
 /*# sourceMappingURL=style.css.map */

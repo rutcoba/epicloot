@@ -7,7 +7,8 @@ class Quest_full extends React.Component {
       super(props);
       this.state = {
           data: this.props.data,
-          id_item: this.props.data.id
+          id_item: this.props.data.id,
+          load: 0
       }
   }
   

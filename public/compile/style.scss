@@ -12,7 +12,7 @@ $accient: #e04718;
 $star-rating: #fdbd39;
 
 $main-gradient: linear-gradient(-120deg, #77559e 0%, #33467b 51%, #41275f 100%);
-$neon-gradient: linear-gradient( 135deg, #FFA6B7 0%, #1E2AD2 100%);
+$neon-gradient: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
 $half-opacity-fradient: linear-gradient(to right, $primary_light_op 0%, $primary_blue_op 100%);
 
 $hex-size: 8rem;
@@ -64,7 +64,7 @@ footer{
   transform: scale(0.95);
   position: relative;
   min-height: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 4rem;
   transition: $anim;
   
   /*router animate*/
@@ -287,7 +287,7 @@ header{
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
+    background-image: $neon-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     span{
@@ -552,11 +552,12 @@ header{
 .profile{
   &__block{
     &--main{
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding: 2rem 1rem 1rem;
+      padding: .5rem 1rem 2rem;
       p{
         margin: 0;
       }
@@ -571,6 +572,25 @@ header{
     background-color: $light;
     box-shadow: 
       inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
+    img{
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+    }
+  }
+  &__link-settings{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    a{
+      color: $light;      
+    }
   }
   &__name{
     font-size: 1.2rem;
@@ -579,6 +599,39 @@ header{
   &__level{
     span{
       color: $star-rating;
+    }
+  }
+  &__tabs{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 1rem 0 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__tab-link{
+    position: relative;
+    flex: 1;
+    a{
+      display: block;
+      padding: .5rem 0;
+      text-align: center;
+      color: $light;
+      font-size: .9rem;
+      text-decoration: none;
+    }
+    &.active{
+      &:before{
+        position: absolute;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-image: $neon-gradient;
+      }
     }
   }
 }
