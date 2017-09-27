@@ -15,9 +15,33 @@ class Profile_main extends React.Component {
   
   render() {
     return (
-      <div className="" >
-        <p>Основная вкладка</p>
-      </div>                             
+      <ul className="profile__tab profile__tab--main" >
+        <li className="card__panel profile__card">
+         <div className="card__header">
+          <i className="material-icons card__ico">person</i>
+          </div>
+        </li>
+        <li className="card__panel profile__card">          
+         <div className="card__header">
+         <i className="material-icons card__ico">contacts</i>
+          </div>
+        </li>
+        <li className="card__panel profile__card">          
+         <div className="card__header">
+         <i className="material-icons card__ico">style</i>
+          </div>
+        </li>
+        <li className="card__panel profile__card">          
+         <div className="card__header">
+         <i className="material-icons card__ico">assessment</i>
+          </div>
+        </li>
+        <li className="card__panel profile__card">          
+         <div className="card__header">
+         <i className="material-icons card__ico">star</i>
+          </div>
+        </li>
+      </ul>                             
     )
   }
 }

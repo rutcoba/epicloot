@@ -4,7 +4,7 @@ $dark: #192231;
 $primary: #506190;
 $primary_op: hsla(224, 29%, 44%, 0.97);
 $primary_light: #a9c2e5;
-$primary_light_op: hsla(215, 54%, 78%, 0.8);
+$primary_light_op: hsla(215, 54%, 78%, 0.6);
 $primary_blue_op: rgba(182, 251, 255, 0.5);
 $secondary: #624f78;
 $secondary_op: hsla(268, 21%, 39%, 0.95);
@@ -282,7 +282,7 @@ header{
   padding: 0 1rem;
   background-color: $light;
   box-sizing: border-box;
-  box-shadow: 0 0 4px $primary_light_op;
+  box-shadow: 0 0 15px $primary_light_op;
   &__link{
     display: flex;
     flex-direction: column;
@@ -472,15 +472,15 @@ header{
 .block{  
   &--with-bg{
     min-height: 70vh;
-    padding: 3.5rem 1rem 2rem;
+    padding: 1.5rem 1rem 2rem;
     background: $light;
     color: $dark;
     box-sizing: border-box;
-    box-shadow: 
-      inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
   }
   &--without-bg{    
     min-height: 30vh;
+    box-shadow: 
+      0 5px 14px 0px rgba(126, 133, 220, 0.6);
   }
 }
 
@@ -550,6 +550,13 @@ header{
 }
 
 .profile{
+  &__tab{
+    margin: 0;
+    padding: 0;
+    &--main{
+      
+    }
+  }
   &__block{
     &--main{
       position: relative;
@@ -567,7 +574,7 @@ header{
   &__avatar{
     width: 6rem;
     height: 6rem;
-    border-radius: 4rem;
+    border-radius: 2rem;
     margin-bottom: 1rem;
     background-color: $light;
     box-shadow: 
@@ -608,8 +615,9 @@ header{
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    padding: 1rem 0 0;
+    padding: 1rem 1rem 0;
     margin: 0;
+    box-sizing: border-box;
     list-style: none;
   }
   &__tab-link{
@@ -633,5 +641,28 @@ header{
         background-image: $neon-gradient;
       }
     }
+  }
+}
+
+.card{
+  &__panel{
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    min-height: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    box-shadow: 
+      inset 0 6px 4px -5px rgba(126, 133, 220, 0.4),
+      0 0 15px $primary_light_op;
+  }
+  &__header{}
+  &__ico{
+    position: absolute;
+    font-size: 1rem;
+    top: .75rem;
+    left: .75rem;
   }
 }
