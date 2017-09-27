@@ -50,7 +50,11 @@ class Events_n_quests extends React.Component {
   
   changeCategory(event){
     this.closeCategoryList();
-    this.setState({val: event.target.innerText});
+    if (event.target.innerText === 'все') {
+      this.setState({val: ''});
+    } else {
+      this.setState({val: event.target.innerText});  
+    }    
   }
   
   openCategoryList(){
