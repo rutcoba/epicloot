@@ -5,8 +5,8 @@ const users = [
     , avatar: '/img/superman.png'
     , exp: '3400'
     , quests: {
-      create: ['1', '3', '6'],
-      take: ['2']      
+      create: ['10', '3', '6'],
+      take: ['435']      
     }
     , about: 'Немного информации о себе'
     , contacts: {
@@ -14,6 +14,11 @@ const users = [
       , phone: '8 954 123 45 85'
       , social: ['vk.com/dfjkhgkdjfhg', 'behance.com/sdlfjsdlfksjd']
     }
+    , skills: [
+      {idCat: 1, exp: '1600'}
+      , {idCat: 4, exp: '800'}
+      , {idCat: 3, exp: '1000'}
+    ]
   }  
 ]
 export default users;

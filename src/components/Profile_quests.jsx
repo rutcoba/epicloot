@@ -16,7 +16,7 @@ class Profile_quests extends React.Component {
   render() {
     return (
       <div className="user__page" >
-       <p>Мои задания</p>
+       <p>Взятые квесты</p>
       </div>                             
     )
   }

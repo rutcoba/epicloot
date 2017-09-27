@@ -27,7 +27,7 @@ class Events_category extends React.Component {
                 } else {
                   if( item.link == idCat ){
                     return(
-                      <Quest_compact key={val} data={item} idCat={idCat}/>                        
+                      <Quest_compact key={val} data={item} idCat={idCat}/>
                      )
                   } 
                 }                                                  

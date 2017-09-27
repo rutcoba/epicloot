@@ -64,7 +64,7 @@ footer{
   transform: scale(0.95);
   position: relative;
   min-height: 100%;
-  padding: 0 1rem 4rem;
+  padding: 0 1rem;
   transition: $anim;
   
   /*router animate*/
@@ -486,7 +486,6 @@ header{
 
 
 .quest__page{
-  padding-top: 2rem;
   .quest{
     &__title{
       white-space: normal;
@@ -503,8 +502,9 @@ header{
       color: $light;
     }
     &__main{
-      &.block--with-bg{
-        margin: 0 -1rem;
+      margin: 0 -1rem;
+      &.block--without-bg{
+        padding: 1rem 1rem 0;
       }
     }
     &__cat{
@@ -520,7 +520,7 @@ header{
     &__reward{
       position: relative;
       z-index: 10;
-      margin: 1rem 0 -1.5rem;
+      margin: 1rem 1rem -1.5rem;
       padding: .75rem;
       background: $light;
       border-radius: .2rem;

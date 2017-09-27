@@ -13,10 +13,14 @@ class Quest_compact extends React.Component {
         }
     }
     render() {
-      var item = this.props.data;
-      var stars = [];
+      const item = this.props.data;
+      let stars = [];
       for (let i = 0 ; i <= item.dificulty; i++){
         stars.push(<i key={i} className="material-icons star">star</i>);
+      }
+      let takeBtn = <button className="btn btn--take_quest">Взять квест</button>;
+      if(this.props.forProfile){
+        takeBtn = '';
       }
       return (            
         <Link to={`/events_n_quests/${item.link}/${item.id}`} className="quest__item" >
@@ -29,7 +33,7 @@ class Quest_compact extends React.Component {
             <span className="quest__reward--money"><span>Деньги</span>{item.reward.money}</span>
             <span className="quest__reward--xp"><span>Опыт</span>{item.reward.xp}</span>
           </div>
-          <button className="btn btn--take_quest">Взять квест</button>
+          {takeBtn}
         </Link>                             
       )
     }
