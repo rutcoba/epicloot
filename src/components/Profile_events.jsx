@@ -10,12 +10,17 @@ class Profile_events extends React.Component {
   constructor(props){
       super(props);
       this.state = {
-        quests: this.props.quests
+        quests: this.props.quests,
+        load: 0
       }
   }
   
   componentDidMount(){
     window.scrollTo(0,0, 1000);
+      let obj = this;
+      setTimeout(function(){
+//        obj.setState({load: 1});
+      },100);
   }
   
   render() {
@@ -28,12 +33,13 @@ class Profile_events extends React.Component {
           if(item == quest.id){
             dataArray.push(<Quest_compact key={val} forProfile data={quest}/>)
           }
+          render = dataArray;
         })
       })
     }
     return (
-      <div className="user__page" >       
-        {dataArray}
+      <div className={`user__page`} >
+        {render}
       </div>                             
     )
   }

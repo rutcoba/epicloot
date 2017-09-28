@@ -41,6 +41,17 @@ body{
   transition: $anim*2 all;
 }
 
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#main_container, .page-main-inner, .page{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 #wrapper{
   display: flex;
   flex-direction: column;
@@ -472,6 +483,7 @@ header{
 .block{  
   &--with-bg{
     min-height: 70vh;
+    flex: 1;
     padding: 1.5rem 1rem 2rem;
     background: $light;
     color: $dark;
@@ -561,7 +573,7 @@ header{
     &--main{
       position: relative;
       padding: .5rem 0 1rem;
-      min-height: 4rem;
+      min-height: 2rem;
       transition: $anim;
       &.full{
         min-height: 30vh;

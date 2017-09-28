@@ -27,7 +27,7 @@ class Quest_full extends React.Component {
       stars.push(<i key={i} className="material-icons star">star</i>);
     }
     return (
-      <div className={`quest__page ${this.state.load === 1 ? 'load-inner_page' : ''}`} >
+      <div className={`page quest__page ${this.state.load === 1 ? 'load-inner_page' : ''}`} >
        <div className="quest__main block--without-bg">
         <p className="quest__title">{item.title}</p>
         <p className="quest__author"><img className="quest__ava" src="/img/superman.png" alt=""/>{item.author}</p>          

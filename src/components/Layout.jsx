@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 
 const Layout = ({ children }) => (
-  <section>
+  <section id="main_container">
     <Header />
     {children}
   </section>

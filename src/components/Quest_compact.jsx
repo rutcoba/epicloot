@@ -9,9 +9,17 @@ class Quest_compact extends React.Component {
         super(props);
         this.state = {
             data: this.props.data,
-            id_item: this.props.data.id
+            id_item: this.props.data.id,
+            forProfile: ''
         }
     }
+  
+    componentdidMount(){
+      if(this.props.forProfile){
+        this.setState({forProfile: 'for_profile'})
+      }    
+    }
+  
     render() {
       const item = this.props.data;
       let stars = [];
@@ -23,7 +31,8 @@ class Quest_compact extends React.Component {
         takeBtn = '';
       }
       return (            
-        <Link to={`/events_n_quests/${item.link}/${item.id}`} className="quest__item" >
+        <Link to={`/events_n_quests/${item.link}/${item.id}`} 
+         className={`quest__item ${this.state.forProfile}`} >
           <p className="quest__title">{item.title}</p>
           <p className="quest__author"><img className="quest__ava" src="/img/superman.png" alt=""/>{item.author}</p>
           <p className="quest__cat"><span>Категория: </span>{item.cat}</p>

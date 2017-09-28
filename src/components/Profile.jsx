@@ -18,6 +18,7 @@ class Profile extends React.Component {
         needExp: 0,
         header: ''
       }
+      
   }
   
   componentDidMount(){
@@ -58,7 +59,7 @@ class Profile extends React.Component {
         return (<Profile_events {...props} quests={obj.state.data.quests} />);
     };
     return (
-      <div className="profile__page" >
+      <div className="page profile__page" >
         <div className={`profile__block--main block--without-bg ${header}`}>
           <div className="profile__header">
              <div className="profile__avatar">
@@ -83,7 +84,7 @@ class Profile extends React.Component {
             </li>
           </ul>
         </div>
-        <div className="profile__block--moreinfo block--with-bg">
+        <div className='profile__block--moreinfo block--with-bg'>
           {redirect}
           <Route exact path={`/personal/main`} component={Main}/>
           <Route exact path={`/personal/settings`} component={Setting}/>
