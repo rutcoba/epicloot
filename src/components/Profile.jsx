@@ -15,7 +15,8 @@ class Profile extends React.Component {
       this.state = {
         data: [],
         level: 1,
-        needExp: 0
+        needExp: 0,
+        header: ''
       }
   }
   
@@ -36,9 +37,13 @@ class Profile extends React.Component {
   
   render() {
     let redirect = '';
+    let header = '';
     const obj = this;
     if(this.props.location.pathname == '/personal'){ 
       redirect = <Redirect from='/personal' to='/personal/main' />;
+    }
+    if(this.props.location.pathname == '/personal/main'){ 
+       header = 'full';
     }
     const Main = function(props) {
         return (<Profile_main {...props} data={obj.state.data} />);
@@ -54,16 +59,18 @@ class Profile extends React.Component {
     };
     return (
       <div className="profile__page" >
-        <div className="profile__block--main block--without-bg">
-           <div className="profile__avatar">
-            <img src={this.state.data.avatar} alt=""/>            
-            <li className="profile__link-settings">
-              <Link to={`/personal/settings`}><i className="material-icons">settings</i></Link>
-            </li>
+        <div className={`profile__block--main block--without-bg ${header}`}>
+          <div className="profile__header">
+             <div className="profile__avatar">
+              <img src={this.state.data.avatar} alt=""/>
+              <Link to={`/personal/settings`} className="profile__link-settings" onClick={this.handleHeader}>
+                <i className="material-icons">settings</i>
+              </Link>
+            </div>
+            <p className="profile__name">{this.state.data.name}</p>
+            <p className="profile__level">Уровень <span> {this.state.level} </span></p>
+            <p className="profile__level">{this.state.needExp}</p>
           </div>
-          <p className="profile__name">{this.state.data.name}</p>
-          <p className="profile__level">Уровень <span> {this.state.level} </span></p>
-          <p className="profile__level">{this.state.needExp}</p>
           <ul className="profile__tabs">
             <li className="profile__tab-link active">
               <Link to={`/personal/main`}>Профиль</Link>

@@ -560,16 +560,36 @@ header{
   &__block{
     &--main{
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: .5rem 1rem 2rem;
+      padding: .5rem 0 1rem;
+      min-height: 4rem;
+      transition: $anim;
+      &.full{
+        min-height: 30vh;
+        overflow: hidden;
+        .profile__header{
+          padding-top: 1rem;
+          opacity: 1;
+          height: 10rem;
+          transform: scale(1);          
+        }
+      }
       p{
         margin: 0;
       }
     }
     &--moreinfo{}
+  }
+  &__header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 0;
+    opacity: 0;
+    height: 0;
+    transition: $anim*2;
+    transform: scale(0);    
   }
   &__avatar{
     width: 6rem;
@@ -587,7 +607,7 @@ header{
   }
   &__link-settings{
     position: absolute;
-    top: 0;
+    top: -.5rem;
     right: 0;
     display: flex;
     align-items: center;
@@ -595,9 +615,8 @@ header{
     width: 3rem;
     height: 3rem;
     font-size: 1rem;
-    a{
-      color: $light;      
-    }
+    color: $light;
+    text-decoration: none;
   }
   &__name{
     font-size: 1.2rem;
@@ -652,10 +671,10 @@ header{
     padding: 1rem;
     min-height: 3rem;
     margin-bottom: 1rem;
-    border-radius: 1rem;
+    border-radius: .3rem;
     box-sizing: border-box;
     box-shadow: 
-      inset 0 6px 4px -5px rgba(126, 133, 220, 0.4),
+      inset 0 2px 5px -2px rgba(126, 133, 220, 0.4), 
       0 0 15px $primary_light_op;
   }
   &__header{}

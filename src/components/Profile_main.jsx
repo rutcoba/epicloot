@@ -18,14 +18,12 @@ class Profile_main extends React.Component {
   
   render() {
     const user = this.state.data;
-    console.log(user.skills);
     let render = <p>Загрузка</p>;
     let skillsArray = [];
     if(user.length !== 0){      
         {category.map((cat, val) => {
           {user.skills.map((item) => {
             if(item.idCat == cat.id){
-              console.log(item.idCat + ' == ' + cat.id);
               skillsArray.push(
                 <div key={val} id={cat.id}>
                   <p className="main_text category__name">{cat.cat}: </p> <p>{item.exp}</p>

@@ -19,14 +19,12 @@ class Profile_events extends React.Component {
   }
   
   render() {
-    console.log(this.props);
     const questsArr = this.state.quests;
     let dataArray = [];
     let render = <p>Загрузка</p>;
     if(questsArr !== undefined){
       quests.map(quest => {        
         questsArr.create.map((item, val) => {
-          console.log(quest.id);
           if(item == quest.id){
             dataArray.push(<Quest_compact key={val} forProfile data={quest}/>)
           }
