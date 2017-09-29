@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { withRouter, BrowserRouter, HashRouter, Redirect, Switch, Route } from 'react-router-dom';
 
 import Layout from './components/Layout';
+import Auth from './components/Auth';
 import Home from './components/Home';
 import About_app from './components/About_app';
 import About_user from './components/About_user';
@@ -19,6 +20,7 @@ const App = () => {
       <section className="page-main-inner">
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/auth" component={Auth}/>
           <Route path="/about_app" component={About_app} />
           <Route path="/our_team" component={Our_team}/>
           <Route path="/contacts" component={Contacts}/>

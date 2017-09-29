@@ -61,11 +61,11 @@ class Profile extends React.Component {
       <div className={`page profile__page`} >
         <div className={`profile__block--main block--without-bg ${header}`}>
           <div className="profile__header">
-             <div className="profile__avatar">
-              <img src={this.state.data.avatar} alt=""/>
               <Link to={`/personal/settings`} className="profile__link-settings">
                 <i className="material-icons">settings</i>
               </Link>
+             <div className="profile__avatar">
+              <img src={this.state.data.avatar} alt=""/>
             </div>
             <p className="profile__name">{this.state.data.name}</p>
             <p className="profile__level">Уровень <span> {this.state.level} </span></p>
