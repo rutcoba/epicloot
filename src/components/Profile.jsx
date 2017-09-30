@@ -46,7 +46,7 @@ class Profile extends React.Component {
        header = 'full';
     }
     const Main = function(props) {
-        return (<Profile_main {...props} load='0' data={obj.state.data} />);
+        return (<Profile_main {...props} data={obj.state.data} />);
     };
     const Setting = function(props) {
         return (<Profile_settings {...props} data={obj.state.data} />);
