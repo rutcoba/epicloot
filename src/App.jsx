@@ -17,19 +17,17 @@ import NotFound from './components/NotFound';
 const App = () => {
   return (
     <Layout>
-      <section className="page-main-inner">
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/auth" component={Auth}/>
-          <Route path="/about_app" component={About_app} />
-          <Route path="/our_team" component={Our_team}/>
-          <Route path="/contacts" component={Contacts}/>
-          <Route path="/events_n_quests" component={Events_n_quests} />
-          <Route path="/users" component={Users} />
-          <Route path="/personal" component={Profile} />
-          <Route path="*" component={NotFound}/>
-        </Switch>
-      </section>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/auth" component={Auth}/>
+        <Route path="/about_app" component={About_app} />
+        <Route path="/our_team" component={Our_team}/>
+        <Route path="/contacts" component={Contacts}/>
+        <Route path="/events_n_quests" component={Events_n_quests} />
+        <Route path="/users" component={Users} />
+        <Route path="/personal" component={Profile} />
+        <Route path="*" component={NotFound}/>
+      </Switch>
   </Layout>       
 )}
 

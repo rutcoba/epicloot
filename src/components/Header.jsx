@@ -21,7 +21,7 @@ class Header extends React.Component{
   }
   
   render(){
-    var btnClose, btnOpen;    
+    let btnClose, btnOpen, toolbar = '';    
     if(window.innerWidth <= 1100){
       btnOpen = 
         <button className="btn btn--ghost toolbar__link" onClick={this.handleOpen}>
@@ -33,23 +33,26 @@ class Header extends React.Component{
          <i className="material-icons">close</i>
         </button> 
     }
-    return (
-      <header className={this.state.open == true ? 'open' : ''}>
-       <div className="toolbar">
-        <NavLink className="btn btn--ghost toolbar__link" to='/'>
+    if(window.location.pathname.split('/')[1] !== 'auth'){
+      toolbar = <div className="toolbar">
+        <NavLink className="btn btn--ghost toolbar__link" to='/' onClick={this.handleClose}>
          <i className="material-icons">home</i>
          <span>Домой</span>
         </NavLink>
-        <NavLink className="btn btn--ghost toolbar__link" to="/events_n_quests">
+        <NavLink className="btn btn--ghost toolbar__link" to="/events_n_quests" onClick={this.handleClose}>
          <i className="material-icons">new_releases</i>
          <span>Задания</span>
         </NavLink>
-        <NavLink className="btn btn--ghost toolbar__link" to="/personal">
+        <NavLink className="btn btn--ghost toolbar__link" to="/personal" onClick={this.handleClose}>
          <i className="material-icons">account_box</i>
          <span>Профиль</span>
         </NavLink>        
         {btnOpen}
         </div>
+    }
+    return (
+      <header className={this.state.open == true ? 'open' : ''}>
+         {toolbar}
         <nav className={window.innerWidth <= 1100 ? 'mobile_nav' : 'desktop_nav'}>
           <ul className="menu">
             {btnClose}

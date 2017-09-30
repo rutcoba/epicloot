@@ -4,6 +4,7 @@ $dark: #192231;
 $primary: #506190;
 $primary_op: hsla(224, 29%, 44%, 0.97);
 $primary_light: #a9c2e5;
+$primary_blue: hsl(183, 100%, 86%);
 $primary_light_op: hsla(215, 54%, 78%, 0.6);
 $primary_blue_op: rgba(182, 251, 255, 0.5);
 $secondary: #624f78;
@@ -71,13 +72,15 @@ footer{
 }
 
 .screen-section{
+  display: flex;
+  flex-direction: column;
   opacity: 0;
   transform: scale(0.95);
   position: relative;
   min-height: 100%;
   padding: 0 1rem;
   transition: $anim;
-  
+  flex: 1;
   /*router animate*/
   &.load-component{
     transform: scale(1);
@@ -132,15 +135,17 @@ footer{
 }
 
 %field{
+    height: auto;
     width: 100%;
     box-sizing: border-box;
-    padding: 0.5rem 0;
+    padding: .75rem 1rem;
     font-size: 1.2rem;
     font-family: $main_text;
-    border-width: 0 0 1px 0;
+    border-width: 1px;
     border-style: solid;
     border-color: $primary_light;
     background-color: transparent !important;
+    border-radius: .2rem;
     margin-bottom: 1rem;
     &::placeholder{
       color: $light;
@@ -162,7 +167,9 @@ footer{
   &--auth{
     @extend %btn;
     width: 80%;
+    height: auto;
     margin: 1rem auto;
+    padding: 1rem;
     background-color: transparent;
     background-image: linear-gradient(to right, rgba(148, 86, 141, 0.68) 0%, rgba(148, 91, 177, 0.56) 100%);
     box-sizing: border-box;
@@ -211,6 +218,49 @@ footer{
     background-size: 200% auto;
     box-shadow: 
       0 0 5px rgba(202, 202, 202, 0.23);
+  }
+}
+
+.link{
+  &--auth{
+    font-size: .8rem;
+    color: $light;
+    text-align: center;
+    margin: auto 0 1.5rem;
+    a{
+      text-decoration: none;
+      color: $primary_blue;
+      margin-left: .3rem;
+    }
+  }
+}
+
+.logo {
+  position: relative;
+  text-align: center;
+  transition: $anim;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 8rem;
+    height: 8rem;
+    border-radius: .6rem;
+    background-image: linear-gradient(to right, rgba(148, 86, 141, 0.3) 0%, rgba(127, 54, 165, 0.27) 100%);
+    box-sizing: border-box;
+    box-shadow: inset 0 0 20px rgba(204, 163, 241, 0.3);
+  }
+}
+
+.welcome_text{
+  color: #fee;
+  font-size: 3rem;    
+  transform: rotate(-5deg);
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; 
+  span{
+    animation: blink linear infinite 5s;
   }
 }
 
@@ -327,10 +377,17 @@ header{
 }
 
 .form{
-  &--auth{
+  &--wrapper{
     display: flex;
-    padding: 2rem 2rem 0;
+    justify-content: center;
+    flex: 1;
+  }
+  &--sign_up,
+  &--sign_in{
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem 0;
   }
 }
 
@@ -358,7 +415,6 @@ header{
   input{
     transition: $anim;
     width: 100%;
-    height: 2.5rem;
     @extend %field;
   }
   textarea{    
@@ -650,18 +706,18 @@ header{
     border-radius: 2rem;
     margin-bottom: 1rem;
     overflow: hidden;
-    background-color: $light;
     box-shadow: 
       inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
     img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
       min-width: 100%;
       height: auto;
       max-height: 100%;
-      position: absolute;
       object-fit: cover;
-      top: 50%;
-      left: 50%;
       transform: translate(-50%, -50%);
+      background-color: $light;
     }
   }
   &__link-settings{
@@ -773,36 +829,42 @@ header{
 }
 
 
-
-.logo {
-  position: relative;
-  text-align: center;
-  margin: 6rem 0;
-  &:before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    width: 8rem;
-    height: 8rem;
-    border-radius: .6rem;
-    background-image: linear-gradient(to right, rgba(148, 86, 141, 0.3) 0%, rgba(127, 54, 165, 0.27) 100%);
-    box-sizing: border-box;
-    box-shadow: inset 0 0 20px rgba(204, 163, 241, 0.3);
+.switch{
+  &--auth{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto 1rem;
+    padding: 0;
+    list-style: none;
+    .btn--auth-switch{
+      display: flex;
+      width: 80%;
+      margin: 0 auto 1rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      color: $light;
+      border-radius: .3rem;
+      background-image: linear-gradient(to right, rgba(148, 86, 141, 0.68) 0%, rgba(148, 91, 177, 0.56) 100%);
+      text-transform: uppercase;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
   }
 }
 
-.welcome_text{
-  color: #fee;
-  font-size: 3rem;    
-  transform: rotate(-5deg);
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; 
-  span{
-    animation: blink linear infinite 5s;
+.start-page{
+  display: flex;
+  flex-direction: column;
+  .logo{
+    margin: 6rem 0;
+  }
+  &.with-form{
+    .logo{
+      margin: 3rem 0;
+    }    
   }
 }
-
 
 /*animation*/
 @keyframes blink {
