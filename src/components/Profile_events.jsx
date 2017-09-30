@@ -17,10 +17,6 @@ class Profile_events extends React.Component {
   
   componentDidMount(){
     window.scrollTo(0,0, 1000);
-      let obj = this;
-      setTimeout(function(){
-//        obj.setState({load: 1});
-      },100);
   }
   
   render() {

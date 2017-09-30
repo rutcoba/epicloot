@@ -18,7 +18,6 @@ class Profile extends React.Component {
         needExp: 0,
         header: ''
       }
-      
   }
   
   componentDidMount(){
@@ -47,7 +46,7 @@ class Profile extends React.Component {
        header = 'full';
     }
     const Main = function(props) {
-        return (<Profile_main {...props} data={obj.state.data} />);
+        return (<Profile_main {...props} load='0' data={obj.state.data} />);
     };
     const Setting = function(props) {
         return (<Profile_settings {...props} data={obj.state.data} />);
@@ -59,14 +58,14 @@ class Profile extends React.Component {
         return (<Profile_events {...props} quests={obj.state.data.quests} />);
     };
     return (
-      <div className="page profile__page" >
+      <div className={`page profile__page`} >
         <div className={`profile__block--main block--without-bg ${header}`}>
           <div className="profile__header">
-             <div className="profile__avatar">
-              <img src={this.state.data.avatar} alt=""/>
-              <Link to={`/personal/settings`} className="profile__link-settings" onClick={this.handleHeader}>
+              <Link to={`/personal/settings`} className="profile__link-settings">
                 <i className="material-icons">settings</i>
               </Link>
+             <div className="profile__avatar">
+              <img src={this.state.data.avatar} alt=""/>
             </div>
             <p className="profile__name">{this.state.data.name}</p>
             <p className="profile__level">Уровень <span> {this.state.level} </span></p>
@@ -76,7 +75,7 @@ class Profile extends React.Component {
             <li className="profile__tab-link active">
               <Link to={`/personal/main`}>Профиль</Link>
             </li>
-            <li className="profile__tab-link">
+            <li className="profile__tab-link" >
               <Link to={`/personal/quests`}>Квесты</Link>
             </li>
             <li className="profile__tab-link">

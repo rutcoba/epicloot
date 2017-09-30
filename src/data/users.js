@@ -2,7 +2,7 @@ const users = [
   {
     id: 1
     , name: "Роман"
-    , avatar: '/img/superman.png'
+    , avatar: '/img/profile_avatar.jpg'
     , exp: '3400'
     , quests: {
       create: ['10', '3', '6'],

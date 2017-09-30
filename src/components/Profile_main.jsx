@@ -8,7 +8,8 @@ class Profile_main extends React.Component {
   constructor(props){
       super(props);
       this.state = {
-        data: this.props.data
+        data: this.props.data,
+        load: this.props.load
       }
   }
   
@@ -20,6 +21,9 @@ class Profile_main extends React.Component {
     const user = this.state.data;
     let render = <p>Загрузка</p>;
     let skillsArray = [];
+    let visible = '';
+    if(this.props.location.pathname == '/personal/main'){
+    }
     if(user.length !== 0){      
         {category.map((cat, val) => {
           {user.skills.map((item) => {
@@ -32,23 +36,23 @@ class Profile_main extends React.Component {
             }
           })}
         })}
-        render = <ul className="profile__tab profile__tab--main" >
-          <li className="card__panel profile__card">{/*инфо о пользователе*/}
+        render = <ul className={`profile__tab profile__tab--main`} >
+          <li className={`card__panel profile__card `}>{/*инфо о пользователе*/}
            <div className="card__header">
             <i className="material-icons card__ico">person</i>
             </div>
             <div className="card__content">
-              <p>{user.about}</p>
+              <p className="profile__props"><span>О себе</span>{user.about}</p>
             </div>
           </li>
-          <li className="card__panel profile__card">{/*контакты*/}
+          <li className={`card__panel profile__card `}>{/*контакты*/}
            <div className="card__header">
            <i className="material-icons card__ico">contacts</i>
             </div>
             <div className="card__content">
-              <p><span>Email: </span>{user.contacts.email}</p>
-              <p><span>Телефон: </span>{user.contacts.phone}</p>
-              <div>
+              <p className="profile__props"><span>Email: </span>{user.contacts.email}</p>
+              <p className="profile__props"><span>Телефон: </span>{user.contacts.phone}</p>
+              <div className="profile__props">
               <span>Профили в социальных сетях: </span>
               {user.contacts.social.map((item, val) => {
                   return <p key={val}>{item}</p>
@@ -56,7 +60,7 @@ class Profile_main extends React.Component {
               </div>
             </div>
           </li>
-          <li className="card__panel profile__card">{/*скилы*/}          
+          <li className={`card__panel profile__card `}>{/*скилы*/}          
            <div className="card__header">
            <i className="material-icons card__ico">style</i>
             </div>
@@ -64,7 +68,7 @@ class Profile_main extends React.Component {
               {skillsArray}
             </div>
           </li>
-          <li className="card__panel profile__card">{/*статистика*/}          
+          <li className={`card__panel profile__card `}>{/*статистика*/}          
            <div className="card__header">
            <i className="material-icons card__ico">assessment</i>
             </div>
@@ -72,7 +76,7 @@ class Profile_main extends React.Component {
               <p>{user.about}</p>
             </div>
           </li>
-          <li className="card__panel profile__card">{/*оценка пользователей*/}
+          <li className={`card__panel profile__card `}>{/*оценка пользователей*/}
            <div className="card__header">
            <i className="material-icons card__ico">star</i>
             </div>
@@ -82,7 +86,7 @@ class Profile_main extends React.Component {
           </li>
         </ul>    
     }
-    return render;
+    return render
   }
 }
 
