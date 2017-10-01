@@ -24,7 +24,7 @@ class Profile extends React.Component {
     window.scrollTo(0,0, 1000);    
     let data = {};    
     users.map(item => {
-      if(item.id == '1'){
+      if(item.id == sessionStorage.getItem('id')){
         data = item;
       }      
     });

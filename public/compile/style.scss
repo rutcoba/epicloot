@@ -612,7 +612,11 @@ header{
     &__main{
       margin: 0 -1rem;
       &.block--without-bg{
+        min-height: auto;
         padding: 1rem 1rem 0;
+      }
+      &.block--with-bg{
+        padding-top: 3rem;
       }
     }
     &__cat{
