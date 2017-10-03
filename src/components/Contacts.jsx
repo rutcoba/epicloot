@@ -27,7 +27,7 @@ class Contacts extends React.Component {
                     <input type="text" placeholder="Ваше имя" />
                   </label>
                   <label className="field-block">
-                    <input type="text" placeholder="Ваш email" />
+                    <input type="email" placeholder="Ваш email" />
                   </label>
                   <label className="field-block">
                     <textarea placeholder="Введите сообщение" />

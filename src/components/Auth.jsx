@@ -25,8 +25,8 @@ class Auth extends React.Component {
       if (window.location.pathname === '/auth'){
           switcher = 
                <ul className="switch--auth">
-                <li><Link to="/auth/login" className="btn btn--auth-switch">Вход</Link></li>
-                <li><Link to="/auth/register" className="btn btn--auth-switch">Регистрация</Link></li>
+                <li><Link to="/auth/login" className="btn btn--auth-switch"><i className="material-icons">input</i>Вход</Link></li>
+                <li><Link to="/auth/register" className="btn btn--auth-switch"><i className="material-icons">perm_identity</i>Регистрация</Link></li>
               </ul>
       }
       

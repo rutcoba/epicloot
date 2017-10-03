@@ -18,7 +18,7 @@ class Sign_in extends React.Component {
             <input type="text" placeholder="Логин"/>
             </label>
            <label className="field-block">
-            <input type="text" placeholder="Email"/>
+            <input type="email" placeholder="Email"/>
             </label>
            <label className="field-block">
             <input type="password" placeholder="Пароль"/>
