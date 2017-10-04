@@ -18,26 +18,32 @@ class Profile extends React.Component {
         needExp: 0,
         header: ''
       }
+      this.logOut = this.logOut.bind(this);
   }
   
   componentDidMount(){
     window.scrollTo(0,0, 1000);    
-    let data = {};    
-    users.map(item => {
-      if(item.id == sessionStorage.getItem('id')){
-        data = item;
-      }      
-    });
+    let data = {};
+    if(sessionStorage.getItem('id') !== undefined && sessionStorage.getItem('id') !== ''){
+      users.map(item => {
+        if(item.id == sessionStorage.getItem('id')){
+          data = item;
+        }      
+      });
+    }
     let level = Math.floor(data.exp/1000);
     let needExp = data.exp%1000;
     this.setState({data,
                    level,
                    needExp});
   }
-  
+  logOut() {
+    sessionStorage.setItem('id', '');
+  }
   render() {
-    let redirect = '';
-    let header = '';
+    let redirect = '',
+        header = '',
+        render = '';
     const obj = this;
     if(this.props.location.pathname == '/personal'){ 
       redirect = <Redirect from='/personal' to='/personal/main' />;
@@ -45,22 +51,17 @@ class Profile extends React.Component {
     if(this.props.location.pathname == '/personal/main'){ 
        header = 'full';
     }
-    const Main = function(props) {
-        return (<Profile_main {...props} data={obj.state.data} />);
-    };
-    const Setting = function(props) {
-        return (<Profile_settings {...props} data={obj.state.data} />);
-    };
-    const Quests = function(props) {
-        return (<Profile_quests {...props} quests={obj.state.data.quests} />);
-    };
-    const Events = function(props) {
-        return (<Profile_events {...props} quests={obj.state.data.quests} />);
-    };
-    return (
-      <div className={`page profile__page`} >
-        <div className={`profile__block--main block--without-bg ${header}`}>
+    if(sessionStorage.getItem('id') == ''){
+      redirect = <Redirect to='/auth' />;
+      console.log('redirect');
+    } else {
+      console.log('render');
+      redirect = '';
+      render = <div className={`profile__block--main block--without-bg ${header}`}>
           <div className="profile__header">
+              <Link to={`/auth`} className="profile__logout" onClick={this.logOut}>
+                <i className="material-icons">exit_to_app</i>
+              </Link>
               <Link to={`/personal/settings`} className="profile__link-settings">
                 <i className="material-icons">settings</i>
               </Link>
@@ -83,6 +84,22 @@ class Profile extends React.Component {
             </li>
           </ul>
         </div>
+    }
+    const Main = function(props) {
+        return (<Profile_main {...props} data={obj.state.data} />);
+    };
+    const Setting = function(props) {
+        return (<Profile_settings {...props} data={obj.state.data} />);
+    };
+    const Quests = function(props) {
+        return (<Profile_quests {...props} quests={obj.state.data.quests} />);
+    };
+    const Events = function(props) {
+        return (<Profile_events {...props} quests={obj.state.data.quests} />);
+    };
+    return (
+      <div className={`page profile__page`} >
+        {render}        
         <div className='profile__block--moreinfo block--with-bg'>
           {redirect}
           <Route exact path={`/personal/main`} component={Main}/>

@@ -1,5 +1,5 @@
 $lightgrey: lightgrey;
-$light: #fff;
+$light: #fefefe;
 $dark: #192231;
 $primary: #506190;
 $primary_op: hsla(224, 29%, 44%, 0.97);
@@ -135,26 +135,27 @@ footer{
 }
 
 %field{
-    height: auto;
-    width: 100%;
-    box-sizing: border-box;
-    padding: .75rem 1rem;
-    font-size: 1.2rem;
-    font-family: $main_text;
-    border-width: 1px;
-    border-style: solid;
-    border-color: $primary_light;
-    background-color: transparent !important;
-    border-radius: .2rem;
-    margin-bottom: 1rem;
-    &::placeholder{
-      color: $light;
-      opacity: 1;
-      transition: opacity $anim ease;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: .75rem 1rem;
+  font-size: 1.2rem;
+  font-family: $main_text;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $primary_light;  
+    background-color: rgba(227, 216, 237, 0.08) !important;
+  border-radius: .2rem;
+  margin-bottom: 1rem;
+  color: $light;
+  &::placeholder{
+    color: $light;
+    opacity: 1;
+    transition: opacity $anim ease;      
   }
   &:focus{
     outline: none;
-    border-bottom-color: $light;
+    box-shadow: inset 0 0 5px rgba(204, 163, 241, 0.8); 
     &::placeholder {
       opacity: 0;
     }
@@ -388,6 +389,14 @@ header{
     flex-direction: column;
     width: 100%;
     padding: 1rem 2rem 0;
+    .material-icons{
+      position: absolute;
+      top: .75rem;
+      left: .75rem;
+      &+input{
+        padding: .75rem 1rem .5rem 2.5rem;
+      }
+    }
   }
 }
 
@@ -411,10 +420,19 @@ header{
 .field-block{
   display: flex;
   width: 100%;
-  position: relative;
+  position: relative;  
+  &:before{
+    content: '';
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
   input{
     transition: $anim;
     width: 100%;
+    backdrop-filter: grayscale(1) contrast(3) blur(1px);
     @extend %field;
   }
   textarea{    
@@ -724,6 +742,7 @@ header{
       background-color: $light;
     }
   }
+  &__logout,
   &__link-settings{
     position: absolute;
     top: -.5rem;
@@ -733,9 +752,15 @@ header{
     justify-content: center;
     width: 3rem;
     height: 3rem;
+    background-color: transparent;
+    border: none;
     font-size: 1rem;
     color: $light;
     text-decoration: none;
+  }
+  &__logout{
+    right: auto;
+    left: 0;
   }
   &__name{
     font-size: 1.2rem;
@@ -843,9 +868,10 @@ header{
     list-style: none;
     .btn--auth-switch{
       display: flex;
+      align-items: center;
       width: 80%;
       margin: 0 auto 1rem;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1.5rem 1rem 0.5rem;
       font-size: 1rem;
       color: $light;
       border-radius: .3rem;
@@ -853,6 +879,20 @@ header{
       text-transform: uppercase;
       text-decoration: none;
       box-sizing: border-box;
+      .material-icons{
+        position: relative;
+        margin-right: .5rem;
+        padding-right: .5rem;
+        &:after{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: block;
+          height: 100%;
+          border-right: 1px solid $light;
+        }
+      }
     }
   }
 }

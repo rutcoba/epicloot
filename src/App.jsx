@@ -14,22 +14,33 @@ import Profile from './components/Profile';
 import Events_n_quests from './components/Events_n_quests';
 import NotFound from './components/NotFound';
 
-const App = () => {
-  return (
-    <Layout>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/auth" component={Auth}/>
-        <Route path="/about_app" component={About_app} />
-        <Route path="/our_team" component={Our_team}/>
-        <Route path="/contacts" component={Contacts}/>
-        <Route path="/events_n_quests" component={Events_n_quests} />
-        <Route path="/users" component={Users} />
-        <Route path="/personal" component={Profile} />
-        <Route path="*" component={NotFound}/>
-      </Switch>
-  </Layout>       
-)}
+
+class App extends React.Component {
+  render(){ 
+    let redirect = '';
+    if(sessionStorage.getItem('id') == undefined || sessionStorage.getItem('id') == ''){
+        redirect = <Redirect from="/personal" to='/auth' />;
+    } else {
+        redirect = <Redirect from="/auth" to='/personal/main' />;
+    }
+    return (
+      <Layout>
+        <Switch>
+         {redirect}
+          <Route exact path="/" component={Home}/>
+          <Route path="/auth" component={Auth}/>
+          <Route path="/about_app" component={About_app} />
+          <Route path="/our_team" component={Our_team}/>
+          <Route path="/contacts" component={Contacts}/>
+          <Route path="/events_n_quests" component={Events_n_quests} />
+          <Route path="/users" component={Users} />
+          <Route path="/personal" component={Profile} />
+          <Route path="*" component={NotFound}/>
+        </Switch>
+    </Layout>       
+    )
+  }
+}
 
 export default withRouter(App);
 

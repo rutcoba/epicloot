@@ -36,7 +36,7 @@ class Sign_in extends React.Component {
       users.map(user => {
         if(user.login == auth.login && user.pass == auth.pass){
           sessionStorage.setItem('id', user.id);
-          window.location = '/personal';          
+          window.location = '/personal/main';          
         } else {          
           console.log('неправильные логин или пароль');
         }
@@ -47,10 +47,12 @@ class Sign_in extends React.Component {
         return (
           <form className="form--sign_in">
            <label className="field-block">
+           <i className="material-icons">account_circle</i>
             <input type="text" placeholder="Логин" autoComplete="on" ref='text' value={this.state.val} onChange={this.changeValue}/>
             </label>
 
            <label className="field-block">
+           <i className="material-icons">lock</i>           
             <input type="password" placeholder="Пароль" autoComplete="on" ref='pass' value={this.state.pass} onChange={this.changePass}/>
             </label>
             <button className="btn btn--auth" onClick={this.handleAuth}>Вход</button>              
