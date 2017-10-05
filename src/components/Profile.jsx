@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link, NavLink, Route, Redirect } from 'react-router-dom';
+import { BrowserHistory, Link, NavLink, Route, Redirect } from 'react-router-dom';
 
 import Profile_main from './Profile_main';
 import Profile_settings from './Profile_settings';
@@ -19,6 +19,7 @@ class Profile extends React.Component {
         header: ''
       }
       this.logOut = this.logOut.bind(this);
+      this.handleActive = this.handleActive.bind(this);
   }
   
   componentDidMount(){
@@ -40,6 +41,13 @@ class Profile extends React.Component {
   logOut() {
     sessionStorage.setItem('id', '');
   }
+  handleActive(e){
+    const tabs = document.getElementsByClassName('profile__tab-link');
+    [].forEach.call(tabs, tab => {
+      tab.classList.remove("active");
+    })
+    e.target.parentNode.className += ' active';
+  }
   render() {
     let redirect = '',
         header = '',
@@ -53,9 +61,7 @@ class Profile extends React.Component {
     }
     if(sessionStorage.getItem('id') == ''){
       redirect = <Redirect to='/auth' />;
-      console.log('redirect');
     } else {
-      console.log('render');
       redirect = '';
       render = <div className={`profile__block--main block--without-bg ${header}`}>
           <div className="profile__header">
@@ -73,13 +79,13 @@ class Profile extends React.Component {
             <p className="profile__level">{this.state.needExp}</p>
           </div>
           <ul className="profile__tabs">
-            <li className="profile__tab-link active">
+            <li id="profile-tab" className="profile__tab-link active" onClick={this.handleActive}>
               <Link to={`/personal/main`}>Профиль</Link>
             </li>
-            <li className="profile__tab-link" >
+            <li id="profile-quests" className="profile__tab-link" onClick={this.handleActive}>
               <Link to={`/personal/quests`}>Квесты</Link>
             </li>
-            <li className="profile__tab-link">
+            <li id="profile-events" className="profile__tab-link" onClick={this.handleActive}>
               <Link to={`/personal/events`}>Задания</Link>
             </li>
           </ul>
