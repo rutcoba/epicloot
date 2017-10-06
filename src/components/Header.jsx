@@ -10,6 +10,7 @@ class Header extends React.Component{
     };
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleToolbarActive = this.handleToolbarActive.bind(this);
   }
   handleOpen(event) {
     this.state.open == false ?      
@@ -19,13 +20,26 @@ class Header extends React.Component{
   handleClose(event) {
     this.setState({open:false});
   }
+  handleToolbarActive(e){
+    this.handleClose();
+    const tabs = document.getElementsByClassName('toolbar__link');
+    [].forEach.call(tabs, tab => {
+      tab.classList.remove("active");
+    })
+    console.log(this);
+    if (e.target.classList.contains('toolbar__link')){
+      e.target.className += ' active';
+    } else if(e.target.parentNode.classList.contains('toolbar__link')){
+      e.target.parentNode.className += ' active';      
+    }
+  }
   
   render(){
     let btnClose, btnOpen, toolbar = '';    
     if(window.innerWidth <= 1100){
       btnOpen = 
         <button className="btn btn--ghost toolbar__link" onClick={this.handleOpen}>
-         <i className="material-icons">menu</i>
+         <i className="material-icons">{this.state.open ? 'close' : 'menu'}</i>
          <span>Меню</span>
         </button>
       btnClose = 
@@ -35,15 +49,15 @@ class Header extends React.Component{
     }
     if(window.location.pathname.split('/')[1] !== 'auth'){
       toolbar = <div className="toolbar">
-        <NavLink className="btn btn--ghost toolbar__link" to='/' onClick={this.handleClose}>
+        <NavLink className="btn btn--ghost toolbar__link" to='/' onClick={this.handleToolbarActive}>
          <i className="material-icons">home</i>
          <span>Домой</span>
         </NavLink>
-        <NavLink className="btn btn--ghost toolbar__link" to="/events_n_quests" onClick={this.handleClose}>
+        <NavLink className="btn btn--ghost toolbar__link" to="/events_n_quests" onClick={this.handleToolbarActive}>
          <i className="material-icons">new_releases</i>
          <span>Задания</span>
         </NavLink>
-        <NavLink className="btn btn--ghost toolbar__link" to="/personal" onClick={this.handleClose}>
+        <NavLink className="btn btn--ghost toolbar__link" to="/personal/main" onClick={this.handleToolbarActive}>
          <i className="material-icons">account_box</i>
          <span>Профиль</span>
         </NavLink>        
