@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link, NavLink, Route, Redirect } from 'react-router-dom';
+import { BrowserHistory, Link, NavLink, Route, Redirect } from 'react-router-dom';
 
 import Events_category from './Events_category';
 import Event from './Event';

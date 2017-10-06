@@ -45,15 +45,15 @@ class Sign_in extends React.Component {
   
     render() {
         return (
-          <form className="form--sign_in">
+          <form className="form--sign_in" autoComplete="off">
            <label className="field-block">
            <i className="material-icons">account_circle</i>
-            <input type="text" placeholder="Логин" autoComplete="on" ref='text' value={this.state.val} onChange={this.changeValue}/>
+            <input type="text" name="login" placeholder="Логин" autoComplete="off" ref='text' value={this.state.val} onChange={this.changeValue}/>
             </label>
 
            <label className="field-block">
-           <i className="material-icons">lock</i>           
-            <input type="password" placeholder="Пароль" autoComplete="on" ref='pass' value={this.state.pass} onChange={this.changePass}/>
+           <i className="material-icons">lock</i>
+            <input type="password" name="pass" placeholder="Пароль" autoComplete="new-password" ref='pass' value={this.state.pass} onChange={this.changePass} />
             </label>
             <button className="btn btn--auth" onClick={this.handleAuth}>Вход</button>              
             <p className="link--auth">Ещё нет аккаунта?<Link to='/auth/register'>Зарегистрируйся</Link></p>

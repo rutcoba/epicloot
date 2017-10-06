@@ -364,15 +364,27 @@ header{
   box-sizing: border-box;
   box-shadow: 0 0 15px $primary_light_op;
   &__link{
+    position: relative;
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    background-image: $neon-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    &:focus{
+      outline: none;
+    }
     span{
       font-size: 0.6rem;
       white-space: nowrap;
+    }
+    .material-icons, span{
+      color: $lightgrey;      
+    }
+    &.active{
+      background-image: $neon-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      .material-icons, span{
+        color: transparent;
+      }
     }
   }
 }
@@ -786,6 +798,16 @@ header{
   &__tab-link{
     position: relative;
     flex: 1;
+    &:before{
+      position: absolute;
+      bottom: 0;
+      content: '';
+      height: 2px;
+      width: 100%;
+      transform: scale(0);
+      background-color: $accient;
+      transition: all $anim;
+    }
     a{
       display: block;
       padding: .5rem 0;
@@ -796,12 +818,7 @@ header{
     }
     &.active{
       &:before{
-        position: absolute;
-        bottom: 0;
-        content: '';
-        height: 2px;
-        width: 100%;
-        background-image: $neon-gradient;
+        transform: scale(1);
       }
     }
   }

@@ -22,8 +22,6 @@ class Profile_main extends React.Component {
     let render = <p>Загрузка</p>;
     let skillsArray = [];
     let visible = '';
-    if(this.props.location.pathname == '/personal/main'){
-    }
     if(user.length !== 0){      
         {category.map((cat, val) => {
           {user.skills.map((item) => {
