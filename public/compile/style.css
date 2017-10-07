@@ -752,46 +752,45 @@ header.open .mobile_nav {
 
 /* line 798, Z:/project/EpicLoot/public/compile/style.scss */
 .profile__tab-link {
+  flex: 1;
   position: relative;
-  flex: 1; }
-  /* line 801, Z:/project/EpicLoot/public/compile/style.scss */
+  display: block;
+  padding: .5rem 0;
+  text-align: center;
+  color: #fefefe;
+  font-size: .9rem;
+  text-decoration: none; }
+  /* line 807, Z:/project/EpicLoot/public/compile/style.scss */
   .profile__tab-link:before {
     position: absolute;
     bottom: 0;
+    left: 0;
     content: '';
     height: 2px;
     width: 100%;
     transform: scale(0);
     background-color: #e04718;
     transition: all 0.3s; }
-  /* line 811, Z:/project/EpicLoot/public/compile/style.scss */
-  .profile__tab-link a {
-    display: block;
-    padding: .5rem 0;
-    text-align: center;
-    color: #fefefe;
-    font-size: .9rem;
-    text-decoration: none; }
-  /* line 820, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 819, Z:/project/EpicLoot/public/compile/style.scss */
   .profile__tab-link.active:before {
     transform: scale(1); }
 
-/* line 825, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 824, Z:/project/EpicLoot/public/compile/style.scss */
 .profile__card {
   opacity: 1;
   transform: scale(1);
   transition: 0.3s; }
-  /* line 829, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 828, Z:/project/EpicLoot/public/compile/style.scss */
   .profile__card.hidden {
     opacity: 0;
     transform: scale(0.98); }
 
-/* line 835, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 834, Z:/project/EpicLoot/public/compile/style.scss */
 .profile__props span {
   display: block;
   font-weight: 500; }
 
-/* line 843, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 842, Z:/project/EpicLoot/public/compile/style.scss */
 .card__panel {
   position: relative;
   display: flex;
@@ -802,7 +801,7 @@ header.open .mobile_nav {
   border-radius: .3rem;
   box-sizing: border-box;
   box-shadow: inset 0 2px 5px -2px rgba(126, 133, 220, 0.4), 0 0 15px rgba(169, 194, 229, 0.6); }
-  /* line 855, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 854, Z:/project/EpicLoot/public/compile/style.scss */
   .card__panel:before {
     content: '';
     position: absolute;
@@ -812,7 +811,7 @@ header.open .mobile_nav {
     height: calc(100% - 3rem);
     background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%); }
 
-/* line 866, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 865, Z:/project/EpicLoot/public/compile/style.scss */
 .card__ico {
   position: absolute;
   font-size: 1rem;
@@ -822,7 +821,7 @@ header.open .mobile_nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-/* line 879, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 878, Z:/project/EpicLoot/public/compile/style.scss */
 .switch--auth {
   display: flex;
   flex-direction: column;
@@ -830,7 +829,7 @@ header.open .mobile_nav {
   margin: 0 auto 1rem;
   padding: 0;
   list-style: none; }
-  /* line 886, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 885, Z:/project/EpicLoot/public/compile/style.scss */
   .switch--auth .btn--auth-switch {
     display: flex;
     align-items: center;
@@ -844,12 +843,12 @@ header.open .mobile_nav {
     text-transform: uppercase;
     text-decoration: none;
     box-sizing: border-box; }
-    /* line 899, Z:/project/EpicLoot/public/compile/style.scss */
+    /* line 898, Z:/project/EpicLoot/public/compile/style.scss */
     .switch--auth .btn--auth-switch .material-icons {
       position: relative;
       margin-right: .5rem;
       padding-right: .5rem; }
-      /* line 903, Z:/project/EpicLoot/public/compile/style.scss */
+      /* line 902, Z:/project/EpicLoot/public/compile/style.scss */
       .switch--auth .btn--auth-switch .material-icons:after {
         content: '';
         position: absolute;
@@ -859,14 +858,14 @@ header.open .mobile_nav {
         height: 100%;
         border-right: 1px solid #fefefe; }
 
-/* line 917, Z:/project/EpicLoot/public/compile/style.scss */
+/* line 916, Z:/project/EpicLoot/public/compile/style.scss */
 .start-page {
   display: flex;
   flex-direction: column; }
-  /* line 920, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 919, Z:/project/EpicLoot/public/compile/style.scss */
   .start-page .logo {
     margin: 6rem 0; }
-  /* line 924, Z:/project/EpicLoot/public/compile/style.scss */
+  /* line 923, Z:/project/EpicLoot/public/compile/style.scss */
   .start-page.with-form .logo {
     margin: 3rem 0; }
 

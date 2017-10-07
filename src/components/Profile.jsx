@@ -19,7 +19,6 @@ class Profile extends React.Component {
         header: ''
       }
       this.logOut = this.logOut.bind(this);
-      this.handleActive = this.handleActive.bind(this);
   }
   
   componentDidMount(){
@@ -40,13 +39,6 @@ class Profile extends React.Component {
   }
   logOut() {
     sessionStorage.setItem('id', '');
-  }
-  handleActive(e){
-    const tabs = document.getElementsByClassName('profile__tab-link');
-    [].forEach.call(tabs, tab => {
-      tab.classList.remove("active");
-    })
-    e.target.parentNode.className += ' active';
   }
   render() {
     let redirect = '',
@@ -78,17 +70,11 @@ class Profile extends React.Component {
             <p className="profile__level">Уровень <span> {this.state.level} </span></p>
             <p className="profile__level">{this.state.needExp}</p>
           </div>
-          <ul className="profile__tabs">
-            <li id="profile-tab" className="profile__tab-link active" onClick={this.handleActive}>
-              <Link to={`/personal/main`}>Профиль</Link>
-            </li>
-            <li id="profile-quests" className="profile__tab-link" onClick={this.handleActive}>
-              <Link to={`/personal/quests`}>Квесты</Link>
-            </li>
-            <li id="profile-events" className="profile__tab-link" onClick={this.handleActive}>
-              <Link to={`/personal/events`}>Задания</Link>
-            </li>
-          </ul>
+          <div className="profile__tabs">
+              <NavLink to={`/personal/main`} className="profile__tab-link" activeClassName="active">Профиль</NavLink>
+              <NavLink to={`/personal/quests`} className="profile__tab-link" activeClassName="active">Квесты</NavLink>
+              <NavLink to={`/personal/events`} className="profile__tab-link" activeClassName="active">Задания</NavLink>
+          </div>
         </div>
     }
     const Main = function(props) {
