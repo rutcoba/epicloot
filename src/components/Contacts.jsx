@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Back_btn from './Back_btn';
+
 class Contacts extends React.Component {
     constructor(props){
         super(props);
@@ -20,7 +22,10 @@ class Contacts extends React.Component {
         return (
             <section id="contacts"
               className={`screen-section ${this.state.load === 1 ? 'load-component' : ''}`}> 
-               <h2 className="title--page">Наши контакты</h2>
+               <h2 className="title--page">
+                 <Back_btn />
+                 Наши контакты
+               </h2>
                <p className="main-text">Напишите нам, и наши специалисты перезвонят вам, пожелают спокойной ночи или расскажут лучшую историю в вашей жизни</p>
                <form action="" className="custom_form--feedback">
                   <label className="field-block">

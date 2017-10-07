@@ -4,6 +4,7 @@ import { BrowserHistory, Link, NavLink, Route, Redirect } from 'react-router-dom
 
 import Events_category from './Events_category';
 import Event from './Event';
+import Back_btn from './Back_btn';
 
 import category from './../data/category';
 
@@ -22,6 +23,7 @@ class Events_n_quests extends React.Component {
     this.closeCategoryList = this.closeCategoryList.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.emptyValue = this.emptyValue.bind(this);
   } 
   
   componentDidMount(){
@@ -35,6 +37,10 @@ class Events_n_quests extends React.Component {
     this.setState({ val: event.target.value });
   }
   
+  emptyValue(){    
+    this.setState({val: ''})
+  }
+  
   handleSearch(){
     this.state.open_search_field == false ?
       (
@@ -43,15 +49,15 @@ class Events_n_quests extends React.Component {
       ) : (
         this.setState({open_search_field: false}),
         this.setState({ico_search: 'search'}),
-        this.setState({val: ''}),
-        this.closeCategoryList()
+        this.closeCategoryList(),
+        this.emptyValue()
       );
   }
   
   changeCategory(event){
     this.closeCategoryList();
     if (event.target.innerText === 'все') {
-      this.setState({val: ''});
+      this.emptyValue();
     } else {
       this.setState({val: event.target.innerText});  
     }    
@@ -77,9 +83,18 @@ class Events_n_quests extends React.Component {
       if(!regExp.test(pathnameArr[pathnameArr.length-1])){
         searchField = 
           <div>
-           <h2 className="title--page title--with_action">Задания и квесты <i className="material-icons" onClick={this.handleSearch}>{this.state.ico_search}</i></h2>
+            <h2 className="title--page title--with_action">
+              <Back_btn onClick={this.emptyValue} />
+              Задания и квесты 
+              <i className="material-icons" onClick={this.handleSearch}>{this.state.ico_search}</i>
+            </h2>
            <div className={`search__block field-block ${this.state.open_search_field == true ? 'open' : ''} `}>
-             <input type="text" placeholder="введите или выберите категорию" value={this.state.val} onFocus={this.openCategoryList} onChange={this.changeValue}/>
+             <input type="text" 
+                     placeholder="введите или выберите категорию" 
+                     value={this.state.val} 
+                     onFocus={this.openCategoryList} 
+                     onChange={this.changeValue}
+             />
              <ul className={this.state.openList == true ? 'field__dropdown category__dropdown open' : 'category__dropdown'}>
                 <li><Link to={`/events_n_quests/all`} className="category__link" onClick={this.changeCategory} id="all">все</Link></li>
                {this.state.category.map((item, val) => {
