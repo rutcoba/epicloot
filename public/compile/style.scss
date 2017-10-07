@@ -93,9 +93,13 @@ footer{
 }
 .title{
   &--page{
+    display: flex;
     font-size: 1.4rem;
     font-weight: normal;
     margin: 1rem 0;
+    .btn--back{
+      margin-right: 1rem;
+    }
   }
   &--section{
     font-size: 1.2rem;
@@ -508,7 +512,9 @@ header{
     padding: .5rem .75rem 1.5rem;
     background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
     box-sizing: border-box;
-    box-shadow: inset 0 0 10px rgba(204, 163, 241, 0.3);
+    box-shadow: 
+      inset 0 0 10px rgba(204, 163, 241, 0.3),
+      0 4px 10px $primary_light_op;
     margin-bottom: 2rem;
     border-radius: .3rem;
     color: #192231;
@@ -592,37 +598,6 @@ header{
   }
 }
 
-.for_profile{
-  margin-bottom: 1rem;
-  .quest{
-    &__title, 
-    &__reward--money span, 
-    &__reward--xp span, 
-    &__reward--loot span, 
-    &__cat span, 
-    &__author{
-      color: $primary;
-    }
-  }
-}
-
-.block{  
-  &--with-bg{
-    min-height: 70vh;
-    flex: 1;
-    padding: 1.5rem 1rem 2rem;
-    background: $light;
-    color: $dark;
-    box-sizing: border-box;
-  }
-  &--without-bg{    
-    min-height: 30vh;
-    box-shadow: 
-      0 5px 14px 0px rgba(126, 133, 220, 0.6);
-  }
-}
-
-
 .quest__page{
   .quest{
     &__title{
@@ -688,6 +663,36 @@ header{
     right: 10%;
     bottom: auto;
     margin-top: 3rem;
+  }
+}
+
+.for_profile{
+  margin-bottom: 1rem;
+  .quest{
+    &__title, 
+    &__reward--money span, 
+    &__reward--xp span, 
+    &__reward--loot span, 
+    &__cat span, 
+    &__author{
+      color: $primary;
+    }
+  }
+}
+
+.block{  
+  &--with-bg{
+    min-height: 70vh;
+    flex: 1;
+    padding: 1.5rem 1rem 2rem;
+    background: $light;
+    color: $dark;
+    box-sizing: border-box;
+  }
+  &--without-bg{    
+    min-height: 30vh;
+    box-shadow: 
+      0 5px 14px 0px rgba(126, 133, 220, 0.6);
   }
 }
 
@@ -779,7 +784,18 @@ header{
     line-height: 1.2;
   }
   &__level{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    padding: .5rem 1rem;
+    box-sizing: border-box;
+    &--skill{
+      padding: 0;
+      margin: 0;
+    }
     span{
+      font-size: .9rem;
+      margin-right: .5rem;
       color: $star-rating;
     }
   }
@@ -850,7 +866,7 @@ header{
     box-sizing: border-box;
     box-shadow: 
       inset 0 2px 5px -2px rgba(126, 133, 220, 0.4), 
-      0 0 15px $primary_light_op;
+      0 4px 10px $primary_light_op;
     &:before{
       content: '';
       position: absolute;
@@ -860,6 +876,9 @@ header{
       height: calc(100% - 3rem);
       background-image: $neon-gradient;
     }
+  }
+  &__content{
+    flex: 1;
   }
   &__header{}
   &__ico{
@@ -925,6 +944,23 @@ header{
     }    
   }
 }
+
+.level__scale{
+  width: 100%;
+  height: .75rem;
+  border-radius: .2rem;
+  background-color: $light;
+  box-shadow: inset 0 2px 5px 2px rgba(126, 133, 220, 0.4);
+  span{
+    display: block;
+    height: 100%;
+    border-radius: .2rem;
+    background-color: $accient;
+    box-shadow: inset 1px 1px 3px 1px rgba(215, 217, 240, 0.2);
+//    background-image: $neon-gradient;
+  }
+}
+
 
 /*animation*/
 @keyframes blink {

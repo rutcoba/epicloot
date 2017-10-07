@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink, Route } from 'react-router-dom';
 
+import Back_btn from './Back_btn';
+
 class Quest_full extends React.Component {
   constructor(props){
       super(props);
@@ -29,6 +31,7 @@ class Quest_full extends React.Component {
     return (
       <div className={`page quest__page ${this.state.load === 1 ? 'load-inner_page' : ''}`} >
        <div className="quest__main block--without-bg">
+         <Back_btn />
         <p className="quest__title">{item.title}</p>
         <p className="quest__author"><img className="quest__ava" src="/img/superman.png" alt=""/>{item.author}</p>          
         <div className="quest__reward">

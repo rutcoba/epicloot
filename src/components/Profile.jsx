@@ -6,6 +6,7 @@ import Profile_main from './Profile_main';
 import Profile_settings from './Profile_settings';
 import Profile_quests from './Profile_quests';
 import Profile_events from './Profile_events';
+import Level from './Level';
 
 import users from './../data/users'; 
 
@@ -31,11 +32,7 @@ class Profile extends React.Component {
         }      
       });
     }
-    let level = Math.floor(data.exp/1000);
-    let needExp = data.exp%1000;
-    this.setState({data,
-                   level,
-                   needExp});
+    this.setState({data});
   }
   logOut() {
     sessionStorage.setItem('id', '');
@@ -67,8 +64,7 @@ class Profile extends React.Component {
               <img src={this.state.data.avatar} alt=""/>
             </div>
             <p className="profile__name">{this.state.data.name}</p>
-            <p className="profile__level">Уровень <span> {this.state.level} </span></p>
-            <p className="profile__level">{this.state.needExp}</p>
+            <Level data={this.state.data.exp}/>
           </div>
           <div className="profile__tabs">
               <NavLink to={`/personal/main`} className="profile__tab-link" activeClassName="active">Профиль</NavLink>
