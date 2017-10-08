@@ -11,14 +11,12 @@ class Level extends React.Component {
     let exp = this.props.data,
         level = Math.floor(exp/1000),
         needExp = exp%1000/10;
-    console.log(!isNaN(needExp));
     let styleScale ={}
     if (!isNaN(needExp)){
       styleScale = {
         width: needExp + '%'
       };
     }
-    console.log(this.props.className);
     return(
       <div className={`profile__level ${this.props.className}`}>
         <span> {level} </span>
