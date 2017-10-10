@@ -5,6 +5,8 @@ import { Link, NavLink, Switch, Route } from 'react-router-dom';
 import Sign_in from './Sign_in';
 import Sign_up from './Sign_up';
 
+import sys_message from './../data/system_message';
+
 class Auth extends React.Component {
     constructor(props){
         super(props);
