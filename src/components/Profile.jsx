@@ -73,7 +73,7 @@ class Profile extends React.Component {
             <p className="profile__level">{this.state.needExp}</p>
           </div>
           <ul className="profile__tabs">
-            <li className="profile__tab-link active">
+            <li className="profile__tab-link">
               <Link to={`/personal/main`}>Профиль</Link>
             </li>
             <li className="profile__tab-link" >

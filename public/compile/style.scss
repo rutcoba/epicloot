@@ -787,21 +787,24 @@ header{
     position: relative;
     flex: 1;
     a{
+      position: relative;
       display: block;
       padding: .5rem 0;
       text-align: center;
       color: $light;
       font-size: .9rem;
-      text-decoration: none;
-    }
-    &.active{
-      &:before{
-        position: absolute;
-        bottom: 0;
-        content: '';
-        height: 2px;
-        width: 100%;
-        background-image: $neon-gradient;
+      text-decoration: none;      
+      &.active{
+        &:before{
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          content: '';
+          height: 2px;
+          width: 100%;
+          background-color: $primary_blue;
+//          background-image: $neon-gradient;
+        }
       }
     }
   }
