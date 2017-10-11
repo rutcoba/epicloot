@@ -1,8 +1,8 @@
 const users = [
   {
     id: 1
-    , login: 'romula'
-    , pass: '123123'
+    , login: 'rom'
+    , pass: '123'
     , name: "Роман"
     , avatar: '/img/profile_avatar.jpg'
     , exp: '3400'

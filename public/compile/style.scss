@@ -513,12 +513,13 @@ header{
     background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
     box-sizing: border-box;
     box-shadow: 
-      inset 0 0 10px rgba(204, 163, 241, 0.3),
-      0 4px 10px $primary_light_op;
+      inset 0 0 10px rgba(204, 163, 241, 0.3), 
+      0 4px 10px rgba(204, 163, 241, 0.3);
     margin-bottom: 2rem;
     border-radius: .3rem;
     color: #192231;
     text-decoration: none;
+    animation: fade_in $anim ease;
   }
   &__title{
     font-size: 1.3rem;
@@ -961,6 +962,30 @@ header{
   }
 }
 
+.popup{
+  position: absolute;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 90%;
+  border-radius: .2rem;
+  background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
+  box-sizing: border-box;
+  box-shadow: 
+    inset 0 0 10px rgba(204, 163, 241, 0.3), 
+    0 4px 10px rgba(204, 163, 241, 0.3);
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: .9rem; 
+  animation: popup 2s ease both;
+  &--message{
+    background-color: $primary_light_op;
+    color: $light;
+  }
+}
+
 
 /*animation*/
 @keyframes blink {
@@ -994,5 +1019,39 @@ header{
   99% {
     color: inherit;
     text-shadow: inherit;
+  }
+}
+
+@keyframes fade_in {
+  0%{
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popup {
+  0%{
+    opacity: 0;
+    bottom: -10rem;
+    transform: scale(0.95);
+  }
+  25%{
+    opacity: 1;
+    bottom: 1rem;
+    transform: scale(1);  
+  }
+  80%{
+    opacity: 1;
+    bottom: 1rem;
+    transform: scale(1);  
+  }
+  100%{
+    opacity: 0;
+    transform: scale(0);
+    bottom: 1rem;
   }
 }
