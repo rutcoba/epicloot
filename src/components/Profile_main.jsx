@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink, Route } from 'react-router-dom';
 
+import Level from './Level';
+
 import category from './../data/category';
 
 class Profile_main extends React.Component {
   constructor(props){
       super(props);
       this.state = {
-        data: this.props.data,
-        load: this.props.load
+        data: this.props.data
       }
   }
   
@@ -22,15 +23,14 @@ class Profile_main extends React.Component {
     let render = <p>Загрузка</p>;
     let skillsArray = [];
     let visible = '';
-    if(this.props.location.pathname == '/personal/main'){
-    }
     if(user.length !== 0){      
         {category.map((cat, val) => {
           {user.skills.map((item) => {
             if(item.idCat == cat.id){
               skillsArray.push(
                 <div key={val} id={cat.id}>
-                  <p className="main_text category__name">{cat.cat}: </p> <p>{item.exp}</p>
+                  <p className="main_text category__name">{cat.cat}: </p>
+                  <Level data={item.exp} className='profile__level--skill'/>
                 </div>
               );
             }

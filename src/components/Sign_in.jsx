@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink } from 'react-router-dom';
 
+import sys_message from './../data/system_message';
 import users from './../data/users';
 
 class Sign_in extends React.Component {
@@ -9,7 +10,8 @@ class Sign_in extends React.Component {
         super(props);
         this.state = {
           val: '',
-          pass: ''
+          pass: '',
+          mess: ''
         }
         this.handleAuth = this.handleAuth.bind(this);
         this.changeValue = this.changeValue.bind(this);
@@ -27,36 +29,51 @@ class Sign_in extends React.Component {
     }
     
     handleAuth(e){
-      let obj = this;
       e.preventDefault();
+      let obj = this;
       let auth = {
         login: obj.state.val,
         pass: obj.state.pass
       }
+      const authMessArr = sys_message.filter(message => {
+        return message.event == 'auth';
+      });
+      const authErrArr = sys_message.filter(message => {
+        return message.event == 'auth_error';
+      });
+          obj.setState({mess: authErrArr[(Math.floor(Math.random()*authErrArr.length))]});      
       users.map(user => {
         if(user.login == auth.login && user.pass == auth.pass){
           sessionStorage.setItem('id', user.id);
-          window.location = '/personal/main';          
-        } else {          
-          console.log('неправильные логин или пароль');
+          obj.setState({mess: authMessArr[(Math.floor(Math.random()*authMessArr.length))]});
+          setTimeout( ()=>{
+            window.location = '/personal/main';
+          }, 2000);            
         }
       });
     }
   
     render() {
+      let message = '';
+      if(this.state.mess !== ''){
+        message = <span className="popup popup--message">{this.state.mess.text}</span>
+      } else {
+        message = '';
+      }
         return (
-          <form className="form--sign_in">
+          <form className="form--sign_in" autoComplete="off">
            <label className="field-block">
            <i className="material-icons">account_circle</i>
-            <input type="text" placeholder="Логин" autoComplete="on" ref='text' value={this.state.val} onChange={this.changeValue}/>
+            <input type="text" name="login" placeholder="Логин" autoComplete="off" autoFocus ref='text' value={this.state.val} onChange={this.changeValue}/>
             </label>
 
            <label className="field-block">
-           <i className="material-icons">lock</i>           
-            <input type="password" placeholder="Пароль" autoComplete="on" ref='pass' value={this.state.pass} onChange={this.changePass}/>
+           <i className="material-icons">lock</i>
+            <input type="password" name="pass" placeholder="Пароль" autoComplete="new-password" ref='pass' value={this.state.pass} onChange={this.changePass} />
             </label>
             <button className="btn btn--auth" onClick={this.handleAuth}>Вход</button>              
             <p className="link--auth">Ещё нет аккаунта?<Link to='/auth/register'>Зарегистрируйся</Link></p>
+            {message}
           </form>
         )
     }
