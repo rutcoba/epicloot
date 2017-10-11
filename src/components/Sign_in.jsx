@@ -27,6 +27,8 @@ class Sign_in extends React.Component {
     changePass(){
       this.setState({ pass: ReactDOM.findDOMNode(this.refs.pass).value });
     }
+  
+  
     
     handleAuth(e){
       e.preventDefault();
@@ -41,16 +43,19 @@ class Sign_in extends React.Component {
       const authErrArr = sys_message.filter(message => {
         return message.event == 'auth_error';
       });
-          obj.setState({mess: authErrArr[(Math.floor(Math.random()*authErrArr.length))]});      
+      obj.setState({mess: authErrArr[(Math.floor(Math.random()*authErrArr.length))]});
       users.map(user => {
         if(user.login == auth.login && user.pass == auth.pass){
           sessionStorage.setItem('id', user.id);
           obj.setState({mess: authMessArr[(Math.floor(Math.random()*authMessArr.length))]});
           setTimeout( ()=>{
             window.location = '/personal/main';
-          }, 2000);            
+          }, 2000);
         }
       });
+      setTimeout( ()=>{
+        this.setState({mess: ''});
+      }, 2000);
     }
   
     render() {
@@ -71,7 +76,7 @@ class Sign_in extends React.Component {
            <i className="material-icons">lock</i>
             <input type="password" name="pass" placeholder="Пароль" autoComplete="new-password" ref='pass' value={this.state.pass} onChange={this.changePass} />
             </label>
-            <button className="btn btn--auth" onClick={this.handleAuth}>Вход</button>              
+            <button className="btn btn--auth" onClick={this.handleAuth} disabled={this.state.mess !== '' ? true : false}>{this.state.mess !== '' ? 'load' : 'Вход'}</button>              
             <p className="link--auth">Ещё нет аккаунта?<Link to='/auth/register'>Зарегистрируйся</Link></p>
             {message}
           </form>

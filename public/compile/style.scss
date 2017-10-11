@@ -715,10 +715,10 @@ header{
         min-height: 30vh;
         overflow: hidden;
         .profile__header{
+          top: 0;
           padding-top: 1rem;
           opacity: 1;
-          height: 10rem;
-          transform: scale(1);          
+          height: 10rem;          
         }
       }
       p{
@@ -729,6 +729,7 @@ header{
   }
   &__header{
     position: relative;
+    top: -10rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -736,15 +737,14 @@ header{
     padding-top: 0;
     opacity: 0;
     height: 0;
-    transition: $anim*2;
-    transform: scale(0);    
+    transition: $anim*2;   
   }
   &__avatar{
     position: relative;
     width: 6rem;
     height: 6rem;
     border-radius: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     overflow: hidden;
     box-shadow: 
       inset 0 6px 4px -5px rgba(126, 133, 220, 0.4);
@@ -787,10 +787,11 @@ header{
   &__level{
     display: flex;
     align-items: center;
-    width: 90%;
+    width: 60%;
     padding: .5rem 1rem;
     box-sizing: border-box;
     &--skill{
+      width: 90%;
       padding: 0;
       margin: 0;
     }
