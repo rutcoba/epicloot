@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink, Route } from 'react-router-dom';
 
+import Message from './Message';
 import Back_btn from './Back_btn';
 
 class Quest_full extends React.Component {
@@ -12,6 +13,8 @@ class Quest_full extends React.Component {
           id_item: this.props.data.id,
           load: 0
       }
+      this.passQuest = this.passQuest.bind(this);
+      this.confirmExecution = this.confirmExecution.bind(this);
   }
   
   componentDidMount(){
@@ -22,11 +25,47 @@ class Quest_full extends React.Component {
       },100);
   }
   
+    activatePopup(messArray){
+      this.setState({
+        mess: messArray[(Math.floor(Math.random()*messArray.length))]
+      });
+      setTimeout( 
+        ()=>{
+          this.setState({
+            mess: ''
+          });
+        }, 
+        2000);
+    }
+    
+    passQuest() {
+      const passQuestMessArr = sys_message.filter(message => {
+        return message.event == 'pass_quest';
+      });
+      this.activatePopup(passQuestMessArr);      
+    }
+  
+    confirmExecution() {
+      const confirmMessArr = sys_message.filter(message => {
+        return message.event == 'confirm_execution';
+      });
+      this.activatePopup(confirmMessArr);
+    }
+  
   render() {
     var item = this.props.data;
     var stars = [];
     for (let i = 0 ; i <= item.dificulty; i++){
       stars.push(<i key={i} className="material-icons star">star</i>);
+    }    
+    let btnText = 'Взять квест';
+    switch(this.props.className){
+      case  'profile__quests':
+        btnText = 'Сдать'
+        break;
+      case  'profile__events':
+        btnText = 'Выполнен'
+        break;
     }
     return (
       <div className={`page quest__page ${this.state.load === 1 ? 'load-inner_page' : ''}`} >
@@ -49,7 +88,7 @@ class Quest_full extends React.Component {
         <div className="quest__description">
           <p>{item.description}</p>
         </div>
-        <button className="btn btn--take_quest">Взять квест</button>
+        <button className="btn btn--take_quest">{btnText}</button>
         </div>
       </div>                             
     )
