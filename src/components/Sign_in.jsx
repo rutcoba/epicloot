@@ -43,19 +43,31 @@ class Sign_in extends React.Component {
       const authErrArr = sys_message.filter(message => {
         return message.event == 'auth_error';
       });
-      obj.setState({mess: authErrArr[(Math.floor(Math.random()*authErrArr.length))]});
+      obj.setState({
+        mess: authErrArr[(Math.floor(Math.random()*authErrArr.length))]
+      });
       users.map(user => {
-        if(user.login == auth.login && user.pass == auth.pass){
+        if(user.login == auth.login && 
+           user.pass == auth.pass)
+        {
           sessionStorage.setItem('id', user.id);
-          obj.setState({mess: authMessArr[(Math.floor(Math.random()*authMessArr.length))]});
-          setTimeout( ()=>{
-            window.location = '/personal/main';
-          }, 2000);
+          obj.setState({
+            mess: authMessArr[(Math.floor(Math.random()*authMessArr.length))]
+          });
+          setTimeout( 
+            ()=>{
+              window.location = '/personal/main';
+            }, 
+            2000);
         }
       });
-      setTimeout( ()=>{
-        this.setState({mess: ''});
-      }, 2000);
+      setTimeout( 
+        ()=>{
+          this.setState({
+            mess: ''
+          });
+        }, 
+        2000);
     }
   
     render() {

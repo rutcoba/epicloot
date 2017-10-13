@@ -39,5 +39,25 @@ const sys_message = [
     , event: 'auth_error'
     , text: 'не ваш день?'
   }
+  , {
+    id: 5
+    , event: 'pass_quest'
+    , text: 'ты крут!'
+  }
+  , {
+    id: 6
+    , event: 'pass_quest'
+    , text: 'молодец'
+  }
+  , {
+    id: 7
+    , event: 'confirm_execution'
+    , text: 'ваше задание выполнено'
+  }
+  , {
+    id: 8
+    , event: 'confirm_execution'
+    , text: 'это вас осчастливило?'
+  }
 ]
 export default sys_message;

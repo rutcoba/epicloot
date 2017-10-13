@@ -72,15 +72,15 @@ footer{
 }
 
 .screen-section{
+  position: relative;
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  transform: scale(0.95);
-  position: relative;
+  flex: 1;
   min-height: 100%;
   padding: 0 1rem;
+  opacity: 0;
+  transform: scale(0.95);
   transition: $anim;
-  flex: 1;
   /*router animate*/
   &.load-component{
     transform: scale(1);
@@ -510,16 +510,22 @@ header{
     display: flex;
     flex-direction: column;
     padding: .5rem .75rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;
+    opacity: 0;
     background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
     box-sizing: border-box;
     box-shadow: 
       inset 0 0 10px rgba(204, 163, 241, 0.3), 
       0 4px 10px rgba(204, 163, 241, 0.3);
-    margin-bottom: 2rem;
-    border-radius: .3rem;
     color: #192231;
     text-decoration: none;
-    animation: fade_in $anim ease;
+    animation: fade_in $anim ease both;
+    @for $i from 1 through 25 {
+      &:nth-child(#{$i}){
+        animation-delay: $anim/2+($i/10);
+      }
+    }
   }
   &__title{
     font-size: 1.3rem;
@@ -667,8 +673,7 @@ header{
   }
 }
 
-.for_profile{
-  margin-bottom: 1rem;
+.profile__quests, .profile__events{
   .quest{
     &__title, 
     &__reward--money span, 
@@ -698,6 +703,9 @@ header{
 }
 
 .profile{
+  &__page{
+    animation: fade_in $anim ease both;
+  }
   &__tab{
     margin: 0;
     padding: 0;

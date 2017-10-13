@@ -27,7 +27,7 @@ class Profile_events extends React.Component {
       quests.map(quest => {        
         questsArr.create.map((item, val) => {
           if(item == quest.id){
-            dataArray.push(<Quest_compact key={val} forProfile data={quest}/>)
+            dataArray.push(<Quest_compact key={val} className="profile__events" data={quest}/>)
           }
           render = dataArray;
         })
