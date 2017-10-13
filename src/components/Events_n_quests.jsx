@@ -71,15 +71,15 @@ class Events_n_quests extends React.Component {
   }
   
     render(){
-      var redirect = '';
+      const regExp = /\d/;
+      let redirect = '',
+          pathnameArr = this.props.location.pathname.split('/'),
+          regExp_search = new RegExp("(" + this.state.val + ")", "i"),
+          searchField = '',
+          categoryList = '';
       if(this.props.location.pathname == '/events_n_quests'){ 
         redirect = <Redirect from='/events_n_quests' to='/events_n_quests/all' />;
       }
-      var pathnameArr = this.props.location.pathname.split('/');
-      var regExp = /\d/;
-      var regExp_search = new RegExp("(" + this.state.val + ")", "i");
-      var searchField = '';
-      var categoryList = '';
       if(!regExp.test(pathnameArr[pathnameArr.length-1])){
         searchField = 
           <div>
@@ -126,6 +126,8 @@ class Events_n_quests extends React.Component {
             {redirect}
             <Route exact path={`/events_n_quests/:link`} component={Events_category}/>
             <Route exact path={`/events_n_quests/:link/:id`} component={Event}/>
+            <Route exact path={`/profile_quests/:link/:id`} component={Event}/>
+            <Route exact path={`/profile_events/:link/:id`} component={Event}/>
           </div> 
        </section>
       )

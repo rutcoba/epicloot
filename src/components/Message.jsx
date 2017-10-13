@@ -9,11 +9,10 @@ class Message extends React.Component {
       }
   }
   componentDidMount(){
+    console.log(this.props.mess);
   }
   render() {
-      return (
-        <span className="popup popup--message">{this.props.mess.text}</span>
-      )
+      return <span className="popup popup--message">{this.props.messText}</span>
   }
 }
 

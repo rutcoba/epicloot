@@ -511,7 +511,7 @@ header{
     display: flex;
     flex-direction: column;
     padding: .5rem .75rem 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-radius: .3rem;
     opacity: 0;
     background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
@@ -966,9 +966,8 @@ header{
     display: block;
     height: 100%;
     border-radius: .2rem;
-    background-color: $accient;
+    background-color: $star-rating;
     box-shadow: inset 1px 1px 3px 1px rgba(215, 217, 240, 0.2);
-//    background-image: $neon-gradient;
   }
 }
 

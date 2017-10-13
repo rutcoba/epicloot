@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink } from 'react-router-dom';
 
+import Message from './Message';
+
 import sys_message from './../data/system_message';
 import users from './../data/users';
 
@@ -72,11 +74,11 @@ class Sign_in extends React.Component {
   
     render() {
       let message = '';
-      if(this.state.mess !== ''){
-        message = <span className="popup popup--message">{this.state.mess.text}</span>
-      } else {
-        message = '';
-      }
+//      if(this.state.mess !== ''){
+//        message = <Message mess={this.state.mess} />
+//      } else {
+//        message = '';
+//      }
         return (
           <form className="form--sign_in" autoComplete="off">
            <label className="field-block">

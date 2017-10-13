@@ -5,6 +5,8 @@ import { Link, NavLink, Route } from 'react-router-dom';
 import Message from './Message';
 import Back_btn from './Back_btn';
 
+import sys_message from './../data/system_message';
+
 class Quest_full extends React.Component {
   constructor(props){
       super(props);
@@ -13,8 +15,8 @@ class Quest_full extends React.Component {
           id_item: this.props.data.id,
           load: 0
       }
-      this.passQuest = this.passQuest.bind(this);
-      this.confirmExecution = this.confirmExecution.bind(this);
+//      this.passQuest = this.passQuest.bind(this);
+//      this.confirmExecution = this.confirmExecution.bind(this);
   }
   
   componentDidMount(){
@@ -25,47 +27,49 @@ class Quest_full extends React.Component {
       },100);
   }
   
-    activatePopup(messArray){
-      this.setState({
-        mess: messArray[(Math.floor(Math.random()*messArray.length))]
-      });
-      setTimeout( 
-        ()=>{
-          this.setState({
-            mess: ''
-          });
-        }, 
-        2000);
-    }
+//    activatePopup(messArray){
+//      this.setState({
+//        mess: messArray[(Math.floor(Math.random()*messArray.length))]
+//      });
+//      setTimeout( () => {
+//        this.setState({ mess: '' });
+//      }, 2000);
+//    }
     
-    passQuest() {
-      const passQuestMessArr = sys_message.filter(message => {
-        return message.event == 'pass_quest';
-      });
-      this.activatePopup(passQuestMessArr);      
-    }
-  
-    confirmExecution() {
-      const confirmMessArr = sys_message.filter(message => {
-        return message.event == 'confirm_execution';
-      });
-      this.activatePopup(confirmMessArr);
-    }
+//    passQuest() {
+//      const passQuestMessArr = sys_message.filter(message => {
+//        return message.event == 'pass_quest';
+//      });
+//      this.activatePopup(passQuestMessArr);      
+//    }
+//  
+//    confirmExecution() {
+//      const confirmMessArr = sys_message.filter(message => {
+//        return message.event == 'confirm_execution';
+//      });
+//      this.activatePopup(confirmMessArr);
+//    }
   
   render() {
-    var item = this.props.data;
-    var stars = [];
+    const item = this.props.data;
+    let stars = [];
     for (let i = 0 ; i <= item.dificulty; i++){
       stars.push(<i key={i} className="material-icons star">star</i>);
-    }    
-    let btnText = 'Взять квест';
-    switch(this.props.className){
-      case  'profile__quests':
-        btnText = 'Сдать'
+    }   
+    let pathnameArr = window.location.pathname.split('/'),
+        btnText,
+        click;
+    switch(pathnameArr[1]){
+      case 'profile_quests':
+        btnText = 'Сдать';
         break;
-      case  'profile__events':
-        btnText = 'Выполнен'
+      case 'profile_events':
+        btnText = 'Выполнен';
         break;
+      default:
+        btnText = 'Взять квест';
+        click = '';
+        break;        
     }
     return (
       <div className={`page quest__page ${this.state.load === 1 ? 'load-inner_page' : ''}`} >

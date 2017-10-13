@@ -33,6 +33,8 @@ class App extends React.Component {
           <Route path="/our_team" component={Our_team}/>
           <Route path="/contacts" component={Contacts}/>
           <Route path="/events_n_quests" component={Events_n_quests} />
+          <Route path="/profile_quests" component={Events_n_quests} />
+          <Route path="/profile_events" component={Events_n_quests} />
           <Route path="/users" component={Users} />
           <Route path="/personal" component={Profile} />
           <Route path="*" component={NotFound}/>
