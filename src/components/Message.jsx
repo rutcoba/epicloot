@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import sys_message from './../data/system_message';
+
 class Message extends React.Component {
   constructor(props){
       super(props);
@@ -8,11 +10,14 @@ class Message extends React.Component {
 
       }
   }
-  componentDidMount(){
-    console.log(this.props.mess);
+  componentDidMount(){  
   }
   render() {
-      return <span className="popup popup--message">{this.props.messText}</span>
+    const mess_array = sys_message.filter(message => {
+      return message.event == this.props.mess;
+    });
+    const mess = mess_array[(Math.floor(Math.random()*mess_array.length))];
+      return <span className="popup popup--message">{mess.text}</span>
   }
 }
 
