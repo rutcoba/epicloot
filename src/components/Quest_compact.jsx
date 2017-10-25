@@ -5,7 +5,6 @@ import { Link, NavLink, Route } from 'react-router-dom';
 import Message from './Message';
 
 import quests from './../data/quests';
-import sys_message from './../data/system_message';
 
 class Quest_compact extends React.Component {
     constructor(props){
@@ -25,9 +24,17 @@ class Quest_compact extends React.Component {
       for (let i = 0 ; i <= dificulty; i++){
         stars.push(<i key={i} className="material-icons star">star</i>);
       }
+      let link = `/events_n_quests/${item.link}/${item.id}`;
+      switch(this.props.className){
+        case 'profile__quests':
+          link = `/profile_quests/${item.link}/${item.id}`;
+          break;
+        case 'profile__events':
+          link = `/profile_events/${item.link}/${item.id}`;
+          break;
+      }
       return (
-        <Link to={`/events_n_quests/${item.link}/${item.id}`}
-         className={`quest__item ${this.props.className != undefined ? this.props.className : ''}`} >
+        <Link to={link} className={`quest__item ${this.props.className != undefined ? this.props.className : ''}`} >
           <div>
             <p className="quest__title">{item.title}</p>
               <p className="quest__author"><img className="quest__ava" src="/img/superman.png" alt=""/>{item.author}</p>

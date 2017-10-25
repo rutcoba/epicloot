@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink } from 'react-router-dom';
 
+import Message from './Message';
+import Field_text from './Field_text';
+
 import sys_message from './../data/system_message';
 import users from './../data/users';
 
@@ -9,42 +12,34 @@ class Sign_in extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-          val: '',
+          login: '',
           pass: '',
           mess: ''
         }
         this.handleAuth = this.handleAuth.bind(this);
-        this.changeValue = this.changeValue.bind(this);
-        this.changePass = this.changePass.bind(this);
+        this.getVal = this.getVal.bind(this);
+    }  
+    componentDidMount(){} 
+  
+    getVal(nameField, val){
+      if(nameField == 'login') {
+        this.setState({ login : val });        
+      } else if (nameField == 'pass'){
+        this.setState({ pass : val });
+      }
+      console.log(nameField + ': ' + val);  
     }
   
-    componentDidMount(){}
-  
-    changeValue(){
-      this.setState({ val: ReactDOM.findDOMNode(this.refs.text).value });
-    }
-  
-    changePass(){
-      this.setState({ pass: ReactDOM.findDOMNode(this.refs.pass).value });
-    }
-  
-  
-    
     handleAuth(e){
       e.preventDefault();
       let obj = this;
       let auth = {
-        login: obj.state.val,
+        login: obj.state.login,
         pass: obj.state.pass
       }
-      const authMessArr = sys_message.filter(message => {
-        return message.event == 'auth';
-      });
-      const authErrArr = sys_message.filter(message => {
-        return message.event == 'auth_error';
-      });
+      console.log(auth);
       obj.setState({
-        mess: authErrArr[(Math.floor(Math.random()*authErrArr.length))]
+        mess: 'auth_error'
       });
       users.map(user => {
         if(user.login == auth.login && 
@@ -52,7 +47,7 @@ class Sign_in extends React.Component {
         {
           sessionStorage.setItem('id', user.id);
           obj.setState({
-            mess: authMessArr[(Math.floor(Math.random()*authMessArr.length))]
+            mess: 'auth'
           });
           setTimeout( 
             ()=>{
@@ -73,21 +68,35 @@ class Sign_in extends React.Component {
     render() {
       let message = '';
       if(this.state.mess !== ''){
-        message = <span className="popup popup--message">{this.state.mess.text}</span>
+        message = <Message mess={this.state.mess} />
       } else {
         message = '';
       }
         return (
           <form className="form--sign_in" autoComplete="off">
-           <label className="field-block">
+            {/*<label className="field-block">
            <i className="material-icons">account_circle</i>
             <input type="text" name="login" placeholder="Логин" autoComplete="off" autoFocus ref='text' value={this.state.val} onChange={this.changeValue}/>
-            </label>
-
-           <label className="field-block">
+            </label>*/}
+            <Field_text ico='account_circle'
+                        type='text'
+                        name='login'
+                        placeholder='Логин'
+                        autoFocus
+                        value={this.state.login}
+                        getVal={this.getVal} />
+            <Field_text ico='lock'
+                        type='password'
+                        name='pass'                        
+                        placeholder='Пароль'
+                        autoComplete="new-password"
+                        value={this.state.pass}
+                        getVal={this.getVal} />
+          
+            {/*<label className="field-block">
            <i className="material-icons">lock</i>
             <input type="password" name="pass" placeholder="Пароль" autoComplete="new-password" ref='pass' value={this.state.pass} onChange={this.changePass} />
-            </label>
+            </label>*/}
             <button className="btn btn--auth" onClick={this.handleAuth} disabled={this.state.mess !== '' ? true : false}>{this.state.mess !== '' ? 'load' : 'Вход'}</button>              
             <p className="link--auth">Ещё нет аккаунта?<Link to='/auth/register'>Зарегистрируйся</Link></p>
             {message}
