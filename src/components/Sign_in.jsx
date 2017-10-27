@@ -27,7 +27,6 @@ class Sign_in extends React.Component {
       } else if (nameField == 'pass'){
         this.setState({ pass : val });
       }
-      console.log(nameField + ': ' + val);  
     }
   
     handleAuth(e){
@@ -53,7 +52,7 @@ class Sign_in extends React.Component {
             ()=>{
               window.location = '/personal/main';
             }, 
-            2000);
+            1000);
         }
       });
       setTimeout( 
@@ -68,7 +67,7 @@ class Sign_in extends React.Component {
     render() {
       let message = '';
       if(this.state.mess !== ''){
-        message = <Message mess={this.state.mess} />
+        message = <Message mess={this.state.mess} className="popup--auth" />
       } else {
         message = '';
       }
@@ -78,14 +77,16 @@ class Sign_in extends React.Component {
            <i className="material-icons">account_circle</i>
             <input type="text" name="login" placeholder="Логин" autoComplete="off" autoFocus ref='text' value={this.state.val} onChange={this.changeValue}/>
             </label>*/}
-            <Field_text ico='account_circle'
+            <Field_text className='auth__field field--with_ico'
+                        ico='account_circle'
                         type='text'
                         name='login'
                         placeholder='Логин'
                         autoFocus
                         value={this.state.login}
                         getVal={this.getVal} />
-            <Field_text ico='lock'
+            <Field_text className='auth__field field--with_ico'
+                        ico='lock'
                         type='password'
                         name='pass'                        
                         placeholder='Пароль'
@@ -97,7 +98,7 @@ class Sign_in extends React.Component {
            <i className="material-icons">lock</i>
             <input type="password" name="pass" placeholder="Пароль" autoComplete="new-password" ref='pass' value={this.state.pass} onChange={this.changePass} />
             </label>*/}
-            <button className="btn btn--auth" onClick={this.handleAuth} disabled={this.state.mess !== '' ? true : false}>{this.state.mess !== '' ? 'load' : 'Вход'}</button>              
+            <button className={`btn btn--auth ${this.state.mess !== '' ? 'load' : ''}`} onClick={this.handleAuth} disabled={this.state.mess !== '' ? true : false}>{this.state.mess !== '' ? 'load' : 'Вход'}</button>              
             <p className="link--auth">Ещё нет аккаунта?<Link to='/auth/register'>Зарегистрируйся</Link></p>
             {message}
           </form>

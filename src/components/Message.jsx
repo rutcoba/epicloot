@@ -17,7 +17,7 @@ class Message extends React.Component {
       return message.event == this.props.mess;
     });
     const mess = mess_array[(Math.floor(Math.random()*mess_array.length))];
-      return <span className="popup popup--message">{mess.text}</span>
+      return <span className={`popup popup--message ${this.props.className ? this.props.className : ''}`}>{mess.text}</span>
   }
 }
 
