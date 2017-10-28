@@ -67,16 +67,12 @@ class Sign_in extends React.Component {
     render() {
       let message = '';
       if(this.state.mess !== ''){
-        message = <Message mess={this.state.mess} className="popup--auth" />
+        message = <Message mess={this.state.mess} className={this.state.mess =='auth' ? 'popup--auth' : ''} />
       } else {
         message = '';
       }
         return (
           <form className="form--sign_in" autoComplete="off">
-            {/*<label className="field-block">
-           <i className="material-icons">account_circle</i>
-            <input type="text" name="login" placeholder="Логин" autoComplete="off" autoFocus ref='text' value={this.state.val} onChange={this.changeValue}/>
-            </label>*/}
             <Field_text className='auth__field field--with_ico'
                         ico='account_circle'
                         type='text'
@@ -93,12 +89,11 @@ class Sign_in extends React.Component {
                         autoComplete="new-password"
                         value={this.state.pass}
                         getVal={this.getVal} />
-          
-            {/*<label className="field-block">
-           <i className="material-icons">lock</i>
-            <input type="password" name="pass" placeholder="Пароль" autoComplete="new-password" ref='pass' value={this.state.pass} onChange={this.changePass} />
-            </label>*/}
-            <button className={`btn btn--auth ${this.state.mess !== '' ? 'load' : ''}`} onClick={this.handleAuth} disabled={this.state.mess !== '' ? true : false}>{this.state.mess !== '' ? 'load' : 'Вход'}</button>              
+            <button className={`btn btn--auth ${this.state.mess == 'auth' ? 'load' : ''}`} 
+                    onClick={this.handleAuth} 
+                    disabled={this.state.mess !== '' ? true : false}>
+              {this.state.mess !== '' ? <div className="loader"><s></s><s></s><s></s></div> : 'Вход'}
+            </button>              
             <p className="link--auth">Ещё нет аккаунта?<Link to='/auth/register'>Зарегистрируйся</Link></p>
             {message}
           </form>

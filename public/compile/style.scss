@@ -1,3 +1,5 @@
+@import '_loader';
+
 $lightgrey: lightgrey;
 $light: #fefefe;
 $dark: #192231;
@@ -172,10 +174,10 @@ footer{
 .btn{
   &--auth{
     @extend %btn;
-    width: 80%;
+    width: auto;
     height: auto;
     margin: 1rem auto;
-    padding: 1rem;
+    padding: 1rem 4rem;
     background-color: transparent;
     background-image: linear-gradient(to right, rgba(148, 86, 141, 0.68) 0%, rgba(148, 91, 177, 0.56) 100%);
     box-sizing: border-box;
@@ -1091,7 +1093,7 @@ header{
     opacity: 0;
     transform: scale(0.95);
   }
-  60%{
+  80%{
     opacity: 1;
     transform: scale(1);
   }
