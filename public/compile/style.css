@@ -1,0 +1,1178 @@
+/* line 7, Z:/project/EpicLoot/public/compile/_loader.scss */
+.loader {
+  position: relative;
+  width: 20px;
+  height: 20px; }
+  /* line 12, Z:/project/EpicLoot/public/compile/_loader.scss */
+  .loader s {
+    display: inline-block;
+    position: absolute;
+    box-sizing: border-box;
+    height: 20px;
+    width: 20px; }
+  /* line 20, Z:/project/EpicLoot/public/compile/_loader.scss */
+  .loader s:nth-child(2) {
+    position: relative;
+    border: 4px solid white;
+    transform: rotate(45deg);
+    animation: centerSpin 2s infinite ease;
+    background-image: radial-gradient(circle, white 40%, transparent 45%);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%; }
+  /* line 31, Z:/project/EpicLoot/public/compile/_loader.scss */
+  .loader s:first-child {
+    border-left: 4px solid white;
+    border-top: 4px solid white;
+    transform: rotate(-45deg);
+    left: -15px;
+    animation: leftMove 0.5s infinite ease; }
+  /* line 39, Z:/project/EpicLoot/public/compile/_loader.scss */
+  .loader s:last-child {
+    border-right: 4px solid white;
+    border-bottom: 4px solid white;
+    transform: rotate(-45deg);
+    right: -15px;
+    animation: rightMove 0.5s infinite ease; }
+
+@keyframes centerSpin {
+  0% {
+    transform: rotate(135deg); }
+  25% {
+    transform: rotate(225deg); }
+  50% {
+    transform: rotate(315deg); }
+  75% {
+    transform: rotate(405deg); }
+  100% {
+    transform: rotate(495deg); } }
+
+@keyframes leftMove {
+  0% {
+    left: -15px; }
+  50% {
+    left: -25px; }
+  100% {
+    left: -15px; } }
+
+@keyframes rightMove {
+  0% {
+    right: -15px; }
+  50% {
+    right: -25px; }
+  100% {
+    right: -15px; } }
+
+/* line 28, Z:/project/EpicLoot/public/compile/style.scss */
+body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 10px;
+  font-family: "Rubik", Helvetica;
+  margin: 0;
+  background: linear-gradient(to top, rgba(80, 97, 144, 0.77) 0%, rgba(98, 79, 120, 0.54) 100%) no-repeat center, url("../img/ground8.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fefefe;
+  transition: 0.6s all; }
+
+/* line 47, Z:/project/EpicLoot/public/compile/style.scss */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+/* line 52, Z:/project/EpicLoot/public/compile/style.scss */
+#main_container, .page-main-inner, .page {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+
+/* line 58, Z:/project/EpicLoot/public/compile/style.scss */
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+  /* line 62, Z:/project/EpicLoot/public/compile/style.scss */
+  #wrapper header,
+  #wrapper footer {
+    flex: 0; }
+  /* line 66, Z:/project/EpicLoot/public/compile/style.scss */
+  #wrapper main {
+    flex: 1; }
+
+/* line 71, Z:/project/EpicLoot/public/compile/style.scss */
+footer {
+  background-image: linear-gradient(-120deg, #77559e 0%, #33467b 51%, #41275f 100%);
+  padding: 1rem; }
+
+/* line 76, Z:/project/EpicLoot/public/compile/style.scss */
+.screen-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  padding: 0 1rem;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: 0.3s;
+  /*router animate*/ }
+  /* line 87, Z:/project/EpicLoot/public/compile/style.scss */
+  .screen-section.load-component {
+    transform: scale(1);
+    opacity: 1; }
+
+/* line 92, Z:/project/EpicLoot/public/compile/style.scss */
+.main-text {
+  font-size: 1rem;
+  color: #fefefe; }
+
+/* line 97, Z:/project/EpicLoot/public/compile/style.scss */
+.title--page {
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin: 1rem 0; }
+  /* line 102, Z:/project/EpicLoot/public/compile/style.scss */
+  .title--page .btn--back {
+    margin-right: 1rem; }
+
+/* line 106, Z:/project/EpicLoot/public/compile/style.scss */
+.title--section {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 1rem; }
+
+/* line 111, Z:/project/EpicLoot/public/compile/style.scss */
+.title--block {
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-decoration: underline;
+  margin-bottom: 1rem; }
+
+/* line 117, Z:/project/EpicLoot/public/compile/style.scss */
+.title--with_action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+/************************************/
+/* line 126, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__title, .quest__author {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+/* line 132, Z:/project/EpicLoot/public/compile/style.scss */
+.btn--auth, .btn--send, .btn--take_quest {
+  height: 2.5rem;
+  border-radius: .3rem;
+  padding: 0 1.5rem;
+  margin: 1rem auto;
+  color: #fefefe;
+  text-transform: uppercase;
+  border: none;
+  transform: scale(1); }
+
+/* line 143, Z:/project/EpicLoot/public/compile/style.scss */
+.field-block input, .field-block textarea {
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: .3rem 1rem;
+  font-size: 1.2rem;
+  font-family: "Rubik", Helvetica;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #a9c2e5;
+  background-color: rgba(227, 216, 237, 0.08) !important;
+  border-radius: .2rem;
+  margin-bottom: 1rem;
+  color: #624f78;
+  transition: 0.3s; }
+  /* line 158, Z:/project/EpicLoot/public/compile/style.scss */
+  .field-block input::placeholder, .field-block textarea::placeholder {
+    color: #fefefe;
+    opacity: 1;
+    transition: opacity 0.3s ease; }
+  /* line 163, Z:/project/EpicLoot/public/compile/style.scss */
+  .field-block input:focus, .field-block textarea:focus {
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(204, 163, 241, 0.8); }
+    /* line 166, Z:/project/EpicLoot/public/compile/style.scss */
+    .field-block input:focus::placeholder, .field-block textarea:focus::placeholder {
+      opacity: 0; }
+
+/************************************/
+/* line 175, Z:/project/EpicLoot/public/compile/style.scss */
+.btn--auth {
+  width: auto;
+  height: auto;
+  margin: 1rem auto;
+  padding: 1rem 4rem;
+  background-color: transparent;
+  background-image: linear-gradient(to right, rgba(148, 86, 141, 0.68) 0%, rgba(148, 91, 177, 0.56) 100%);
+  box-sizing: border-box;
+  box-shadow: inset 0 0 20px rgba(204, 163, 241, 0.3);
+  transition: 0.6s; }
+  /* line 186, Z:/project/EpicLoot/public/compile/style.scss */
+  .btn--auth:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    transition: 0.6s; }
+  /* line 204, Z:/project/EpicLoot/public/compile/style.scss */
+  .btn--auth.load:before {
+    z-index: 10;
+    background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%);
+    transform: scale(30); }
+
+/* line 211, Z:/project/EpicLoot/public/compile/style.scss */
+.btn--close {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  border: none; }
+
+/* line 219, Z:/project/EpicLoot/public/compile/style.scss */
+.btn--ghost {
+  height: 3rem;
+  width: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fefefe;
+  background-color: transparent;
+  border: none; }
+
+/* line 229, Z:/project/EpicLoot/public/compile/style.scss */
+.btn--send {
+  background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%);
+  background-size: 200% auto;
+  color: #fefefe;
+  transition: 0.3s all; }
+  /* line 235, Z:/project/EpicLoot/public/compile/style.scss */
+  .btn--send:focus {
+    box-shadow: 0 0 5px lightgrey; }
+  /* line 238, Z:/project/EpicLoot/public/compile/style.scss */
+  .btn--send:hover, .btn--send:active {
+    outline: none;
+    transform: scale(0.95);
+    background-position: right center; }
+
+/* line 244, Z:/project/EpicLoot/public/compile/style.scss */
+.btn--take_quest {
+  position: absolute;
+  bottom: -1rem;
+  right: 1rem;
+  z-index: 10;
+  margin: 0;
+  background-image: linear-gradient(to right, #B993D6 0%, #8CA6DB 51%, #B993D6 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 5px rgba(202, 202, 202, 0.23); }
+
+/* line 259, Z:/project/EpicLoot/public/compile/style.scss */
+.link--auth {
+  font-size: .8rem;
+  color: #fefefe;
+  text-align: center;
+  margin: auto 0 1.5rem; }
+  /* line 264, Z:/project/EpicLoot/public/compile/style.scss */
+  .link--auth a {
+    text-decoration: none;
+    color: #b8fbff;
+    margin-left: .3rem; }
+
+/* line 272, Z:/project/EpicLoot/public/compile/style.scss */
+.logo {
+  position: relative;
+  text-align: center;
+  transition: 0.3s; }
+  /* line 276, Z:/project/EpicLoot/public/compile/style.scss */
+  .logo:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 8rem;
+    height: 8rem;
+    border-radius: .6rem;
+    background-image: linear-gradient(to right, rgba(148, 86, 141, 0.3) 0%, rgba(127, 54, 165, 0.27) 100%);
+    box-sizing: border-box;
+    box-shadow: inset 0 0 20px rgba(204, 163, 241, 0.3); }
+
+/* line 291, Z:/project/EpicLoot/public/compile/style.scss */
+.welcome_text {
+  color: #fee;
+  font-size: 3rem;
+  transform: rotate(-5deg);
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; }
+  /* line 296, Z:/project/EpicLoot/public/compile/style.scss */
+  .welcome_text span {
+    animation: blink linear infinite 5s; }
+
+/* line 303, Z:/project/EpicLoot/public/compile/style.scss */
+header.open .mobile_nav {
+  z-index: 11;
+  height: 100vh;
+  bottom: 0; }
+  /* line 307, Z:/project/EpicLoot/public/compile/style.scss */
+  header.open .mobile_nav .menu {
+    bottom: 0; }
+    /* line 309, Z:/project/EpicLoot/public/compile/style.scss */
+    header.open .mobile_nav .menu_item {
+      opacity: 1; }
+
+/* line 318, Z:/project/EpicLoot/public/compile/style.scss */
+.mobile_nav {
+  z-index: 10;
+  max-width: 100%;
+  position: fixed;
+  width: 40rem;
+  height: 0;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s all ease-in-out; }
+  /* line 329, Z:/project/EpicLoot/public/compile/style.scss */
+  .mobile_nav .menu {
+    bottom: -100vh; }
+
+/* line 334, Z:/project/EpicLoot/public/compile/style.scss */
+.desktop_nav .menu {
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  padding: 0; }
+
+/* line 340, Z:/project/EpicLoot/public/compile/style.scss */
+.desktop_nav .btn--close {
+  display: none; }
+
+/* line 345, Z:/project/EpicLoot/public/compile/style.scss */
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0 3rem;
+  box-sizing: border-box;
+  background-image: linear-gradient(-120deg, #77559e 0%, #33467b 51%, #41275f 100%);
+  list-style: none; }
+  /* line 360, Z:/project/EpicLoot/public/compile/style.scss */
+  .menu_item {
+    width: 80%;
+    max-width: 300px;
+    transition: 0.9s all ease-in;
+    opacity: 0; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(1) {
+      transition-delay: 0.06s; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(2) {
+      transition-delay: 0.12s; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(3) {
+      transition-delay: 0.18s; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(4) {
+      transition-delay: 0.24s; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(5) {
+      transition-delay: 0.3s; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(6) {
+      transition-delay: 0.36s; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(7) {
+      transition-delay: 0.42s; }
+    /* line 366, Z:/project/EpicLoot/public/compile/style.scss */
+    .menu_item:nth-child(8) {
+      transition-delay: 0.48s; }
+  /* line 371, Z:/project/EpicLoot/public/compile/style.scss */
+  .menu_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fefefe;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(182, 251, 255, 0.03) 50%, rgba(255, 255, 255, 0));
+    margin-bottom: 1rem; }
+
+/* line 387, Z:/project/EpicLoot/public/compile/style.scss */
+.toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  background-color: #fefefe;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px rgba(169, 194, 229, 0.6); }
+  /* line 399, Z:/project/EpicLoot/public/compile/style.scss */
+  .toolbar__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; }
+    /* line 404, Z:/project/EpicLoot/public/compile/style.scss */
+    .toolbar__link:focus {
+      outline: none; }
+    /* line 407, Z:/project/EpicLoot/public/compile/style.scss */
+    .toolbar__link span {
+      font-size: 0.6rem;
+      white-space: nowrap; }
+    /* line 411, Z:/project/EpicLoot/public/compile/style.scss */
+    .toolbar__link .material-icons, .toolbar__link span {
+      color: lightgrey; }
+    /* line 414, Z:/project/EpicLoot/public/compile/style.scss */
+    .toolbar__link.active {
+      background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
+      /* line 418, Z:/project/EpicLoot/public/compile/style.scss */
+      .toolbar__link.active .material-icons, .toolbar__link.active span {
+        color: transparent; }
+
+/* line 426, Z:/project/EpicLoot/public/compile/style.scss */
+.form--wrapper {
+  display: flex;
+  justify-content: center;
+  flex: 1; }
+
+/* line 431, Z:/project/EpicLoot/public/compile/style.scss */
+.form--sign_up, .form--sign_in {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 2rem 0; }
+  /* line 437, Z:/project/EpicLoot/public/compile/style.scss */
+  .form--sign_up .material-icons, .form--sign_in .material-icons {
+    position: absolute;
+    top: .75rem;
+    left: .75rem; }
+    /* line 441, Z:/project/EpicLoot/public/compile/style.scss */
+    .form--sign_up .material-icons + input, .form--sign_in .material-icons + input {
+      padding: .75rem 1rem .5rem 2.5rem; }
+
+/* line 449, Z:/project/EpicLoot/public/compile/style.scss */
+.custom_form--feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+/* line 456, Z:/project/EpicLoot/public/compile/style.scss */
+.what-we-do_item {
+  display: flex;
+  margin-bottom: 1.5rem; }
+  /* line 459, Z:/project/EpicLoot/public/compile/style.scss */
+  .what-we-do_item .main-text {
+    flex: 1;
+    padding-left: 1rem; }
+
+/* line 465, Z:/project/EpicLoot/public/compile/style.scss */
+.field-block {
+  display: flex;
+  width: 100%;
+  position: relative; }
+  /* line 470, Z:/project/EpicLoot/public/compile/style.scss */
+  .field-block--with_ico:before {
+    content: '';
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  /* line 479, Z:/project/EpicLoot/public/compile/style.scss */
+  .field-block input {
+    width: 100%; }
+  /* line 483, Z:/project/EpicLoot/public/compile/style.scss */
+  .field-block textarea {
+    height: 5rem; }
+
+/* line 491, Z:/project/EpicLoot/public/compile/style.scss */
+.auth__field input {
+  color: #fefefe;
+  backdrop-filter: grayscale(1) contrast(3) blur(1px); }
+
+/* line 497, Z:/project/EpicLoot/public/compile/style.scss */
+.search__block {
+  height: 0;
+  overflow: hidden; }
+  /* line 500, Z:/project/EpicLoot/public/compile/style.scss */
+  .search__block input {
+    font-size: 0.8rem; }
+  /* line 503, Z:/project/EpicLoot/public/compile/style.scss */
+  .search__block.open {
+    height: 2.5rem;
+    padding: 0 0 1rem;
+    overflow: visible; }
+
+/* line 511, Z:/project/EpicLoot/public/compile/style.scss */
+.category__dropdown {
+  position: absolute;
+  z-index: 2;
+  top: 2.5rem;
+  height: 0;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  transition: 0.3s;
+  background-color: #fefefe; }
+  /* line 521, Z:/project/EpicLoot/public/compile/style.scss */
+  .category__dropdown.open {
+    height: auto;
+    max-height: 300px;
+    overflow-y: scroll;
+    padding: 0;
+    box-sizing: border-box;
+    color: #192231;
+    border-radius: .2rem; }
+
+/* line 534, Z:/project/EpicLoot/public/compile/style.scss */
+.category__link {
+  display: block;
+  padding: 0.5em .75rem;
+  color: #192231;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 1px solid lightgrey; }
+
+/* line 545, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem .75rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: .3rem;
+  opacity: 0;
+  background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
+  box-sizing: border-box;
+  box-shadow: inset 0 0 10px rgba(204, 163, 241, 0.3), 0 4px 10px rgba(204, 163, 241, 0.3);
+  color: #192231;
+  text-decoration: none;
+  animation: fade_in 0.3s ease both; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(1) {
+    animation-delay: 0.25s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(2) {
+    animation-delay: 0.35s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(3) {
+    animation-delay: 0.45s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(4) {
+    animation-delay: 0.55s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(5) {
+    animation-delay: 0.65s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(6) {
+    animation-delay: 0.75s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(7) {
+    animation-delay: 0.85s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(8) {
+    animation-delay: 0.95s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(9) {
+    animation-delay: 1.05s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(10) {
+    animation-delay: 1.15s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(11) {
+    animation-delay: 1.25s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(12) {
+    animation-delay: 1.35s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(13) {
+    animation-delay: 1.45s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(14) {
+    animation-delay: 1.55s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(15) {
+    animation-delay: 1.65s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(16) {
+    animation-delay: 1.75s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(17) {
+    animation-delay: 1.85s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(18) {
+    animation-delay: 1.95s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(19) {
+    animation-delay: 2.05s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(20) {
+    animation-delay: 2.15s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(21) {
+    animation-delay: 2.25s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(22) {
+    animation-delay: 2.35s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(23) {
+    animation-delay: 2.45s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(24) {
+    animation-delay: 2.55s; }
+  /* line 562, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__item:nth-child(25) {
+    animation-delay: 2.65s; }
+
+/* line 567, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__title {
+  font-size: 1.3rem;
+  color: #fefefe;
+  margin: 0;
+  padding: .3rem 0; }
+
+/* line 574, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__author {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #fefefe;
+  margin: 0 0 .5rem;
+  padding: .2rem;
+  margin-left: -.2rem; }
+
+/* line 584, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__ava {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+  background-color: #fefefe;
+  box-shadow: 0 0 10px rgba(182, 251, 255, 0.5), 0 0 5px rgba(182, 251, 255, 0.5);
+  border-radius: 50%; }
+
+/* line 595, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__cat {
+  display: flex;
+  align-items: center;
+  margin-bottom: .5rem;
+  font-size: .9rem; }
+  /* line 600, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__cat span {
+    color: #fefefe;
+    margin-right: .3rem; }
+  /* line 604, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__cat .star {
+    font-size: .8rem;
+    margin: .2rem;
+    color: #fdbd39; }
+
+/* line 610, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__description {
+  font-size: 1rem; }
+
+/* line 613, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__reward {
+  display: flex;
+  justify-content: space-around;
+  padding: .5rem 0;
+  font-size: 0.8rem;
+  border-top: 1px solid #fefefe; }
+  /* line 619, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__reward--money, .quest__reward--loot, .quest__reward--xp {
+    display: flex;
+    flex-direction: column; }
+    /* line 624, Z:/project/EpicLoot/public/compile/style.scss */
+    .quest__reward--money span, .quest__reward--loot span, .quest__reward--xp span {
+      color: #fefefe;
+      margin-bottom: .5rem; }
+  /* line 629, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__reward--loot {
+    flex: 2;
+    width: 50%; }
+  /* line 633, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__reward--money, .quest__reward--xp {
+    flex: 1;
+    width: 25%; }
+
+/* line 647, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__page .quest__title {
+  white-space: normal; }
+  /* line 649, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__page .quest__title:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin: 1rem 0;
+    background-color: #fefefe; }
+
+/* line 658, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__page .quest__author {
+  color: #fefefe; }
+
+/* line 661, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__page .quest__main {
+  margin: 0 -1rem; }
+  /* line 663, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__page .quest__main.block--without-bg {
+    min-height: auto;
+    padding: 1rem 1rem 0; }
+  /* line 667, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__page .quest__main.block--with-bg {
+    padding-top: 3rem; }
+
+/* line 671, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__page .quest__cat {
+  margin: 0 0 1rem;
+  font-size: .9rem; }
+  /* line 674, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__page .quest__cat span {
+    color: #a9c2e5; }
+  /* line 677, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__page .quest__cat .star {
+    font-size: 1.2rem; }
+
+/* line 681, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__page .quest__reward {
+  position: relative;
+  z-index: 10;
+  margin: 1rem 1rem -1.5rem;
+  padding: .75rem;
+  background: #fefefe;
+  border-radius: .2rem;
+  border: none;
+  box-shadow: 0 0 5px #a9c2e5; }
+  /* line 691, Z:/project/EpicLoot/public/compile/style.scss */
+  .quest__page .quest__reward--money, .quest__page .quest__reward--loot, .quest__page .quest__reward--xp {
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #506190; }
+    /* line 697, Z:/project/EpicLoot/public/compile/style.scss */
+    .quest__page .quest__reward--money span, .quest__page .quest__reward--loot span, .quest__page .quest__reward--xp span {
+      color: #a9c2e5; }
+
+/* line 703, Z:/project/EpicLoot/public/compile/style.scss */
+.quest__page .btn--take_quest {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  bottom: auto;
+  margin-top: 3rem; }
+
+/* line 715, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__quests .quest__title,
+.profile__quests .quest__reward--money span,
+.profile__quests .quest__reward--xp span,
+.profile__quests .quest__reward--loot span,
+.profile__quests .quest__cat span, .profile__quests .quest__author, .profile__events .quest__title,
+.profile__events .quest__reward--money span,
+.profile__events .quest__reward--xp span,
+.profile__events .quest__reward--loot span,
+.profile__events .quest__cat span, .profile__events .quest__author {
+  color: #506190; }
+
+/* line 727, Z:/project/EpicLoot/public/compile/style.scss */
+.block--with-bg {
+  min-height: 70vh;
+  flex: 1;
+  padding: 1.5rem 1rem 2rem;
+  background: #fefefe;
+  color: #192231;
+  box-sizing: border-box; }
+
+/* line 735, Z:/project/EpicLoot/public/compile/style.scss */
+.block--without-bg {
+  min-height: 30vh;
+  box-shadow: 0 5px 14px 0px rgba(126, 133, 220, 0.6); }
+
+/* line 743, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__page {
+  animation: fade_in 0.3s ease both; }
+
+/* line 746, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__tab {
+  margin: 0;
+  padding: 0; }
+
+/* line 754, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__block--main {
+  position: relative;
+  padding: .5rem 0 1rem;
+  min-height: 2rem;
+  transition: 0.3s; }
+  /* line 759, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__block--main.full {
+    min-height: 30vh;
+    overflow: hidden; }
+    /* line 762, Z:/project/EpicLoot/public/compile/style.scss */
+    .profile__block--main.full .profile__header {
+      top: 0;
+      padding-top: 1rem;
+      opacity: 1;
+      height: 10rem; }
+  /* line 769, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__block--main p {
+    margin: 0; }
+
+/* line 775, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__header {
+  position: relative;
+  top: -10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 0;
+  opacity: 0;
+  height: 0;
+  transition: 0.6s; }
+
+/* line 787, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__avatar {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 2rem;
+  margin-bottom: .5rem;
+  overflow: hidden;
+  box-shadow: inset 0 6px 4px -5px rgba(126, 133, 220, 0.4); }
+  /* line 796, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__avatar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe; }
+
+/* line 808, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__logout, .profile__link-settings {
+  position: absolute;
+  top: -.5rem;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #fefefe;
+  text-decoration: none; }
+
+/* line 824, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__logout {
+  right: auto;
+  left: 0; }
+
+/* line 828, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__name {
+  font-size: 1.2rem;
+  line-height: 1.2; }
+
+/* line 832, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__level {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  padding: .5rem 1rem;
+  box-sizing: border-box; }
+  /* line 838, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__level--skill {
+    width: 90%;
+    padding: 0;
+    margin: 0; }
+  /* line 843, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__level span {
+    font-size: .9rem;
+    margin-right: .5rem;
+    color: #fdbd39; }
+
+/* line 849, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__tabs {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1rem 1rem 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none; }
+
+/* line 861, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__tab-link {
+  flex: 1;
+  position: relative;
+  display: block;
+  padding: .5rem 0;
+  text-align: center;
+  color: #fefefe;
+  font-size: .9rem;
+  text-decoration: none; }
+  /* line 870, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__tab-link:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    height: 2px;
+    width: 100%;
+    transform: scale(0);
+    background-color: #b8fbff;
+    transition: all 0.3s; }
+  /* line 882, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__tab-link.active:before {
+    transform: scale(1); }
+
+/* line 887, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__card {
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.3s; }
+  /* line 891, Z:/project/EpicLoot/public/compile/style.scss */
+  .profile__card.hidden {
+    opacity: 0;
+    transform: scale(0.98); }
+
+/* line 897, Z:/project/EpicLoot/public/compile/style.scss */
+.profile__props span {
+  display: block;
+  font-weight: 500; }
+
+/* line 905, Z:/project/EpicLoot/public/compile/style.scss */
+.card__panel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 1.5rem 1rem 1rem 2rem;
+  min-height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: .3rem;
+  box-sizing: border-box;
+  box-shadow: inset 0 2px 5px -2px rgba(126, 133, 220, 0.4), 0 4px 10px rgba(169, 194, 229, 0.6); }
+  /* line 917, Z:/project/EpicLoot/public/compile/style.scss */
+  .card__panel:before {
+    content: '';
+    position: absolute;
+    left: 1.2rem;
+    top: 2rem;
+    width: 2px;
+    height: calc(100% - 3rem);
+    background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%); }
+
+/* line 927, Z:/project/EpicLoot/public/compile/style.scss */
+.card__content {
+  flex: 1; }
+
+/* line 931, Z:/project/EpicLoot/public/compile/style.scss */
+.card__ico {
+  position: absolute;
+  font-size: 1rem;
+  top: .75rem;
+  left: .75rem;
+  background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+/* line 944, Z:/project/EpicLoot/public/compile/style.scss */
+.switch--auth {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto 1rem;
+  padding: 0;
+  list-style: none; }
+  /* line 951, Z:/project/EpicLoot/public/compile/style.scss */
+  .switch--auth .btn--auth-switch {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto 1rem;
+    padding: 1rem 1.5rem 1rem 0.5rem;
+    font-size: 1rem;
+    color: #fefefe;
+    border-radius: .3rem;
+    background-image: linear-gradient(to right, rgba(148, 86, 141, 0.68) 0%, rgba(148, 91, 177, 0.56) 100%);
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box; }
+    /* line 964, Z:/project/EpicLoot/public/compile/style.scss */
+    .switch--auth .btn--auth-switch .material-icons {
+      position: relative;
+      margin-right: .5rem;
+      padding-right: .5rem; }
+      /* line 968, Z:/project/EpicLoot/public/compile/style.scss */
+      .switch--auth .btn--auth-switch .material-icons:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        height: 100%;
+        border-right: 1px solid #fefefe; }
+
+/* line 982, Z:/project/EpicLoot/public/compile/style.scss */
+.start-page {
+  display: flex;
+  flex-direction: column; }
+  /* line 985, Z:/project/EpicLoot/public/compile/style.scss */
+  .start-page .logo {
+    margin: 6rem 0; }
+  /* line 989, Z:/project/EpicLoot/public/compile/style.scss */
+  .start-page.with-form .logo {
+    margin: 3rem 0; }
+
+/* line 995, Z:/project/EpicLoot/public/compile/style.scss */
+.level__scale {
+  width: 100%;
+  height: .75rem;
+  border-radius: .2rem;
+  background-color: #fefefe;
+  box-shadow: inset 0 2px 5px 2px rgba(126, 133, 220, 0.4); }
+  /* line 1001, Z:/project/EpicLoot/public/compile/style.scss */
+  .level__scale span {
+    display: block;
+    height: 100%;
+    border-radius: .2rem;
+    background-color: #fdbd39;
+    box-shadow: inset 1px 1px 3px 1px rgba(215, 217, 240, 0.2); }
+
+/* line 1010, Z:/project/EpicLoot/public/compile/style.scss */
+.popup {
+  position: absolute;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 90%;
+  border-radius: .2rem;
+  background-image: linear-gradient(to right, rgba(229, 169, 222, 0.3) 0%, rgba(126, 133, 220, 0.4) 100%);
+  box-sizing: border-box;
+  box-shadow: inset 0 0 10px rgba(204, 163, 241, 0.3), 0 4px 10px rgba(204, 163, 241, 0.3);
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: .9rem;
+  animation: popup 2s ease both; }
+  /* line 1028, Z:/project/EpicLoot/public/compile/style.scss */
+  .popup--message {
+    background-color: rgba(169, 194, 229, 0.6);
+    color: #fefefe; }
+  /* line 1032, Z:/project/EpicLoot/public/compile/style.scss */
+  .popup--auth {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: fade_in_out 1.5s ease both; }
+
+/*animation*/
+@keyframes blink {
+  88% {
+    color: inherit;
+    text-shadow: inherit; }
+  90% {
+    color: #333; }
+  91% {
+    text-shadow: none; }
+  93% {
+    color: inherit;
+    text-shadow: inherit; }
+  94% {
+    color: #333;
+    text-shadow: none; }
+  95% {
+    color: inherit;
+    text-shadow: inherit; }
+  97% {
+    color: #333;
+    text-shadow: none; }
+  99% {
+    color: inherit;
+    text-shadow: inherit; } }
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes fade_in_out {
+  0% {
+    opacity: 0;
+    transform: scale(0.95); }
+  80% {
+    opacity: 1;
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    transform: scale(0.95); } }
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    bottom: -10rem;
+    transform: scale(0.95); }
+  25% {
+    opacity: 1;
+    bottom: 1rem;
+    transform: scale(1); }
+  80% {
+    opacity: 1;
+    bottom: 1rem;
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    bottom: 1rem; } }
+
+/*# sourceMappingURL=style.css.map */
