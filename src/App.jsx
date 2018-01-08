@@ -18,11 +18,10 @@ import NotFound from './components/NotFound';
 class App extends React.Component {
   render(){ 
     let redirect = '';
-    if(sessionStorage.getItem('id') == undefined || sessionStorage.getItem('id') == ''){
-        redirect = <Redirect from="/personal" to='/auth' />;
-    } else {
-        redirect = <Redirect from="/auth" to='/personal/main' />;
-    }
+    sessionStorage.getItem('id') == undefined || sessionStorage.getItem('id') == ''
+      ? redirect = <Redirect from="/personal" to='/auth' />
+      : redirect = <Redirect from="/auth" to='/personal/main' />;
+    
     return (
       <Layout>
         <Switch>

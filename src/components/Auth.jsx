@@ -11,14 +11,14 @@ class Auth extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-          load: 0
+          load: false
         }
     }
   
     componentDidMount(){
       let obj = this;
       setTimeout(function(){
-        obj.setState({load: 1});
+        obj.setState({load: true});
       },100);
     }
   
@@ -34,7 +34,7 @@ class Auth extends React.Component {
       
         return (
          <section id="auth_page" 
-                  className={`screen-section ${this.state.load === 1 ? 'load-component' : ''}`}>
+                  className={`screen-section ${this.state.load ? 'load-component' : ''}`}>
             <div className={`start-page ${window.location.pathname === '/auth' ? '' : 'with-form'}`}>
              <div className={`logo`}>
               <p className="welcome_text">Ep<span>i</span>cL<span>oo</span>t</p>

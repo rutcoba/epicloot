@@ -1,3 +1,4 @@
+@import '_fonts';
 @import '_loader';
 
 $lightgrey: lightgrey;
@@ -23,7 +24,8 @@ $big-hex-size: 16rem;
 
 $anim: 0.3s;
 
-$main_text: 'Rubik', Helvetica;
+$main_text: 'IdealistLight', Helvetica;
+$welcome_text: 'Lazer', Helvetica;
 
 body{
   position: relative;
@@ -33,6 +35,7 @@ body{
   min-height: 100vh;
   font-size: 10px;
   font-family: $main_text;
+//  letter-spacing: 1px;
   margin: 0;
 //  background: linear-gradient(to top, $primary_op 0%, $secondary_op 100%) no-repeat center, url('../img/ground.jpg') no-repeat center;
   background: linear-gradient(to top, rgba(80, 97, 144, 0.77) 0%, rgba(98, 79, 120, 0.54) 100%) no-repeat center, url('../img/ground8.jpg') no-repeat center;
@@ -290,6 +293,7 @@ footer{
 
 .welcome_text{
   color: #fee;
+  font-family: $welcome_text;
   font-size: 3rem;    
   transform: rotate(-5deg);
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000; 
@@ -499,11 +503,26 @@ header{
   overflow: hidden;
   input{
     font-size: 0.8rem;
+    color: $light;
   }
   &.open{
-    height: 2.5rem;
+    position: relative;
+    height: 3rem;
     padding: 0 0 1rem;
     overflow: visible;
+    &:after{
+      content: '\E5C5';
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2rem;
+      font-size: 1.7rem;
+      font-family: 'Material Icons';
+      transition: 0.3s all ease-in;
+    }
   }
 }
 

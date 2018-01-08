@@ -13,6 +13,7 @@ class Events_n_quests extends React.Component {
     super(props);
     this.state = {
       val: '',
+      load: false,
       openList: false,
       open_search_field: false,
       ico_search: 'search',
@@ -29,7 +30,7 @@ class Events_n_quests extends React.Component {
   componentDidMount(){
     let obj = this;
     setTimeout(function(){
-      obj.setState({load: 1});
+      obj.setState({load: true});
     },100);
   }
   
@@ -44,11 +45,15 @@ class Events_n_quests extends React.Component {
   handleSearch(){
     this.state.open_search_field == false ?
       (
-        this.setState({open_search_field: true}),
-        this.setState({ico_search: 'close'})
+        this.setState({
+          open_search_field: true,
+          ico_search: 'close'
+        })
       ) : (
-        this.setState({open_search_field: false}),
-        this.setState({ico_search: 'search'}),
+        this.setState({
+          open_search_field: false,
+          ico_search: 'search'
+        }),
         this.closeCategoryList(),
         this.emptyValue()
       );
@@ -72,11 +77,20 @@ class Events_n_quests extends React.Component {
   
     render(){
       const regExp = /\d/;
+      const {
+        open_search_field,
+        openList,
+        category,
+        val,
+        changeCategory,
+        load,
+        ico_search
+      } = this.state;
       let redirect = '',
           pathnameArr = this.props.location.pathname.split('/'),
-          regExp_search = new RegExp("(" + this.state.val + ")", "i"),
+          regExp_search = new RegExp("(" + val + ")", "i"),
           searchField = '',
-          categoryList = '';
+          categoryItem = '';
       if(this.props.location.pathname == '/events_n_quests'){ 
         redirect = <Redirect from='/events_n_quests' to='/events_n_quests/all' />;
       }
@@ -86,32 +100,42 @@ class Events_n_quests extends React.Component {
             <h2 className="title--page title--with_action">
               <Back_btn onClick={this.emptyValue} />
               Задания и квесты 
-              <i className="material-icons" onClick={this.handleSearch}>{this.state.ico_search}</i>
+              <i className="material-icons" onClick={this.handleSearch}>{ ico_search }</i>
             </h2>
-           <div className={`search__block field-block ${this.state.open_search_field == true ? 'open' : ''} `}>
+           <div className={`search__block field-block ${ open_search_field ? 'open' : '' } `}>
              <input type="text" 
                      placeholder="введите или выберите категорию" 
-                     value={this.state.val} 
+                     value={val} 
                      onFocus={this.openCategoryList} 
                      onChange={this.changeValue}
              />
-             <ul className={this.state.openList == true ? 'field__dropdown category__dropdown open' : 'category__dropdown'}>
-                <li><Link to={`/events_n_quests/all`} className="category__link" onClick={this.changeCategory} id="all">все</Link></li>
-               {this.state.category.map((item, val) => {
-                 categoryList = 
-                    <li key={val}><Link to={`/events_n_quests/${item.link}`} className="category__link" onClick={this.changeCategory} id={item.link}>{item.cat}</Link></li>;
-                 if(this.state.val == ''){                   
-                   return(
-                     categoryList
-                   )
-                 } else {
-                   if(regExp_search.test(item.cat)){
-                     return(
-                       categoryList
-                     )                     
-                   }
-                 }
+             <ul className={openList ? 'field__dropdown category__dropdown open' : 'category__dropdown'}>
+                <li>
+                  <Link
+                    to={`/events_n_quests/all`}
+                    className="category__link"
+                    onClick={this.changeCategory}
+                    id="all">
+                    все
+                  </Link>
+                </li>
+               
+                {category.map((item, val) => {
+                 if(val == '' || regExp_search.test(item.cat)){                   
+                   return <li key={val}>
+                             <Link
+                               to={`/events_n_quests/${item.link}`}
+                               className="category__link"
+                               onClick={this.changeCategory}
+                               id={item.link}>
+                               
+                               {item.cat}
+                               
+                             </Link>
+                          </li>
+                 } 
                })}
+               
              </ul>
            </div>
          </div>;
@@ -120,7 +144,7 @@ class Events_n_quests extends React.Component {
       }
       return (
         <section id="events_n_quests" 
-                 className={`screen-section ${this.state.load === 1 ? 'load-component' : ''}`}>
+                 className={`screen-section ${ load ? 'load-component' : '' }`}>
           {searchField}
           <div>
             {redirect}

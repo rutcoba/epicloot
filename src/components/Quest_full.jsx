@@ -13,7 +13,7 @@ class Quest_full extends React.Component {
       this.state = {
           data: this.props.data,
           id_item: this.props.data.id,
-          load: 0
+          load: false
       }
 //      this.passQuest = this.passQuest.bind(this);
 //      this.confirmExecution = this.confirmExecution.bind(this);
@@ -23,7 +23,7 @@ class Quest_full extends React.Component {
     window.scrollTo(0,0, 1000);
       let obj = this;
       setTimeout(function(){
-        obj.setState({load: 1});
+        obj.setState({load: true});
       },100);
   }
   
@@ -72,7 +72,7 @@ class Quest_full extends React.Component {
         break;        
     }
     return (
-      <div className={`page quest__page ${this.state.load === 1 ? 'load-inner_page' : ''}`} >
+      <div className={`page quest__page ${this.state.load ? 'load-inner_page' : ''}`} >
        <div className="quest__main block--without-bg">
          <Back_btn />
         <p className="quest__title">{item.title}</p>

@@ -9,6 +9,7 @@ class Field_text extends React.Component {
             value: this.props.value
         }
         this.changeValue = this.changeValue.bind(this);
+        this.getval = this.getval.bind(this);
     }
   
     componentDidMount(){
@@ -19,11 +20,13 @@ class Field_text extends React.Component {
   
     changeValue(){
       this.setState({ value: ReactDOM.findDOMNode(this.refs.text).value });
-      setTimeout(()=>{
-        if(this.props.getVal){
-          this.props.getVal(this.props.name, this.state.value);
-        }        
-      },0)
+      
+    }
+  
+    getval(){
+      if(this.props.getVal){
+        this.props.getVal(this.props.name, this.state.value);
+      }
     }
   
     render() {
@@ -35,7 +38,8 @@ class Field_text extends React.Component {
                       autoFocus={this.props.autoFocus ? true : false} 
                       ref='text'
                       value={this.state.value} 
-                      onChange={this.changeValue} 
+                      onChange={this.changeValue}
+                     onBlur={this.getval} 
                />;
       if (this.props.type == 'textarea'){
         input = <textarea 
@@ -43,6 +47,7 @@ class Field_text extends React.Component {
                      placeholder={this.props.placeholder ? this.props.placeholder : '' } 
                      name={this.props.name} 
                      onChange={this.changeValue}
+                     onBlur={this.getval}
                      defaultValue={this.state.value} />
       }
         return (

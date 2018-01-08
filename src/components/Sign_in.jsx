@@ -12,8 +12,10 @@ class Sign_in extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-          login: '',
-          pass: '',
+          auth: {
+            pass: '',
+            login: ''
+          },
           mess: ''
         }
         this.handleAuth = this.handleAuth.bind(this);
@@ -22,21 +24,20 @@ class Sign_in extends React.Component {
     componentDidMount(){} 
   
     getVal(nameField, val){
+      console.log(nameField, val);
+      let auth = this.state.auth;
       if(nameField == 'login') {
-        this.setState({ login : val });        
+        auth.login = val;       
       } else if (nameField == 'pass'){
-        this.setState({ pass : val });
+        auth.pass = val;
       }
+      this.setState({ auth });
     }
   
     handleAuth(e){
       e.preventDefault();
       let obj = this;
-      let auth = {
-        login: obj.state.login,
-        pass: obj.state.pass
-      }
-      console.log(auth);
+      let auth = this.state.auth;
       obj.setState({
         mess: 'auth_error'
       });
@@ -65,9 +66,10 @@ class Sign_in extends React.Component {
     }
   
     render() {
+      const { mess, auth } = this.state;
       let message = '';
-      if(this.state.mess !== ''){
-        message = <Message mess={this.state.mess} className={this.state.mess =='auth' ? 'popup--auth' : ''} />
+      if(mess !== ''){
+        message = <Message mess={mess} className={mess =='auth' ? 'popup--auth' : ''} />
       } else {
         message = '';
       }
@@ -79,7 +81,7 @@ class Sign_in extends React.Component {
                         name='login'
                         placeholder='Логин'
                         autoFocus
-                        value={this.state.login}
+                        value={auth.login}
                         getVal={this.getVal} />
             <Field_text className='auth__field field--with_ico'
                         ico='lock'
@@ -87,12 +89,12 @@ class Sign_in extends React.Component {
                         name='pass'                        
                         placeholder='Пароль'
                         autoComplete="new-password"
-                        value={this.state.pass}
+                        value={auth.pass}
                         getVal={this.getVal} />
-            <button className={`btn btn--auth ${this.state.mess == 'auth' ? 'load' : ''}`} 
+            <button className={`btn btn--auth ${ mess == 'auth' ? 'load' : '' }`} 
                     onClick={this.handleAuth} 
-                    disabled={this.state.mess !== '' ? true : false}>
-              {this.state.mess !== '' ? <div className="loader"><s></s><s></s><s></s></div> : 'Вход'}
+                    disabled={ mess !== '' ? true : false }>
+              { mess !== '' ? <div className="loader"><s></s><s></s><s></s></div> : 'Вход'}
             </button>              
             <p className="link--auth">Ещё нет аккаунта?<Link to='/auth/register'>Зарегистрируйся</Link></p>
             {message}
